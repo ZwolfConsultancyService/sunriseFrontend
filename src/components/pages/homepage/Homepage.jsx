@@ -1,15 +1,28 @@
-import React from 'react';
-import HomeImg from '../../../assets/homeimg.jpg';
+import React, { useEffect } from "react";
+import HomeImg from "../../../assets/homeimg.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Homepage = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: "ease-in-out",
+      once: true,
+    });
+  }, []);
+
   return (
     <div
-      className="font-sans bg-cover bg-center bg-no-repeat shadow-lg "
+      className="font-sans bg-cover bg-center bg-no-repeat shadow-lg"
       style={{ backgroundImage: `url(${HomeImg})` }}
     >
       <div className="min-h-screen flex flex-col md:flex-row items-center justify-between px-6 sm:px-10 md:px-20 gap-12 py-12 md:py-0">
         {/* Text Section */}
-        <div className="md:w-1/2 max-w-xl text-center md:text-left">
+        <div
+          className="md:w-1/2 max-w-xl text-center md:text-left"
+          data-aos="fade-right"
+        >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#1a1a28] mb-6 leading-tight">
             Ideal Everyday
           </h1>

@@ -1,4 +1,5 @@
-import React from "react";
+import Aos from "aos";
+import React, { useEffect } from "react";
 import { FiShoppingCart } from "react-icons/fi";
 
 const products = [
@@ -87,8 +88,15 @@ const products = [
   },
 ];
 
-
 const Product = () => {
+  useEffect(() => {
+    Aos.init({
+      duration: 700,
+      easing: "ease-in-out",
+      once: true,
+    });
+  }, []);
+
   return (
     <div className="bg-white font-sans text-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-20">
@@ -100,45 +108,49 @@ const Product = () => {
         </p>
 
         <div className="mt-12 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-  {products.map((item, idx) => (
-    <div key={idx} className="group relative flex flex-col items-center text-center">
-      <div className="relative w-full max-w-[240px] h-60">
-        <img
-          src={item.image}
-          alt={item.name}
-          className="w-full h-full object-contain rounded-md"
-        />
+          {products.map((item, idx) => (
+            <div
+              key={idx}
+              className="group relative flex flex-col items-center text-center"
+              data-aos="fade-up"
+              data-aos-delay={idx * 100} // stagger animation delay by 100ms per card
+            >
+              <div className="relative w-full max-w-[240px] h-60">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-full object-contain rounded-md"
+                />
 
-        {/* Hover Cart Icon */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <div className="bg-green-500 p-3 rounded-full shadow-lg">
-            <FiShoppingCart className="text-white text-lg" />
-          </div>
+                {/* Hover Cart Icon */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="bg-green-500 p-3 rounded-full shadow-lg">
+                    <FiShoppingCart className="text-white text-lg" />
+                  </div>
+                </div>
+
+                {/* Badges */}
+                {item.badge && (
+                  <span className="absolute top-3 right-3 bg-black text-white text-xs font-semibold px-2 py-1 rounded">
+                    {item.badge}
+                  </span>
+                )}
+                {item.discount && (
+                  <span className="absolute top-3 left-3 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded">
+                    {item.discount}
+                  </span>
+                )}
+              </div>
+              <h2 className="mt-6 text-lg font-medium">{item.name}</h2>
+              <p className="mt-1 text-sm text-gray-400">
+                {item.oldPrice && (
+                  <span className="line-through mr-2">{item.oldPrice}</span>
+                )}
+                {item.price}
+              </p>
+            </div>
+          ))}
         </div>
-
-        {/* Optional Badges */}
-        {item.badge && (
-          <span className="absolute top-3 right-3 bg-black text-white text-xs font-semibold px-2 py-1 rounded">
-            {item.badge}
-          </span>
-        )}
-        {item.discount && (
-          <span className="absolute top-3 left-3 bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded">
-            {item.discount}
-          </span>
-        )}
-      </div>
-      <h2 className="mt-6 text-lg font-medium">{item.name}</h2>
-      <p className="mt-1 text-sm text-gray-400">
-        {item.oldPrice && (
-          <span className="line-through mr-2">{item.oldPrice}</span>
-        )}
-        {item.price}
-      </p>
-    </div>
-  ))}
-</div>
-
       </div>
     </div>
   );
