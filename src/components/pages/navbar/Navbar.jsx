@@ -20,7 +20,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Nav */}
-        <ul className="hidden lg:flex space-x-8 text-gray-900 text-base font-medium">
+        <ul className="hidden lg:flex space-x-8 text-gray-900 text-base font-medium ">
           {navLinks.map((link) => (
             <li key={link}>
                   <Link

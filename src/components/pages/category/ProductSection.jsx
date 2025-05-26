@@ -13,7 +13,7 @@ const ProductSection = () => {
   }, []);
 
   return (
-    <div className="bg-white font-sans shadow-[0_4px_12px_rgba(0,0,0,0.05),0_-4px_12px_rgba(0,0,0,0.05)]">
+    <div className="bg-white font-sans ">
       <div className="min-h-screen flex flex-col md:flex-row">
         {/* Text Section */}
         <div
