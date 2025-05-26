@@ -111,7 +111,7 @@ const products = [
 const Shop = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [priceRange, setPriceRange] = useState([0, 100]);
-  const [itemsPerPage, setItemsPerPage] = useState(9);
+  const [itemsPerPage, setItemsPerPage] = useState();
 
   useEffect(() => {
     AOS.init({

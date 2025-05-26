@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = ["Home", "Features", "Pages", "Portfolio", "Blog", "Shop", "Components"];
+  const navLinks = ["Home", "Blog", "Shop", ];
 
   return (
 <nav className="w-full bg-white shadow px-6 py-4 relative">
@@ -37,9 +37,6 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center space-x-6 text-xl text-gray-900">
           <button aria-label="Search">
             <FaSearch />
-          </button>
-          <button aria-label="Cart">
-            <FaShoppingCart />
           </button>
         </div>
 
