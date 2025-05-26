@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = ["Home", "Blog", "Shop", ];
+  const navLinks = ["Home", "Blog", "Shop", "About", "Contact Us"];
 
   return (
 <nav className="w-full bg-white shadow px-6 py-4 relative">
@@ -38,6 +38,7 @@ const Navbar = () => {
           <button aria-label="Search">
             <FaSearch />
           </button>
+         
         </div>
 
         {/* Toggle button (visible on sm + md) */}

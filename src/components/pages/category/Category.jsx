@@ -13,7 +13,7 @@ const Category = () => {
   }, []);
 
   return (
-    <div className="bg-white font-sans mt-10 md:mt-14 px-6 sm:px-10 md:px-24 lg:px-32 py-10 sm:py-12 md:py-16 shadow-[0_-4px_8px_rgba(0,0,0,0.05),0_4px_8px_rgba(0,0,0,0.05)] rounded-md">
+    <div className="bg-white font-sans mt-10 md:mt-14 px-6 sm:px-10 md:px-24 lg:px-32 py-10 sm:py-12 md:py-16  rounded-md">
       <main className="flex flex-col md:flex-row items-center justify-between gap-10">
         {/* Image Section */}
         <div

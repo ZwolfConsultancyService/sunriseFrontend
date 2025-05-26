@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { FaThLarge, FaThList } from 'react-icons/fa'
+import { FaShoppingCart, FaThLarge, FaThList } from 'react-icons/fa'
 import Navbar from '../Navbar'
 import Footer from '../../footer/Footer'
 import AOS from 'aos'
@@ -221,33 +221,48 @@ const Shop = () => {
             {/* Product Grid */}
             <main className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 md:mt-0">
               {filteredProducts.slice(0, itemsPerPage).map((product) => (
-                <article key={product.id} className="text-center" data-aos="fade-up">
-                  <div className={`relative p-8 ${product.bg}`}>
-                    <img
-                      alt={product.title}
-                      className="mx-auto"
-                      height={320}
-                      width={240}
-                      src={product.image}
-                    />
-                    {product.badge && (
-                      <span className="absolute top-2 right-2 bg-black text-white text-xs px-2 py-0.5 rounded shadow-md">
-                        {product.badge}
-                      </span>
-                    )}
-                  </div>
-                  <h3 className="mt-4 text-base font-normal">{product.title}</h3>
-                  <p className="mt-1 text-sm text-gray-500">
-                    {product.originalPrice ? (
-                      <>
-                        <span className="line-through">${product.originalPrice}</span>{' '}
-                        <span>${product.price}</span>
-                      </>
-                    ) : (
-                      `$${product.price}`
-                    )}
-                  </p>
-                </article>
+               <article key={product.id} className="text-center group relative" data-aos="fade-up">
+  <div className={`relative p-8 ${product.bg} overflow-hidden`}>
+    <img
+      alt={product.title}
+      className="mx-auto transition-transform duration-300 group-hover:scale-105"
+      height={320}
+      width={240}
+      src={product.image}
+    />
+
+    {/* Badge (top-right corner) */}
+    {product.badge && (
+      <span className="absolute top-2 right-2 bg-black text-white text-xs px-2 py-0.5 rounded shadow-md">
+        {product.badge}
+      </span>
+    )}
+
+    {/* Hover Cart Icon */}
+    <button
+      aria-label="Add to cart"
+      className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    >
+      <div className="bg-green-500 text-white p-4 rounded-full shadow-lg hover:scale-105 transition-transform">
+        <FaShoppingCart className="text-xl" />
+      </div>
+    </button>
+  </div>
+
+  {/* Title & Price */}
+  <h3 className="mt-4 text-base font-normal">{product.title}</h3>
+  <p className="mt-1 text-sm text-gray-500">
+    {product.originalPrice ? (
+      <>
+        <span className="line-through">${product.originalPrice}</span>{' '}
+        <span>${product.price}</span>
+      </>
+    ) : (
+      `$${product.price}`
+    )}
+  </p>
+</article>
+
               ))}
             </main>
           </div>

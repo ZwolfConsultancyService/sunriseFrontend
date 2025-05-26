@@ -27,10 +27,11 @@ const Homepage = () => {
             Ideal Everyday
           </h1>
           <p className="text-[#6b6b6b] text-base sm:text-lg md:text-xl mb-10 leading-relaxed">
-            Create exactly what you need with our powerful bootstrap toolkit.
+       Sunrise – Your one-stop shop for everything you love && 
+       Shop smart and  Live better.
           </p>
           <button className="bg-[#12121f] text-white font-semibold px-6 py-3 rounded-md shadow-lg hover:shadow-xl transition-shadow duration-300 text-base sm:text-lg">
-            Buy Intense Now
+            Buy Now
           </button>
         </div>
       </div>
