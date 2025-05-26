@@ -12,10 +12,11 @@ const Navbar = () => {
   const getLinkPath = (link) =>
     `/${link === "Home" ? "" : link.toLowerCase().replace(/\s+/g, "-")}`;
 
-  const isActive = (link) => {
-    const current = location.pathname === "/" ? "" : location.pathname.slice(1);
-    return current === link.toLowerCase().replace(/\s+/g, "-");
-  };
+const isActive = (link) => {
+  const currentPath = location.pathname;
+  const targetPath = getLinkPath(link);
+  return currentPath === targetPath;
+};
 
   return (
     <nav className="w-full bg-white shadow px-6 py-4 relative">
