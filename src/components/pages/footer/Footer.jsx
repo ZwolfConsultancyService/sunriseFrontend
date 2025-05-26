@@ -91,16 +91,13 @@ const Footer = () => {
         {/* Bottom row */}
         <div className="max-w-7xl mx-auto mt-24 flex flex-col md:flex-row md:justify-between md:items-center text-gray-700 text-sm sm:text-base font-medium">
           <div className="flex flex-wrap items-center gap-3 mb-8 md:mb-0">
-            <img
-              src="https://placehold.co/24x24/png?text=%5B%20green%20corner%20bracket%20icon%20%5D"
-              alt="Green corner bracket icon"
-              width={24}
-              height={24}
-              className="inline-block"
-            />
-            <span className="font-extrabold text-lg sm:text-xl tracking-tight text-gray-900">
-              intense
-            </span>
+            <div className="flex items-center space-x-2 font-extrabold text-2xl">
+          <span className="text-green-500 text-3xl">⌞</span>
+          <span>sun</span>
+          <span className="text-green-500">r</span>
+          <span>ise</span>
+        </div>
+
             <span className="text-gray-700">© 2023 Intense. All rights reserved.</span>
             <a href="#" className="ml-2 hover:underline text-gray-700">
               Privacy Policy

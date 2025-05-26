@@ -37,7 +37,7 @@ const Preloader = () => {
             loading
           </span>
 
-          {/* Intense text */}
+         
           <span
             style={{
               position: "absolute",
@@ -50,9 +50,9 @@ const Preloader = () => {
             }}
           >
             <span className="text-green-500 text-xl">⌞</span>
-            <span>int</span>
-            <span className="text-green-500">e</span>
-            <span>nse</span>
+            <span>sun</span>
+            <span className="text-green-500">r</span>
+            <span>ise</span>
           </span>
         </div>
       </div>
