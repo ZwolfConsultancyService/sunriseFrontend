@@ -1,4 +1,3 @@
-import React from 'react'
 import Navbar from '../Navbar';
 import Footer from '../../footer/Footer';
 import { FaArrowRight, FaRegClock, FaRegComment, FaUser } from 'react-icons/fa';
@@ -111,85 +110,154 @@ Shipping options:
     reviews: `Customer reviews will be displayed here.`,
   },
 ];
+
+
 const Blog = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-
-      <main className="flex-grow container mx-auto px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-48 py-16 space-y-32">
-        {products.slice(0, 5).map((product, index) => (
-          <section
-            key={product.id}
-            className={`grid grid-cols-1 md:grid-cols-2 gap-16 items-center
-              ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}
-            `}
-          >
-            {/* Image Container */}
-            <div
-              className={`flex justify-center items-center ${
-                index % 2 === 1 ? 'order-1 md:order-2' : 'order-1'
-              }`}
+    <>
+      {/* Desktop version - hidden on small, visible on md and above */}
+      <div className="hidden md:block min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-grow container mx-auto px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-48 py-16 space-y-32">
+          {products.slice(0, 5).map((product, index) => (
+            <section
+              key={product.id}
+              className={`grid grid-cols-1 md:grid-cols-2 gap-16 items-center
+                ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}
+              `}
             >
-              <img
-                src={product.image}
-                alt={product.title}
-                className="rounded-lg shadow-lg max-w-full h-auto object-cover"
-                width={600}
-                height={400}
-                loading="lazy"
-              />
-            </div>
-
-            {/* Text Content */}
-            <article
-              className={`flex flex-col justify-center space-y-6
-              ${index % 2 === 1 ? 'order-2 md:order-1 text-right md:text-left' : 'order-2 text-left'}`}
-            >
-              <h2 className="text-3xl font-semibold leading-tight">{product.title}</h2>
-
+              {/* Image Container */}
               <div
-                className={`flex flex-wrap items-center gap-4 text-sm md:text-base text-gray-700 ${
-                  index % 2 === 1 ? 'justify-end md:justify-start' : ''
+                className={`flex justify-center items-center ${
+                  index % 2 === 1 ? 'order-1 md:order-2' : 'order-1'
                 }`}
               >
-                <span className="text-green-600 font-semibold uppercase tracking-wide">HTML</span>
-                <span className="flex items-center space-x-2">
-                  <FaUser />
-                  <span>Mark Rogers</span>
-                </span>
-                <span className="flex items-center space-x-2">
-                  <FaRegClock />
-                  <span>September 16, 2023</span>
-                </span>
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="rounded-lg shadow-lg max-w-full h-auto object-cover"
+                  width={600}
+                  height={400}
+                  loading="lazy"
+                />
               </div>
 
-              <p className="text-gray-600 max-w-xl leading-relaxed">
-                {product.description.length > 160
-                  ? product.description.slice(0, 160) + '...'
-                  : product.description}
-              </p>
-
-              <div
-                className={`flex items-center space-x-6 ${
-                  index % 2 === 1 ? 'justify-end md:justify-start' : ''
+              {/* Text Content */}
+              <article
+                className={`flex flex-col justify-center space-y-6 ${
+                  index % 2 === 1 ? 'order-2 md:order-1 text-right md:text-left' : 'order-2 text-left'
                 }`}
               >
-                <button className="bg-green-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:shadow-xl transition-shadow flex items-center space-x-3">
-                  <span>Read more</span>
-                  <FaArrowRight />
-                </button>
-                <div className="flex items-center space-x-2 text-gray-700 text-sm md:text-base">
-                  <FaRegComment />
-                  <span>25</span>
+                <h2 className="text-3xl font-semibold leading-tight">{product.title}</h2>
+                <div
+                  className={`flex flex-wrap items-center gap-4 text-sm md:text-base text-gray-700 ${
+                    index % 2 === 1 ? 'justify-end md:justify-start' : ''
+                  }`}
+                >
+                  <span className="text-green-600 font-semibold uppercase tracking-wide">HTML</span>
+                  <span className="flex items-center space-x-2">
+                    <FaUser />
+                    <span>Mark Rogers</span>
+                  </span>
+                  <span className="flex items-center space-x-2">
+                    <FaRegClock />
+                    <span>September 16, 2023</span>
+                  </span>
                 </div>
-              </div>
-            </article>
-          </section>
-        ))}
-      </main>
+                <p className="text-gray-600 max-w-xl leading-relaxed">
+                  {product.description.length > 160
+                    ? product.description.slice(0, 160) + '...'
+                    : product.description}
+                </p>
+                <div
+                  className={`flex items-center space-x-6 ${
+                    index % 2 === 1 ? 'justify-end md:justify-start' : ''
+                  }`}
+                >
+                  <button className="bg-green-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:shadow-xl transition-shadow flex items-center space-x-3">
+                    <span>Read more</span>
+                    <FaArrowRight />
+                  </button>
+                  <div className="flex items-center space-x-2 text-gray-700 text-sm md:text-base">
+                    <FaRegComment />
+                    <span>25</span>
+                  </div>
+                </div>
+              </article>
+            </section>
+          ))}
+        </main>
+        <Footer />
+      </div>
 
-      <Footer />
-    </div>
+      {/* Mobile version - visible on small, hidden on md and above */}
+      <div className="block md:hidden min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-grow container mx-auto px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-48 py-16 space-y-32">
+          {products.slice(0, 5).map((product, index) => (
+            <section
+              key={product.id}
+              className={`grid grid-cols-1 md:grid-cols-2 gap-16 items-center
+                ${index % 2 === 1 ? 'md:grid-flow-col-dense' : ''}
+              `}
+            >
+              <div
+                className={`flex justify-center items-center order-1 md:order-${index % 2 === 1 ? 2 : 1}`}
+              >
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="rounded-lg shadow-lg max-w-full h-auto object-cover"
+                  width={600}
+                  height={400}
+                  loading="lazy"
+                />
+              </div>
+
+              <article
+                className={`flex flex-col justify-center space-y-6 order-2 md:order-${index % 2 === 1 ? 1 : 2} text-left md:text-${index % 2 === 1 ? 'left' : 'right'}`}
+              >
+                <h2 className="text-3xl font-semibold leading-tight">{product.title}</h2>
+
+                <div
+                  className={`flex flex-wrap items-center gap-4 text-sm md:text-base text-gray-700 justify-start md:justify-${index % 2 === 1 ? 'start' : 'end'}`}
+                >
+                  <span className="text-green-600 font-semibold uppercase tracking-wide">HTML</span>
+                  <span className="flex items-center space-x-2">
+                    <FaUser />
+                    <span>Mark Rogers</span>
+                  </span>
+                  <span className="flex items-center space-x-2">
+                    <FaRegClock />
+                    <span>September 16, 2023</span>
+                  </span>
+                </div>
+
+                <p className="text-gray-600 max-w-xl leading-relaxed">
+                  {product.description.length > 160
+                    ? product.description.slice(0, 160) + '...'
+                    : product.description}
+                </p>
+
+                <div
+                  className={`flex items-center space-x-6 justify-start md:justify-${index % 2 === 1 ? 'start' : 'end'}`}
+                >
+                  <button className="bg-green-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:shadow-xl transition-shadow flex items-center space-x-3">
+                    <span>Read more</span>
+                    <FaArrowRight />
+                  </button>
+                  <div className="flex items-center space-x-2 text-gray-700 text-sm md:text-base">
+                    <FaRegComment />
+                    <span>25</span>
+                  </div>
+                </div>
+              </article>
+            </section>
+          ))}
+        </main>
+        <Footer />
+      </div>
+    </>
   );
 };
 
