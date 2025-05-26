@@ -215,47 +215,6 @@ const Shop = () => {
                     ))}
                   </div>
                 </fieldset>
-
-                <fieldset>
-                  <legend className="text-base font-normal mb-4">Color</legend>
-                  <div className="flex flex-wrap gap-3">
-                    {[
-                      'bg-white border border-gray-300',
-                      'bg-green-300',
-                      'bg-purple-400',
-                      'bg-orange-300',
-                      'bg-pink-400',
-                      'bg-gray-600',
-                      'bg-blue-400',
-                      'bg-green-300/70',
-                    ].map((color, i) => (
-                      <button
-                        key={i}
-                        aria-label="Color"
-                        className={`w-8 h-8 rounded-full ${color}`}
-                        type="button"
-                      ></button>
-                    ))}
-                  </div>
-                </fieldset>
-
-                <fieldset>
-                  <legend className="text-base font-normal mb-4">Price</legend>
-                  <div className="flex justify-between text-xs text-gray-600 mb-2">
-                    <span>${priceRange[0]}</span>
-                    <span>${priceRange[1]}</span>
-                  </div>
-                  <input
-                    aria-label="Price range"
-                    className="w-full"
-                    max={100}
-                    min={0}
-                    type="range"
-                    value={priceRange[1]}
-                    onChange={handlePriceChange}
-                  />
-                  <hr className="mt-4 border-gray-200" />
-                </fieldset>
               </form>
             </aside>
 
