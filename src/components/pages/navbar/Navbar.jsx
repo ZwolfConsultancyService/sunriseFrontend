@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import { FaSearch, FaShoppingCart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,7 +10,7 @@ const Navbar = () => {
 
   return (
 <nav className="w-full bg-white shadow px-6 py-4 relative">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <div className="max-w-7xl mx-auto flex items-center justify-between ">
         {/* Logo */}
         <div className="flex items-center space-x-2 font-extrabold text-2xl">
           <span className="text-green-500 text-3xl">⌞</span>
@@ -22,9 +23,12 @@ const Navbar = () => {
         <ul className="hidden lg:flex space-x-8 text-gray-900 text-base font-medium">
           {navLinks.map((link) => (
             <li key={link}>
-              <a href="#" className="hover:text-gray-700">
-                {link}
-              </a>
+                  <Link
+    to={`/${link === 'Home' ? '' : link.toLowerCase()}`}
+      className="hover:text-gray-700"
+    >
+      {link}
+    </Link>
             </li>
           ))}
         </ul>
@@ -53,9 +57,11 @@ const Navbar = () => {
     {isOpen && (
   <div className="lg:hidden absolute top-16 left-0 w-full bg-white shadow-md px-6 py-4 z-50">
           {navLinks.map((link) => (
-            <a key={link} href="#" className="block py-2 border-b border-gray-200 hover:text-gray-700">
+            <Link key={link}
+          to={`/${link === 'Home' ? '' : link.toLowerCase()}`}
+              className="block py-2 border-b border-gray-200 hover:text-gray-700">
               {link}
-            </a>
+            </Link>
           ))}
 
           {/* Mobile/Tablet Icons */}
