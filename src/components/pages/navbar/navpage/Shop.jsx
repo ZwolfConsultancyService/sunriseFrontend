@@ -16,6 +16,19 @@ const products = [
     image: 'https://storage.googleapis.com/a1aa/image/95514d06-5f74-46d5-af8c-27ce876abe11.jpg',
     bg: '',
     badge: null,
+    description: `This stylish black baseball cap is perfect for everyday wear. 
+- Durable and breathable material
+- Adjustable strap for a custom fit
+- Suitable for all head sizes
+- Ideal for sun protection
+- Comes with a branded carry pouch.`,
+    sizeAndFit: `One size fits all. Adjustable strap at the back ensures a snug fit.`,
+    shippingAndReturns: `Free worldwide shipping and 30-day free returns.
+Shipping options:
+- Standard: 2–4 business days
+- Two-day: 2–3 business days
+- Next-day: 1–2 business days`,
+    reviews: `Customer reviews will be displayed here.`,
   },
   {
     id: 2,
@@ -24,6 +37,19 @@ const products = [
     image: 'https://storage.googleapis.com/a1aa/image/f0e9b45e-4c01-42bc-efb5-d5728ce3865a.jpg',
     bg: '',
     badge: 'New',
+    description: `This iridescent phone case with a silver chain is a perfect choice for any lady looking for quality phone protection. 
+- Bright & lightweight
+- Fits any phone or smartphone
+- Offers full protection
+- Has additional inside pockets
+- Comes with a branded dust bag.`,
+    sizeAndFit: `Universal fit for all standard-sized smartphones.`,
+    shippingAndReturns: `Free worldwide shipping and 30-day free returns.
+Shipping options:
+- Standard: 2–4 business days
+- Two-day: 2–3 business days
+- Next-day: 1–2 business days`,
+    reviews: `Customer reviews will be displayed here.`,
   },
   {
     id: 3,
@@ -32,6 +58,19 @@ const products = [
     image: 'https://storage.googleapis.com/a1aa/image/c941ca74-026c-4b01-76b5-d6441955ad0e.jpg',
     bg: '',
     badge: null,
+    description: `Elegant black analogue watch with a timeless design. 
+- Water-resistant
+- Quartz movement
+- Comfortable leather strap
+- Scratch-resistant glass
+- Minimalist dial.`,
+    sizeAndFit: `Adjustable strap fits wrist sizes from 6" to 9".`,
+    shippingAndReturns: `Free worldwide shipping and 30-day free returns.
+Shipping options:
+- Standard: 2–4 business days
+- Two-day: 2–3 business days
+- Next-day: 1–2 business days`,
+    reviews: `Customer reviews will be displayed here.`,
   },
   {
     id: 4,
@@ -41,6 +80,19 @@ const products = [
     bg: '',
     originalPrice: 37,
     badge: '-22%',
+    description: `Trendy ombré vinyl backpack with functional design. 
+- Spacious compartments
+- Durable waterproof material
+- Stylish ombré finish
+- Comfortable shoulder straps
+- Ideal for daily use or travel.`,
+    sizeAndFit: `Fits up to 15" laptops with plenty of storage space.`,
+    shippingAndReturns: `Free worldwide shipping and 30-day free returns.
+Shipping options:
+- Standard: 2–4 business days
+- Two-day: 2–3 business days
+- Next-day: 1–2 business days`,
+    reviews: `Customer reviews will be displayed here.`,
   },
   {
     id: 5,
@@ -49,6 +101,19 @@ const products = [
     image: 'https://ld-wt73.template-help.com/intense/intense2/images/products/product-11-290x372.jpg',
     bg: '',
     badge: null,
+    description: `Elegant golden earrings for all occasions. 
+- Hypoallergenic metal
+- Lightweight & comfortable
+- Timeless design
+- Suitable for sensitive ears
+- Comes with a gift box.`,
+    sizeAndFit: `One size. Approx. length: 2.5cm.`,
+    shippingAndReturns: `Free worldwide shipping and 30-day free returns.
+Shipping options:
+- Standard: 2–4 business days
+- Two-day: 2–3 business days
+- Next-day: 1–2 business days`,
+    reviews: `Customer reviews will be displayed here.`,
   },
   {
     id: 6,
@@ -57,6 +122,19 @@ const products = [
     image: 'https://ld-wt73.template-help.com/intense/intense2/images/products/product-04-290x372.jpg',
     bg: '',
     badge: 'New',
+    description: `Shiny and stylish tote bag that elevates your everyday look. 
+- Iridescent finish
+- Spacious main compartment
+- Inner zipper pockets
+- Magnetic button closure
+- Easy to carry handles.`,
+    sizeAndFit: `Size: 15" x 13". Ideal for books, laptops, and daily essentials.`,
+    shippingAndReturns: `Free worldwide shipping and 30-day free returns.
+Shipping options:
+- Standard: 2–4 business days
+- Two-day: 2–3 business days
+- Next-day: 1–2 business days`,
+    reviews: `Customer reviews will be displayed here.`,
   },
   {
     id: 7,
@@ -66,6 +144,19 @@ const products = [
     bg: '',
     originalPrice: 45,
     badge: '-33%',
+    description: `Complete stationery collection to boost your creativity. 
+- Includes pens, markers, notebooks, and stickers
+- Vibrant colors
+- Eco-friendly materials
+- Ideal for school or office
+- Comes in a premium organizer box.`,
+    sizeAndFit: `Box size: 10" x 8". Perfect for backpacks and desks.`,
+    shippingAndReturns: `Free worldwide shipping and 30-day free returns.
+Shipping options:
+- Standard: 2–4 business days
+- Two-day: 2–3 business days
+- Next-day: 1–2 business days`,
+    reviews: `Customer reviews will be displayed here.`,
   },
   {
     id: 8,
@@ -74,6 +165,19 @@ const products = [
     image: 'https://ld-wt73.template-help.com/intense/intense2/images/products/product-06-290x372.jpg',
     bg: '',
     badge: null,
+    description: `Trendy iridescent belt bag for hands-free convenience. 
+- Adjustable strap
+- Secure zipper closure
+- Lightweight and compact
+- Eye-catching design
+- Ideal for festivals or travel.`,
+    sizeAndFit: `Fits waist sizes from 24" to 40".`,
+    shippingAndReturns: `Free worldwide shipping and 30-day free returns.
+Shipping options:
+- Standard: 2–4 business days
+- Two-day: 2–3 business days
+- Next-day: 1–2 business days`,
+    reviews: `Customer reviews will be displayed here.`,
   },
   {
     id: 9,
@@ -82,6 +186,19 @@ const products = [
     image: 'https://ld-wt73.template-help.com/intense/intense2/images/products/product-12-290x372.jpg',
     bg: '',
     badge: null,
+    description: `Classic white sneakers that go with everything. 
+- Breathable fabric
+- Padded sole for comfort
+- Anti-slip rubber outsole
+- Timeless style
+- Easy to clean.`,
+    sizeAndFit: `Available in sizes US 6 to 11.`,
+    shippingAndReturns: `Free worldwide shipping and 30-day free returns.
+Shipping options:
+- Standard: 2–4 business days
+- Two-day: 2–3 business days
+- Next-day: 1–2 business days`,
+    reviews: `Customer reviews will be displayed here.`,
   },
   {
     id: 10,
@@ -91,6 +208,19 @@ const products = [
     bg: '',
     originalPrice: 80,
     badge: '-25%',
+    description: `Rugged travel backpack built for adventure. 
+- Water-resistant material
+- Padded laptop sleeve
+- Multiple compartments
+- Breathable back support
+- Fits in airplane cabin size requirements.`,
+    sizeAndFit: `Dimensions: 18" x 12" x 7". Volume: 28L.`,
+    shippingAndReturns: `Free worldwide shipping and 30-day free returns.
+Shipping options:
+- Standard: 2–4 business days
+- Two-day: 2–3 business days
+- Next-day: 1–2 business days`,
+    reviews: `Customer reviews will be displayed here.`,
   },
   {
     id: 11,
@@ -100,6 +230,19 @@ const products = [
     bg: '',
     originalPrice: 53,
     badge: null,
+    description: `Elegant phone case with stylish detachable chain. 
+- Full body protection
+- Stylish chain strap
+- Scratch-resistant shell
+- Lightweight design
+- Includes velvet pouch.`,
+    sizeAndFit: `Universal fit for all major smartphone models.`,
+    shippingAndReturns: `Free worldwide shipping and 30-day free returns.
+Shipping options:
+- Standard: 2–4 business days
+- Two-day: 2–3 business days
+- Next-day: 1–2 business days`,
+    reviews: `Customer reviews will be displayed here.`,
   },
   {
     id: 12,
@@ -108,6 +251,19 @@ const products = [
     image: 'https://ld-wt73.template-help.com/intense/intense2/images/products/product-09-290x372.jpg',
     bg: '',
     badge: 'New',
+    description: `Charming rose fragrance perfect for daily wear. 
+- Long-lasting scent
+- Notes of rose, jasmine, and vanilla
+- Elegant bottle design
+- Great for gifting
+- Comes in a luxury box.`,
+    sizeAndFit: `50ml bottle. Travel-friendly size.`,
+    shippingAndReturns: `Free worldwide shipping and 30-day free returns.
+Shipping options:
+- Standard: 2–4 business days
+- Two-day: 2–3 business days
+- Next-day: 1–2 business days`,
+    reviews: `Customer reviews will be displayed here.`,
   },
 ];
 
