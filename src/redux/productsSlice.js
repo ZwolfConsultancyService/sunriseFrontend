@@ -4,6 +4,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
 	products : [],
 	selectedProduct : null,
+	BlogProducts : [],
+	selectedBlogProduct:null,
+
 }
 
 const productsSlice = createSlice({
@@ -19,9 +22,21 @@ const productsSlice = createSlice({
 		clearSelectedProduct(state) {
 			state.selectedProduct = null;
 		},
+
+		setBlogProducts(state, action) {
+			state.BlogProducts = action.payload;
+		},
+		setSelectedBlogProduct(state, action) {
+      state.selectedBlogProduct = action.payload;
+    },
+    clearSelectedBlogProduct(state) {
+      state.selectedBlogProduct = null;
+    },
 	},
 });
 
-export const { setProducts, setSelectedProduct , clearSelectedProduct } = productsSlice.actions;
+export const { setProducts, setSelectedProduct , clearSelectedProduct ,   setBlogProducts,     
+  setSelectedBlogProduct,    
+  clearSelectedBlogProduct,  } = productsSlice.actions;
 
 export default productsSlice.reducer;
