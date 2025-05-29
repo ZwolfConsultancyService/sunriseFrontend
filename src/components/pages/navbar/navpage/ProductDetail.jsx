@@ -45,94 +45,111 @@ const ProductDetail = () => {
   return (
     <>
       <Navbar />
-      <div className="max-w-5xl mx-auto p-6 space-y-10">
-        {/* Product Info */}
-        <div className="flex flex-col md:flex-row gap-8">
-          <img
-            src={product.image}
-            alt={product.title}
-            className="w-full max-w-sm rounded shadow"
-          />
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        {/* Image + Info */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Left: Image Gallery */}
+          <div className="flex flex-col md:flex-row gap-4">
+            <div className="flex flex-col gap-4 w-full md:w-1/3">
+              {[1, 2].map((_, idx) => (
+                <img
+                  key={idx}
+                  src={product.image}
+                  alt={`${product.title} ${idx + 1}`}
+                  className="w-full h-40 object-cover rounded-lg border"
+                />
+              ))}
+            </div>
+            <div className="flex-1">
+              <img
+                src={product.image}
+                alt={product.title}
+                className="w-full h-[400px] object-cover rounded-lg shadow"
+              />
+            </div>
+          </div>
 
-          <div className="flex-1 space-y-4">
-            <h2 className="text-3xl font-bold">{product.title}</h2>
-            <p className="text-gray-700">{product.description}</p>
-            <div className="text-xl font-semibold text-black">
+          {/* Right: Product Info */}
+          <div className="space-y-6">
+            <h1 className="text-3xl font-semibold">{product.title}</h1>
+            <p className="text-gray-600">{product.description}</p>
+
+            <div className="text-2xl font-bold text-black">
               ${product.price}
               {product.originalPrice && (
-                <span className="text-sm text-gray-500 line-through ml-3">
+                <span className="text-sm text-gray-500 line-through ml-3 font-normal">
                   ${product.originalPrice}
                 </span>
               )}
             </div>
+
             {product.badge && (
-              <span className="inline-block mt-2 px-3 py-1 bg-black text-white rounded text-xs">
+              <div className="inline-block bg-black text-white px-3 py-1 text-xs rounded">
                 {product.badge}
-              </span>
+              </div>
             )}
+
+            {/* Inquiry Form CTA inside card */}
+            <form
+              onSubmit={handleSubmit}
+              className="mt-6 bg-gray-100 p-6 rounded-lg shadow space-y-4"
+            >
+              <h3 className="text-lg font-medium">Contact for this product</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  value={form.name}
+                  onChange={handleChange}
+                  required
+                  className="border border-gray-300 p-2 rounded w-full"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  value={form.email}
+                  onChange={handleChange}
+                  required
+                  className="border border-gray-300 p-2 rounded w-full"
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Your Phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                  required
+                  className="border border-gray-300 p-2 rounded w-full sm:col-span-2"
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="mt-2 bg-black text-white px-5 py-2 rounded hover:bg-gray-800"
+              >
+                Submit
+              </button>
+            </form>
           </div>
         </div>
 
         {/* Additional Product Details */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-800">
-          <div className="space-y-2">
-            <h4 className="font-semibold text-base">Size & Fit</h4>
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-gray-800">
+          <div>
+            <h4 className="font-semibold mb-1">Size & Fit</h4>
             <p>{product.sizeAndFit}</p>
           </div>
-          <div className="space-y-2">
-            <h4 className="font-semibold text-base">Shipping & Returns</h4>
+          <div>
+            <h4 className="font-semibold mb-1">Shipping & Returns</h4>
             <p>{product.shippingAndReturns}</p>
           </div>
-          <div className="space-y-2 md:col-span-2">
-            <h4 className="font-semibold text-base">Customer Reviews</h4>
+          <div className="md:col-span-2">
+            <h4 className="font-semibold mb-1">Customer Reviews</h4>
             <p>{product.reviews}</p>
           </div>
         </div>
-
-        {/* Inquiry Form */}
-        <form
-          onSubmit={handleSubmit}
-          className="bg-gray-100 p-6 rounded-md shadow space-y-4"
-        >
-          <h3 className="text-lg font-semibold">Contact for this product</h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={form.name}
-              onChange={handleChange}
-              required
-              className="border border-gray-300 p-2 rounded w-full"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              value={form.email}
-              onChange={handleChange}
-              required
-              className="border border-gray-300 p-2 rounded w-full"
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Your Phone"
-              value={form.phone}
-              onChange={handleChange}
-              required
-              className="border border-gray-300 p-2 rounded w-full"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="mt-4 bg-black text-white px-4 py-2 rounded hover:bg-gray-800"
-          >
-            Submit
-          </button>
-        </form>
       </div>
       <Footer />
     </>
