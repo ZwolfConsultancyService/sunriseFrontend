@@ -1,8 +1,11 @@
 import { useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
-import Footer from '../../footer/Footer';
-import Navbar from '../Navbar';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 import { useState } from 'react';
+import Navbar from '../navbar/Navbar';
+import Footer from '../footer/Footer';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -40,16 +43,20 @@ const ProductDetail = () => {
         </button>
       </div>
     );
+
+    useEffect(() => {
+  AOS.init({ duration: 1000, once: true });
+  window.scrollTo(0, 0);
+}, []);
+
   }
 
   return (
     <>
       <Navbar />
       <div className="max-w-6xl mx-auto px-4 py-12">
-        {/* Image + Info */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Left: Image Gallery */}
-          <div className="flex flex-col md:flex-row gap-4">
+       <div className="flex flex-col md:flex-row gap-4" data-aos="fade-right">
             <div className="flex flex-col gap-4 w-full md:w-1/3">
               {[1, 2].map((_, idx) => (
                 <img
@@ -69,8 +76,7 @@ const ProductDetail = () => {
             </div>
           </div>
 
-          {/* Right: Product Info */}
-          <div className="space-y-6">
+     <div className="space-y-6" data-aos="fade-left">
             <h1 className="text-3xl font-semibold">{product.title}</h1>
             <p className="text-gray-600">{product.description}</p>
 

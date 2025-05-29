@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Home from './components/Home';
-import Preloader from './components/anims/Preloader';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Shop from './components/pages/navbar/navpage/Shop';
-import ProductDetail from './components/pages/navbar/navpage/ProductDetail';
-import Blog from './components/pages/navbar/navpage/Blog';
+import Preloader from './components/anims/Preloader';
+import Shop from './components/pages/shop/Shop';
+import ProductDetail from './components/pages/shop/ProductDetail';
+import Blog from './components/pages/blog/Blog';
+import BlogDetail from './components/pages/blog/BlogDetail';
 
 
 function App() {
@@ -27,6 +29,7 @@ function App() {
         <Route path="/shop" element={<Shop />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path = '/blog' element = {<Blog />} />
+         <Route path="/blog/:slug" element={<BlogDetail />} />
       </Routes>
     </Router>
 
