@@ -98,7 +98,7 @@ const Footer = () => {
           <span>ise</span>
         </div>
 
-            <span className="text-gray-700">© 2023 Intense. All rights reserved.</span>
+            <span className="text-gray-700">© 2023 sunrise. All rights reserved.</span>
             <a href="#" className="ml-2 hover:underline text-gray-700">
               Privacy Policy
             </a>

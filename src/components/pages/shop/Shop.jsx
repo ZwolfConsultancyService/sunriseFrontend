@@ -9,6 +9,8 @@ import Navbar from '../navbar/Navbar'
 import Footer from '../footer/Footer'
 import ShopData from "./ShopData";
 
+const slugify = (text) =>
+  text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
 
 const Shop = () => {
   const [selectedCategories, setSelectedCategories] = useState([]);
@@ -30,7 +32,8 @@ const Shop = () => {
 
   const handleCardClick = (product) => {
     dispatch(setSelectedProduct(product));
-    navigate(`/product/${product.id}`);
+   navigate(`/product/${slugify(product.title)}`);
+
   };
 
   const handleCategoryChange = (category) => {

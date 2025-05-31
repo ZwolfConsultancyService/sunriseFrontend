@@ -2,17 +2,20 @@ import { useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '../navbar/Navbar';
 import Footer from '../footer/Footer';
 
+const slugify = (text) =>
+  text.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
+
 const ProductDetail = () => {
-  const { id } = useParams();
-  const product = useSelector((state) =>
-    state.products.products.find((p) => p.id === Number(id))
-  );
+  const { slug } = useParams();
   const navigate = useNavigate();
+
+  const product = useSelector((state) =>
+    state.products.products.find((p) => slugify(p.title) === slug)
+  );
 
   const [form, setForm] = useState({
     name: '',
@@ -31,6 +34,11 @@ const ProductDetail = () => {
     setForm({ name: '', email: '', phone: '' });
   };
 
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+    window.scrollTo(0, 0);
+  }, []);
+
   if (!product) {
     return (
       <div className="p-10">
@@ -43,12 +51,6 @@ const ProductDetail = () => {
         </button>
       </div>
     );
-
-    useEffect(() => {
-  AOS.init({ duration: 1000, once: true });
-  window.scrollTo(0, 0);
-}, []);
-
   }
 
   return (
@@ -56,7 +58,8 @@ const ProductDetail = () => {
       <Navbar />
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-       <div className="flex flex-col md:flex-row gap-4" data-aos="fade-right">
+          {/* Images */}
+          <div className="flex flex-col md:flex-row gap-4" data-aos="fade-right">
             <div className="flex flex-col gap-4 w-full md:w-1/3">
               {[1, 2].map((_, idx) => (
                 <img
@@ -76,7 +79,8 @@ const ProductDetail = () => {
             </div>
           </div>
 
-     <div className="space-y-6" data-aos="fade-left">
+          {/* Details */}
+          <div className="space-y-6" data-aos="fade-left">
             <h1 className="text-3xl font-semibold">{product.title}</h1>
             <p className="text-gray-600">{product.description}</p>
 
@@ -95,7 +99,7 @@ const ProductDetail = () => {
               </div>
             )}
 
-            {/* Inquiry Form CTA inside card */}
+            {/* Inquiry Form */}
             <form
               onSubmit={handleSubmit}
               className="mt-6 bg-gray-100 p-6 rounded-lg shadow space-y-4"
@@ -141,7 +145,7 @@ const ProductDetail = () => {
           </div>
         </div>
 
-        {/* Additional Product Details */}
+        {/* Additional Info */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-gray-800">
           <div>
             <h4 className="font-semibold mb-1">Size & Fit</h4>
