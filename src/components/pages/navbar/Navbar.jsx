@@ -19,7 +19,7 @@ const isActive = (link) => {
 };
 
   return (
-    <nav className="w-full bg-white shadow px-6 py-4 relative">
+   <nav className="w-full bg-white shadow px-6 py-4 fixed top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2 font-extrabold text-2xl">
