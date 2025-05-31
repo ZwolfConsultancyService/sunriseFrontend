@@ -23,10 +23,13 @@ const Product = () => {
     });
   }, []);
 
-  const handleClick = (product) => {
-    dispatch(setSelectedProduct(product));
-    navigate(`/product/${slugify(product.title)}`);
-  };
+const handleClick = (product) => {
+  dispatch(setSelectedProduct(product));
+  navigate(`/product/${slugify(product.title)}`, {
+    state: { product }, 
+  });
+};
+
 
   return (
     <div className="bg-white font-sans text-gray-900">
