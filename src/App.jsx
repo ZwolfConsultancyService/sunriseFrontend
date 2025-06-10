@@ -7,6 +7,8 @@ import Shop from './components/pages/shop/Shop';
 import ProductDetail from './components/pages/shop/ProductDetail';
 import Blog from './components/pages/blog/Blog';
 import BlogDetail from './components/pages/blog/BlogDetail';
+import Label from './components/pages/label/Label';
+import About from './components/pages/about/About';
 
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
          <Route path="/product/:slug" element={<ProductDetail />} />
           <Route path = '/blog' element = {<Blog />} />
          <Route path="/blog/:slug" element={<BlogDetail />} />
+         <Route path='/label' element={<Label />} />
+        
       </Routes>
     </Router>
 
