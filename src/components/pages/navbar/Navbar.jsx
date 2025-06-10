@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  const navLinks = ["Home", "Blog", "Shop", "About", "Label"];
+  const navLinks = ["Home", "Blog", "Shop", "About", "Label", "Accessories"];
 
   const getLinkPath = (link) =>
     `/${link === "Home" ? "" : link.toLowerCase().replace(/\s+/g, "-")}`;

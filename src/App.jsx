@@ -9,6 +9,7 @@ import Blog from './components/pages/blog/Blog';
 import BlogDetail from './components/pages/blog/BlogDetail';
 import Label from './components/pages/label/Label';
 import About from './components/pages/about/About';
+import Accessories from './components/pages/accessories/Accessories';
 
 
 function App() {
@@ -33,7 +34,7 @@ function App() {
           <Route path = '/blog' element = {<Blog />} />
          <Route path="/blog/:slug" element={<BlogDetail />} />
          <Route path='/label' element={<Label />} />
-        
+        <Route path='/accessories' element={<Accessories />} />
       </Routes>
     </Router>
 
