@@ -10,6 +10,7 @@ import BlogDetail from './components/pages/blog/BlogDetail';
 import Label from './components/pages/label/Label';
 import About from './components/pages/about/About';
 import Accessories from './components/pages/accessories/Accessories';
+import AccessoryRouter from './components/pages/accessories/router/AccessoryRouter';
 
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
           <Route path = '/blog' element = {<Blog />} />
          <Route path="/blog/:slug" element={<BlogDetail />} />
          <Route path='/label' element={<Label />} />
-        <Route path='/accessories' element={<Accessories />} />
+        <Route path='/accessories/:slug' element={<Accessories />} />
       </Routes>
     </Router>
 
