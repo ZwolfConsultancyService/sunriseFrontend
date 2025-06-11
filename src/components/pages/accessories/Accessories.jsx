@@ -8,7 +8,7 @@ const Accessories = () => {
   return (
     <>
     <Navbar />
-    <div className='mt-16'>
+    <div className='mt-16 mb-6'>
      <AccessoryRouter />
     </div>
    <Form />
