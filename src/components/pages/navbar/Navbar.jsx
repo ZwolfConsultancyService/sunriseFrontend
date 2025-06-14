@@ -18,7 +18,7 @@ const Navbar = () => {
   const accessoriesSubLinks = [
     "Hang Tang String",
     "Custom Sticker",
-    "Foldable Bags",
+    "No Waven Bags",
     // "Tissue Paper",
     // "Metal Badges",
     // "Custom Cufflinks",

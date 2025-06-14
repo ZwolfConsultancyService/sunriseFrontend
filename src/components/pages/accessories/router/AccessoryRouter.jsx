@@ -6,10 +6,11 @@ import FoldableBags from "../pages/FoldableBags";
 import TissuePaper from "../pages/TissuePaper";
 import MetalBadges from "../pages/MetalBadges";
 import CustomCufflinks from "../pages/CustomCufflinks";
-
+import NoWavenbags from "../pages/NonWavanBags"; 
 const componentMap = {
   "hang-tang-string": HangTangString,
   "custom-sticker": CustomSticker,
+  "no-waven-bags": NoWavenbags, 
   "foldable-bags": FoldableBags,
   "tissue-paper": TissuePaper,
   "metal-badges": MetalBadges,
