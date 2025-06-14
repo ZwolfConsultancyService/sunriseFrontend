@@ -8,9 +8,10 @@ import ProductDetail from './components/pages/shop/ProductDetail';
 import Blog from './components/pages/blog/Blog';
 import BlogDetail from './components/pages/blog/BlogDetail';
 import Label from './components/pages/label/Label';
-import About from './components/pages/about/About';
 import Accessories from './components/pages/accessories/Accessories';
 import AccessoryRouter from './components/pages/accessories/router/AccessoryRouter';
+import AboutNav from './components/pages/about/AboutNav';
+import LabelDetail from './components/pages/label/page/LabelDetail';
 
 
 function App() {
@@ -34,7 +35,9 @@ function App() {
          <Route path="/product/:slug" element={<ProductDetail />} />
           <Route path = '/blog' element = {<Blog />} />
          <Route path="/blog/:slug" element={<BlogDetail />} />
+         <Route path='/about' element={<AboutNav />} />
          <Route path='/label' element={<Label />} />
+           <Route path="/label/:slug" element={<LabelDetail />} />
         <Route path='/accessories/:slug' element={<Accessories />} />
       </Routes>
     </Router>

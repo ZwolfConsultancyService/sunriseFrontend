@@ -1,6 +1,6 @@
 import { FiSearch } from "react-icons/fi";
 import React, { useState } from "react";
-import QuoteForm from "./QuoteForm"; 
+import QuoteForm from "../../accessories/pages/QuoteForm"; 
 
 
 const CustomSticker = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LabelData from '../page/LabelData'; // Import label data
+import LabelData from '../page/LabelData'; 
 import { FaArrowRight } from 'react-icons/fa';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -57,7 +57,7 @@ const Labeltyp = () => {
 <div className="grid md:grid-cols-1 lg:grid-cols-2 px-3 md:px-8  gap-y-8 mb-5 ">
           {LabelData.map((label, index) => (
             <div key={index} data-aos="fade-up">
-              <Link to={`/labels/${label.slug}`} className="flex flex-col items-center mb-5">
+              <Link to={`/label/${label.slug}`} className="flex flex-col items-center mb-5">
                 <img
                   alt={label.title}
                   className="w-full max-w-[600px] lg:w-[400px] xl:w-[600px] object-contain"
