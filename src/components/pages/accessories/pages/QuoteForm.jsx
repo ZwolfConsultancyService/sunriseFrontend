@@ -33,10 +33,10 @@ const QuoteForm = () => {
       <main className="max-w-5xl mx-auto px-6 py-10">
         <h2 className="text-green-600 font-bold text-2xl mb-4">Email us:</h2>
         <a
-          href="mailto:Info@Intense.com"
+          href="mailto:Info@Sunrise.com"
           className="inline-block bg-red-500 text-white font-semibold text-sm rounded-full px-6 py-2 mb-4 hover:bg-red-600 transition-colors"
         >
-          Info@Intense.com
+          Info@Sunrise.com
         </a>
         <p className="text-gray-700 text-sm max-w-xl">
           If you do not receive our email response, please check your spam folder.

@@ -19,9 +19,9 @@ const Navbar = () => {
     "Hang Tang String",
     "Custom Sticker",
     "Foldable Bags",
-    "Tissue Paper",
-    "Metal Badges",
-    "Custom Cufflinks",
+    // "Tissue Paper",
+    // "Metal Badges",
+    // "Custom Cufflinks",
   ];
 
   const getLinkPath = (link) =>
@@ -63,7 +63,7 @@ const Navbar = () => {
                     {link}
                     <HiOutlineChevronDown className="ml-1 text-sm transition-transform duration-200 group-hover:rotate-180" />
                   </div>
-                  <ul className="absolute top-full left-0 bg-white shadow-lg mt-2 rounded w-56 hidden group-hover:block z-50 transition-all duration-300">
+                  <ul className="absolute top-full left-0 bg-white shadow-lg mt- rounded w-56 hidden group-hover:block z-50 transition-all duration-300">
                     {accessoriesSubLinks.map((sub) => (
                       <li key={sub}>
                         <Link

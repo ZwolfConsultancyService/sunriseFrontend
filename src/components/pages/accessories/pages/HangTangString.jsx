@@ -44,7 +44,7 @@ const [showForm, setShowForm] = useState(false);
           {/* Left Main Content */}
           <main className="flex-1 max-w-full lg:max-w-7xl">
             <p className="mb-6 leading-relaxed text-lg font-semibold text-gray-700">
-              “Intense” is custom <strong>hang tag string suppliers</strong> and manufacturer for swing hang tags hung on clothing. We supply durable and high-end tag string rope & thread. Here you can customize any color, size, or string style for your clothing.
+              “Sunrise” is custom <strong>hang tag string suppliers</strong> and manufacturer for swing hang tags hung on clothing. We supply durable and high-end tag string rope & thread. Here you can customize any color, size, or string style for your clothing.
             </p>
             <p className="mb-6 leading-relaxed text-lg font-semibold text-gray-700">
               Then, string seals are the middle snap lock pin. They are loop fasteners or hook ties made from plastic, metal, or epoxy material. You can engrave or print your logo on the seal for brand visibility.
@@ -64,7 +64,7 @@ const [showForm, setShowForm] = useState(false);
             {/* Info + Image Block */}
             <div className="bg-[#d1d9e0] p-6 flex flex-col md:flex-row gap-6 rounded-md shadow-sm">
               <p className="text-sm md:text-lg font-semibold text-gray-700 leading-relaxed md:w-1/2">
-                It is recommended to choose a supplier that can provide a one-stop purchasing service. Such as Intense. Here, you can customize the hang tags with the brand logo. Also, you can order custom hang tag string with logos, price stickers, safety pins, and other accessories related to clothing tag rope. Ordering a whole string of clothing tags will greatly save you time and costs.
+                It is recommended to choose a supplier that can provide a one-stop purchasing service. Such as Sunrise. Here, you can customize the hang tags with the brand logo. Also, you can order custom hang tag string with logos, price stickers, safety pins, and other accessories related to clothing tag rope. Ordering a whole string of clothing tags will greatly save you time and costs.
               </p>
               <img
                 alt="Tag strings with fasteners"
@@ -88,7 +88,7 @@ const [showForm, setShowForm] = useState(false);
                   />
                 </div>
                 <div className="md:w-1/2 text-lg font-semibold text-gray-700 leading-relaxed md:pl-6">
-                  At Intense, string seals are available in plastic, metal, zinc alloy, ABS, epoxy, and aluminum. Tag rope also has many different materials. For example, plastic ropes, ribbon ropes, cotton ropes, velvet/polyester/grosgrain/elastic ropes, jute, wax cotton, etc.
+                  At Sunrise, string seals are available in plastic, metal, zinc alloy, ABS, epoxy, and aluminum. Tag rope also has many different materials. For example, plastic ropes, ribbon ropes, cotton ropes, velvet/polyester/grosgrain/elastic ropes, jute, wax cotton, etc.
                 </div>
               </div>
 
@@ -259,7 +259,7 @@ const [showForm, setShowForm] = useState(false);
               2. Can the hang tag string be customized together with the hang tags? Are they a set?
             </h3>
             <p className="text-sm text-[#1a1a1a]">
-              -Yes. They can be customized together. In this way, the color and size of hang tags and strings can be unified. It also saves time and costs. However, at Intense, you can also order individual hang tags or tag ropes.
+              -Yes. They can be customized together. In this way, the color and size of hang tags and strings can be unified. It also saves time and costs. However, at Sunrise, you can also order individual hang tags or tag ropes.
             </p>
           </div>
 
@@ -302,7 +302,7 @@ const [showForm, setShowForm] = useState(false);
             <span className="font-extrabold">One-Stop Purchasing</span>
           </p>
           <h2 className="text-xl sm:text-2xl font-semibold text-center max-w-[600px] mb-6">
-            Custom hang tag string suppliers &amp; wholesaler | Intense
+            Custom hang tag string suppliers &amp; wholesaler | Sunrise
           </h2>
           <button
       className="font-bold text-white text-sm sm:text-base rounded-full px-10 py-3 bg-gradient-to-r from-[#f9a96e] via-[#a15ed9] to-[#4a4dbf] hover:opacity-90 transition-opacity"
