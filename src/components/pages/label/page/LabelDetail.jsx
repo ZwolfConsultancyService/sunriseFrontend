@@ -4,6 +4,8 @@ import LabelData from './LabelData';
 import Navbar from '../../navbar/Navbar';
 import Footer from '../../footer/Footer';
 import { FiSearch } from "react-icons/fi";
+import Form from './Form';
+import customImages from '../customImages';
 
 
 const LabelDetail = () => {
@@ -62,7 +64,7 @@ Custom care labels’ photo gallery
           </div>
     
           {/* Main Container with Sidebar */}
-          <div className="bg-white text-gray-900 font-sans max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="bg-white text-gray-900 font-sans min-w-7xl mx-auto px-4  py-8">
             
             <div className="flex flex-col lg:flex-row gap-20">
               {/* Left Main Content */}
@@ -82,7 +84,19 @@ Custom care labels’ photo gallery
       <p style={{ fontSize: '1.2rem', lineHeight: '1.6', color: '#333' }}>
         {label.description}
       </p>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10">
+  {customImages.map((img, index) => (
+    <img
+      key={index}
+      src={img}
+      alt={`Label Image ${index + 1}`}
+      className="w-full h-48 object-cover rounded shadow-md hover:scale-105 transition-transform duration-300"
+    />
+  ))}
+</div>
+       <Form />
     </div>
+   
               {/* Right Sidebar */}
               <aside className="w-full max-w-xs lg:max-w-sm flex-shrink-0 ml-6">
                 {/* Search Form */}
