@@ -12,6 +12,7 @@ import Accessories from './components/pages/accessories/Accessories';
 import AccessoryRouter from './components/pages/accessories/router/AccessoryRouter';
 import AboutNav from './components/pages/about/AboutNav';
 import LabelDetail from './components/pages/label/page/LabelDetail';
+import ScrollToTop from './lib/ScrollToTop';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
   return (
     <>
         <Router>
+          <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
