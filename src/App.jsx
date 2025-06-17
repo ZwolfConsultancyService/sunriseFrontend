@@ -13,6 +13,8 @@ import AccessoryRouter from './components/pages/accessories/router/AccessoryRout
 import AboutNav from './components/pages/about/AboutNav';
 import LabelDetail from './components/pages/label/page/LabelDetail';
 import ScrollToTop from './lib/ScrollToTop';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 function App() {

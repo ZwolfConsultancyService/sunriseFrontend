@@ -6,6 +6,7 @@ import Product from './pages/product/Product';
 import About from './pages/about/About';
 import WhyChooseUs from './pages/whyChoose/WhyChooseUs';
 import FaqSection from './pages/faq/FaqSection';
+import Testimonials from './pages/Testimonial/Testimonials';
 const Home = () => {
   return (
     <div>
@@ -15,6 +16,7 @@ const Home = () => {
   <About />
   <WhyChooseUs />
     <Product />
+    <Testimonials />
     <FaqSection />
 	<Footer />
   </div>
@@ -22,4 +24,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;
