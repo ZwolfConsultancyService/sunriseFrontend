@@ -4,6 +4,8 @@ import Footer from './pages/footer/Footer';
 import Homepage from './pages/homepage/Homepage';
 import Product from './pages/product/Product';
 import About from './pages/about/About';
+import WhyChooseUs from './pages/whyChoose/WhyChooseUs';
+import FaqSection from './pages/faq/FaqSection';
 const Home = () => {
   return (
     <div>
@@ -11,7 +13,9 @@ const Home = () => {
   <div className='mt-16'>
   <Homepage />
   <About />
+  <WhyChooseUs />
     <Product />
+    <FaqSection />
 	<Footer />
   </div>
     </div>
