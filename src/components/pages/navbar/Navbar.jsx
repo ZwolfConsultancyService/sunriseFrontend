@@ -14,7 +14,9 @@ const Navbar = () => {
 
   const location = useLocation();
 
-  const navLinks = ["Home", "Blog",  "About", "Label", "Accessories"];
+  const navLinks = ["Home", "Blog",  "About", "Label",
+    // "Accessories"//
+   ];
 
   const accessoriesSubLinks = [
     "Hang Tang String",

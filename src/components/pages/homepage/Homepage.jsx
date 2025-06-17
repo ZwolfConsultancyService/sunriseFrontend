@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
-import HomeImg from "../../../assets/homeimg.jpg";
+import HomeImg from "../../../assets/homew.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
-
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     AOS.init({
@@ -18,26 +17,40 @@ const navigate = useNavigate();
 
   return (
     <div
-      className="font-sans bg-cover bg-center bg-no-repeat "
+      className="font-sans bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${HomeImg})` }}
     >
-      <div className="min-h-screen flex flex-col md:flex-row items-center justify-between px-6 sm:px-10 md:px-20 gap-12 py-12 md:py-0">
-        {/* Text Section */}
+      <div className="min-h-screen bg-black/70 flex items-center justify-center px-6 sm:px-10 md:px-20 py-20">
         <div
-          className="md:w-1/2 max-w-xl text-center md:text-left"
-          data-aos="fade-right"
+          className="w-full max-w-4xl text-center md:text-center"
+          data-aos="fade-up"
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#1a1a28] mb-6 leading-tight">
-            Ideal Everyday
+
+          {/* Title */}
+          <h1
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight"
+            style={{ fontFamily: "'Playfair Display', serif" }}
+          >
+            <span className="block">Elevate Your Everyday</span>
+            <span className="block">Style</span>
           </h1>
-          <p className="text-[#6b6b6b] text-base sm:text-lg md:text-xl mb-10 leading-relaxed">
-       Sunrise – Your one-stop shop for everything you love && 
-       Shop smart and  Live better.
+
+          {/* Paragraph */}
+          <p className="mt-6 text-lg sm:text-xl text-gray-300 leading-relaxed">
+            Welcome to <span className="text-white font-semibold">Sunrise</span> — where creativity meets
+            quality. Shop smarter, live better, and
+            <span className="block text-white">discover pieces that inspire.</span>
           </p>
-          <button className="bg-[#12121f] text-white font-semibold px-6 py-3 rounded-md shadow-lg hover:shadow-xl transition-shadow duration-300 text-base sm:text-lg"
-          onClick={() => navigate("/shop")}>
-            Buy Now
-          </button>
+
+          {/* CTA Button */}
+          <div className="mt-10">
+            <button
+              onClick={() => navigate("/shop")}
+              className="bg-white text-black px-8 py-3 text-base sm:text-lg font-medium rounded-full shadow-md hover:shadow-xl transition duration-300 hover:bg-gray-200 focus:outline-none focus:ring-2 "
+            >
+              Buy Now
+            </button>
+          </div>
         </div>
       </div>
     </div>
