@@ -224,7 +224,7 @@ const ProductDetail = () => {
 
   if (!product) {
     return (
-      <div className="p-10">
+      <div className="p-10 ">
         <p className="text-lg font-medium text-center text-red-500">Product not found</p>
         <div className="flex justify-center mt-4">
           <button
@@ -241,7 +241,7 @@ const ProductDetail = () => {
   return (
     <>
       <Navbar />
-      <div className="max-w-6xl mx-auto px-4 py-12">
+      <div className="max-w-6xl mx-auto px-4 py-12 mt-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Images */}
           <div className="flex flex-col md:flex-row gap-4" data-aos="fade-right">
