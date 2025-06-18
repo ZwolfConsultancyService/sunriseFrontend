@@ -8,19 +8,15 @@ import {
   FaTwitter,
   FaLinkedinIn,
 } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollThreshold = 1000; // Increased height threshold to 1000px
-
-      if (window.scrollY > scrollThreshold) {
-        setShowScrollTop(true);
-      } else {
-        setShowScrollTop(false);
-      }
+      setShowScrollTop(window.scrollY > 1000);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -31,35 +27,45 @@ const Footer = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const footerLinks = [
+    { name: "Gallery", path: "/gallery" },
+    { name: "Blog", path: "/blog" },
+    {name : "Order Proccess", path: "/order-process"},
+        { name: "Return Policy", path: "/return-policy" },
+  ];
+
+  const legalLinks = [
+
+    { name: "Privacy Policy", path: "/privacy-policy" },
+    { name: "Terms & Conditions", path: "/terms-&-Conditions" },
+    { name: "Refund Policy", path: "/refund-policy" },
+  ];
+
   return (
     <div className="bg-gray-100 shadow-2xl shadow-gray-300 mt-10">
       <footer className="bg-gray-100 w-full py-20 px-8 md:px-24">
         {/* Top section */}
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:items-start gap-20">
           {/* Left links */}
-          <div className="flex flex-wrap gap-16 md:gap-x-48 sm:gap-24 ">
+          <div className="flex flex-wrap gap-16 md:gap-x-48 sm:gap-24">
             <div className="flex flex-col space-y-6 text-gray-800 text-base sm:text-lg font-semibold">
-              {["Store", "Support", "About", "Careers"].map((item) => (
-                <a key={item} href="#" className="hover:underline">
-                  {item}
-                </a>
+              {footerLinks.map((item) => (
+                <Link key={item.name} to={item.path} className="hover:underline">
+                  {item.name}
+                </Link>
               ))}
             </div>
-            <div className="flex flex-col space-y-6 text-gray-800 text-base sm:text-lg font-semibold">
-              {[
-                "Cookies",
-                "Privacy Policy",
-                "Data-retention policy",
-                "Code of Conduct",
-              ].map((item) => (
-                <a key={item} href="#" className="hover:underline">
-                  {item}
-                </a>
-              ))}
-            </div>
+          <div className="flex flex-col space-y-6 text-gray-800 text-base sm:text-lg font-semibold">
+  {legalLinks.map((item) => (
+    <Link key={item.name} to={item.path} className="hover:underline">
+      {item.name}
+    </Link>
+  ))}
+</div>
+
           </div>
 
-          {/* Right newsletter */}
+          {/* Newsletter */}
           <div className="flex flex-col space-y-6 max-w-xs w-full">
             <p className="text-gray-900 text-lg font-semibold">
               Discover the latest trends
@@ -91,17 +97,22 @@ const Footer = () => {
         {/* Bottom row */}
         <div className="max-w-7xl mx-auto mt-24 flex flex-col md:flex-row md:justify-between md:items-center text-gray-700 text-sm sm:text-base font-medium">
           <div className="flex flex-wrap items-center gap-3 mb-8 md:mb-0">
-            <div className="flex items-center space-x-2 font-extrabold text-2xl">
-          <span className="text-green-500 text-3xl">⌞</span>
-          <span>sun</span>
-          <span className="text-green-500">r</span>
-          <span>ise</span>
-        </div>
+            <div
+              className="flex items-center space-x-2 font-extrabold text-2xl cursor-pointer"
+              onClick={() => navigate("/")}
+            >
+              <span className="text-green-500 text-3xl">⌞</span>
+              <span>sun</span>
+              <span className="text-green-500">r</span>
+              <span>ise</span>
+            </div>
 
-            <span className="text-gray-700">© 2023 sunrise. All rights reserved.</span>
-            <a href="#" className="ml-2 hover:underline text-gray-700">
+            <span className="text-gray-700">
+              © {new Date().getFullYear()} sunrise. All rights reserved.
+            </span>
+            <Link to="/privacy-policy" className="ml-2 hover:underline text-gray-700">
               Privacy Policy
-            </a>
+            </Link>
           </div>
 
           {/* Social Icons */}

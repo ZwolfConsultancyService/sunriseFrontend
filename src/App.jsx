@@ -15,6 +15,8 @@ import LabelDetail from './components/pages/label/page/LabelDetail';
 import ScrollToTop from './lib/ScrollToTop';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import PrivacyPolicy from './components/pages/privacyPolicy/PrivacyPolicy';
+import TermsAndConditions from './components/pages/term/TermsAndConditions';
 
 
 function App() {
@@ -43,6 +45,8 @@ function App() {
          <Route path='/label' element={<Label />} />
            <Route path="/label/:slug" element={<LabelDetail />} />
         <Route path='/accessories/:slug' element={<Accessories />} />
+        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+        <Route path='/terms-&-Conditions' element={<TermsAndConditions />} />
       </Routes>
     </Router>
 
