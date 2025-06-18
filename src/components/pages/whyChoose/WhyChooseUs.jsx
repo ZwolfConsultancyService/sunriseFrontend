@@ -39,7 +39,7 @@ const WhyChooseUs = () => {
   return (
     <section className="bg-white py-8 px-6 md:px-16">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-6 text-gray-800" data-aos="fade-up">Why Choose <span className="text-indigo-600">Sunrise Label</span>?</h2>
+        <h2 className="text-4xl font-bold mb-6 text-gray-800" data-aos="fade-up">Why Choose <span className="text-green-500">Sunrise Label</span>?</h2>
         <p className="text-lg text-gray-500 mb-12" data-aos="fade-up" data-aos-delay="200">
           Premium trims tailored for global garment brands.
         </p>
