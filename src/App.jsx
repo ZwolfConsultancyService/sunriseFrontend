@@ -15,8 +15,10 @@ import LabelDetail from './components/pages/label/page/LabelDetail';
 import ScrollToTop from './lib/ScrollToTop';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import PrivacyPolicy from './components/pages/privacyPolicy/PrivacyPolicy';
+import PrivacyPolicy from './components/pages/policy/PrivacyPolicy';
 import TermsAndConditions from './components/pages/term/TermsAndConditions';
+import ReturnPolicy from './components/pages/policy/ReturnPolicy';
+import RefundPolicy from './components/pages/policy/RefundPolicy';
 
 
 function App() {
@@ -47,6 +49,8 @@ function App() {
         <Route path='/accessories/:slug' element={<Accessories />} />
         <Route path='/privacy-policy' element={<PrivacyPolicy />} />
         <Route path='/terms-&-Conditions' element={<TermsAndConditions />} />
+        <Route path='/return-policy' element={<ReturnPolicy />} />
+        <Route path='/refund-policy' element={<RefundPolicy />} />
       </Routes>
     </Router>
 

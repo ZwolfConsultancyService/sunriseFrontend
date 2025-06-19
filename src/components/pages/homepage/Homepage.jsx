@@ -45,10 +45,10 @@ const Homepage = () => {
           {/* CTA Button */}
           <div className="mt-10">
             <button
-              onClick={() => navigate("/shop")}
-              className="bg-white text-black px-8 py-3 text-base sm:text-lg font-medium rounded-full shadow-md hover:shadow-xl transition duration-300 hover:bg-gray-200 focus:outline-none focus:ring-2 "
+              onClick={() => navigate("/label")}
+              className="bg-[#85f870] text-gray-900 px-8 py-3 text-base sm:text-lg font-bold rounded-full shadow-md hover:shadow-xl transition duration-300 hover:bg-[#87d57b] focus:outline-none focus:ring-2 "
             >
-              Buy Now
+              Explore Our Trim Collection
             </button>
           </div>
         </div>
