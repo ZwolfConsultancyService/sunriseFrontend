@@ -7,7 +7,7 @@ const About = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 700 });
   }, []);
 
   const toggleReadMore = () => {

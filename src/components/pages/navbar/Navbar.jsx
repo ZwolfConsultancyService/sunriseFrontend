@@ -137,7 +137,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-16 left-0 w-full bg-white shadow-md px-6 py-4 z-40">
+        <div className="md:hidden absolute top-16 left-0 w-full bg-white shadow-md px-6 py-4 z-40 ">
           {navLinks.map((link) =>
             link === "Accessories" || link === "Label" ? (
               <div key={link} className="py-2 border-b border-gray-200">
