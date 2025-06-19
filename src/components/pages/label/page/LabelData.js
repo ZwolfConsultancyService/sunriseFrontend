@@ -1,61 +1,76 @@
-
 const labelData = [
   {
-    title: 'Main labels',
-    description: 'Main labels are small signs that display trademarks or brand names on clothes. The main labels can be a small woven label or a small paper tag. It can also be the fabric labels printed on the clothes. It is usually located under the inner and rear collars of the tops, or at the inner and rear seams of the bottoms.',
-    image: 'https://acctrims.com/wp-content/uploads/2022/08/main-labels_DSC1907-768x512.jpg',
-    slug: 'main-labels',
-  },
-  {
-    title: 'Size labels',
-    description: 'Size labels, as the name suggests, refer to the size printed, woven, or embroidered on the clothing label to describe the size of the clothing. Common size labels are marked with two models: one is S (small), M (medium), L (large), and XL (large); the other is the form of height plus bust, such as 160/80A, 165/85A, 170/85A, etc..',
-    image: 'https://acctrims.com/wp-content/uploads/2022/08/DSC1602-768x512.jpg',
-    slug: 'size-labels',
-  },
-  {
-    title: 'PVC rubber labels',
-    description: 'A PVC rubber label is a clothing label made of PVC and Epoxy. It is ideal for clothes, bags, shoes, hats, luggage tags, key chains, gloves, and scarves decorations. The main crafts are plane, 3D stereo, sewing thread, adhesive, edge lock, Velcro, etc..',
-    image: 'https://acctrims.com/wp-content/uploads/2022/08/PVC-labels_DSC1722-768x512.jpg',
-    slug: 'pvc-rubber-labels',
-  },
-  {
-    title: 'Clear TPU labels',
-    description: 'TPU label is a transparent clear wash label, main label, or collar label. It is perfect for swimsuits, underwear, or all kinds of clothing. It’s soft to the touch and does not deform or fade when washed. Commonly used varieties are transparent, frosted, printing, bronzing, oil powder, LOGO, etc..',
-    image: 'https://acctrims.com/wp-content/uploads/2022/08/TPU-labels_DSC9564-768x512.jpg',
-    slug: 'clear-tpu-labels',
-  },
-  {
     title: 'Woven labels',
-    description: 'Woven labels are garment labels woven on a loom. It expresses logo, text, pattern, size, and wash symbols by fixing warp and weft. And the woven label is a high-end, durable label with clear lines and a soft hand feeling. There are three main types of woven labels: damask woven labels; salvage(satin) woven labels, and crochet woven labels.',
+    description: 'Woven labels are garment labels woven on a loom. It expresses logo, text, pattern, size, and wash symbols by fixing warp and weft...',
     image: 'https://acctrims.com/wp-content/uploads/2023/02/custom-woven-labels_DSC0590-768x512.jpg',
     slug: 'woven-labels',
   },
   {
+    title: 'Printed labels',
+    description: 'Printed labels are made by printing directly on fabric materials like satin, cotton, or polyester. They are economical and suitable for lightweight garments.',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtTvLZeea7KYKV6cagzqv8vV-Ty9amSS7Crg&s',
+    slug: 'printed-labels',
+  },
+  {
     title: 'Heat transfer labels',
-    description: 'Thermal transfer labels include embossed, flat oil, 3D silicone thermal transfer, thick plate thermal transfer labels, etc. We can store and send them directly to customers. In this way, customers can use the ironing machine to transfer their own materials. The heat transfer labels are exquisite and the production cost is low. And it is green and pollution-free.',
+    description: 'Thermal transfer labels include embossed, flat oil, 3D silicone, and thick plate labels. They are applied using heat and are eco-friendly.',
     image: 'https://acctrims.com/wp-content/uploads/2023/03/DSC0013.jpg',
     slug: 'heat-transfer-labels',
   },
   {
-    title: 'Cotton labels',
-    description: 'Cotton labels are a kind of common clothing label used for garments, t-shirts, coats, sweaters, gloves, towels, home textiles, canvas bags, pouches, etc. The pure cotton label is soft and skin-friendly, breathable, and comfortable. It is very suitable for use in children’s clothing. Meanwhile, it is eco-friendly and good for people’s health.',
-    image: 'https://acctrims.com/wp-content/uploads/2023/03/DSC0406.jpg',
-    slug: 'cotton-labels',
+    title: 'Narrow fabric',
+    description: 'Narrow fabrics include tapes, ribbons, webbings, and elastic bands used for various garment trims and decorations.',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7dsqBkLF-btA66PI3wws_ctzhomoUB-RtNQ&s',
+    slug: 'narrow-fabric',
   },
   {
-    title: 'Satin labels',
-    description: 'Satin labels include woven labels and printed labels. Its material is bright and has a good feel, so it is smooth as silk. We can print not only wash symbols but also logos, sizes, brand names, etc on it. It can use sustainable eco-friendly fabrics. And It is high density, smooth and high quality with reasonable price.',
-    image: 'https://acctrims.com/wp-content/uploads/2022/08/satin-labels_DSC0916.jpg',
-    slug: 'satin-labels',
+    title: 'Tags',
+    description: 'Tags include hang tags, price tags, and brand tags made from paper, plastic, or fabric and attached to garments for branding or info.',
+    image: 'https://images.pexels.com/photos/1111319/pexels-photo-1111319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+    slug: 'tags',
   },
   {
-    title: 'Leather labels',
-    description: 'Leather labels are mainly sewn on the back waist of the jeans. Also, it is also very suitable for bags, handbags, shoes, and hats. The leather label process has hot pressing, voltage (high frequency), silk screen, laser, embroidery, adding metal hardware, etc. The materials include genuine(real) leather, imitation leather, microfiber leather, washed paper, canvas, horsehair, PVC, TPU, etc..',
+    title: 'Tag seals',
+    description: 'Tag seals are small locking mechanisms used to secure tags to garments, often customized with logos.',
+    image: 'https://5.imimg.com/data5/KD/ZP/EC/SELLER-46123511/img-20200220-wa0020-500x500.jpg',
+    slug: 'tag-seals',
+  },
+  {
+    title: 'Stickers',
+    description: 'Stickers are adhesive labels used on packaging or products for branding or product info. They come in various finishes.',
+    image: 'https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,q_auto:best,t_productPageHeroGalleryTransformation_v2,w_auto/India%20LOB/marketing%20Materials/Labels%20and%20Stickers/Product%20and%20Packaging%20Labels/IN_Product-and-Packaging-Labels_Hero-image_01',
+    slug: 'stickers',
+  },
+  {
+    title: 'Patches or badges',
+    description: 'Patches or badges are embroidered or printed pieces attached to clothing for branding or decoration.',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGXLy7M2by830jyi6wBTBgOvE3XMBqAsFAL_WkNletP-vQvnXSje11RcJpbr7WvRC25Fg&usqp=CAU',
+    slug: 'patches-or-badges',
+  },
+  {
+    title: 'Flexible labels',
+    description: 'Flexible labels are soft and adaptable, made from rubber, silicone, or soft PVC, used on activewear, bags, or footwear.',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK-53zG_keMefUJV-nywGObl33GlCKVh0POg&s',
+    slug: 'flexible-labels',
+  },
+  {
+    title: 'Leather or PU labels',
+    description: 'Leather or PU labels are sewn onto garments like jeans, bags, or jackets. They can be genuine or synthetic leather.',
     image: 'https://acctrims.com/wp-content/uploads/2022/08/leather-labels_DSC0800.jpg',
-    slug: 'leather-labels',
+    slug: 'leather-or-pu-labels',
+  },
+  {
+    title: 'Security labels',
+    description: 'Security labels include RFID or anti-theft tags used in retail to prevent shoplifting and manage inventory.',
+    image: 'https://geipl.com/wp-content/uploads/2024/06/Security-labels.png',
+    slug: 'security-labels',
+  },
+  {
+    title: 'Metal labels',
+    description: 'Metal labels are durable decorative pieces, usually with embossed logos, used on jeans, bags, or shoes.',
+    image: 'https://i.etsystatic.com/14683597/r/il/fc540b/1184273262/il_570xN.1184273262_rdyp.jpg',
+    slug: 'metal-labels',
   },
 ];
-
-
 
 export default labelData;

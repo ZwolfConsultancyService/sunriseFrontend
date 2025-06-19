@@ -33,20 +33,18 @@ const Labeltyp = () => {
       </div>
       <div className="bg-gray-100 p-8 mt-8 md:mt-0 flex-1">
         <ul className="list-disc list-inside space-y-3 text-sm leading-relaxed">
-          <li>Care labels</li>
-          <li>Neck labels</li>
-          <li>Size labels</li>
-          <li>Main labels</li>
-          <li>Metal labels</li>
-          <li>Leather labels</li>
-          <li>PVC rubber labels</li>
-          <li>Clear TPU labels</li>
-          <li>Woven labels</li>
-          <li>Heat transfer labels</li>
-          <li>Satin labels</li>
-          <li>Cotton labels</li>
-          <li>Woven patches</li>
-          <li>Embroidered patches</li>
+          <li>WOVEN LABEL</li>
+          <li>PRINTED LABELS</li>
+          <li>HEAT TRANSFER LABEL</li>
+          <li>NARROW FABRIC</li>
+          <li>TAGS</li>
+          <li>TAG SEAL</li>
+          <li>STICKERS</li>
+          <li>PATCHES or BADGES</li>
+          <li>FLEXIBLE LABELS</li>
+          <li>LEATHER OR PU LABELS</li>
+          <li>SECURITY LABEL</li>
+          <li>METAL LABEL</li>
         </ul>
       </div>
     </div>

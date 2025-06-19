@@ -31,13 +31,17 @@ const Navbar = () => {
   "Woven labels",
   "Printed labels",
   "Heat transfer labels",
+  "Narrow fabric",
   "Tags",
   "Tag seals",
   "Stickers",
-  "Patches",
-  "Leather labels",
+  "Patches or badges",
+  "Flexible labels",
+  "Leather or PU labels",
+  "Security labels",
   "Metal labels",
 ];
+
 
   const getLinkPath = (link) =>
     `/${link === "Home" ? "" : link.toLowerCase().replace(/\s+/g, "-")}`;

@@ -19,6 +19,7 @@ import PrivacyPolicy from './components/pages/policy/PrivacyPolicy';
 import TermsAndConditions from './components/pages/term/TermsAndConditions';
 import ReturnPolicy from './components/pages/policy/ReturnPolicy';
 import RefundPolicy from './components/pages/policy/RefundPolicy';
+import Order from './components/pages/step/Order';
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
         <Route path='/terms-&-Conditions' element={<TermsAndConditions />} />
         <Route path='/return-policy' element={<ReturnPolicy />} />
         <Route path='/refund-policy' element={<RefundPolicy />} />
+        <Route path='/order-process' element={<Order />} />
       </Routes>
     </Router>
 
