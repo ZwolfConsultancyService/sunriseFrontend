@@ -1,17 +1,17 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import LabelData from './LabelData';
+
 import Navbar from '../../navbar/Navbar';
 import Footer from '../../footer/Footer';
 import { FiSearch } from "react-icons/fi";
 import Form from './Form';
-import customImages from '../customImages';
+import labelHierarchy from '../data/labelHierarchy';
 
 const LabelDetail = () => {
   const { slug } = useParams();
   const decodedSlug = decodeURIComponent(slug).toLowerCase();
 
-  const label = LabelData.find(
+  const label = labelHierarchy.find(
     (item) => item.slug.trim().toLowerCase() === decodedSlug.trim()
   );
 
@@ -67,18 +67,36 @@ const LabelDetail = () => {
             <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-10">
               {label.description}
             </p>
+   
+{/* Category Cards for this Group */}
+<div className="mb-12">
+  <h2 className="text-xl font-bold mb-4 text-orange-600">Explore Categories in {label.group}</h2>
 
-            {/* Gallery */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              {customImages.map((img, index) => (
-                <img
-                  key={index}
-                  src={img}
-                  alt={`Label ${index + 1}`}
-                  className="w-full h-48 object-cover rounded shadow hover:scale-105 transition duration-300"
-                />
-              ))}
-            </div>
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    {label.categories?.map((cat, idx) => (
+     <Link to={`/label/${label.slug}/${cat.category.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/gi, '')}`}>
+      <div
+        key={idx}
+        className="p-4 border rounded-lg hover:shadow transition duration-300"
+      >
+        <img
+          src={cat.image}
+          alt={cat.category}
+          className="w-full h-40 object-cover rounded mb-4"
+        />
+        <h3 className="font-semibold text-lg mb-2 text-gray-800">{cat.category}</h3>
+        <ul className="text-sm text-gray-600 list-disc ml-4 space-y-1">
+          {cat.items.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
+      </div>
+      </Link>
+    ))}
+  </div>
+</div>
+
+
 
             <div className="mt-10">
               <Form />

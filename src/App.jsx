@@ -20,6 +20,10 @@ import TermsAndConditions from './components/pages/term/TermsAndConditions';
 import ReturnPolicy from './components/pages/policy/ReturnPolicy';
 import RefundPolicy from './components/pages/policy/RefundPolicy';
 import Order from './components/pages/step/Order';
+import LabelGroupPage from './components/pages/label/page/LabelGroupPage';
+import LabelCategoryPage from './components/pages/label/page/LabelCategoryPage';
+import LabelItemPage from './components/pages/label/page/LabelItemPage';
+import CategoryDetail from './components/pages/label/page/CategoryDetail';
 
 
 function App() {
@@ -53,6 +57,10 @@ function App() {
         <Route path='/return-policy' element={<ReturnPolicy />} />
         <Route path='/refund-policy' element={<RefundPolicy />} />
         <Route path='/order-process' element={<Order />} />
+      <Route path="/label/:group" element={<LabelGroupPage />} />
+     <Route path="/label/:group/:category" element={<LabelCategoryPage />} />
+     <Route path="/label/:groupSlug/:categorySlug" element={<CategoryDetail />} />
+       <Route path="/label/:group/:category/:item" element={<LabelItemPage />} />
       </Routes>
     </Router>
 

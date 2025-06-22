@@ -6,48 +6,26 @@ import {
 } from "react-icons/hi";
 import { FaSearch } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
+import labelHierarchy from "../label/data/labelHierarchy";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showAccessoriesMobile, setShowAccessoriesMobile] = useState(false);
   const [showLabelMobile, setShowLabelMobile] = useState(false);
-
+  const [showAccessoriesMobile, setShowAccessoriesMobile] = useState(false);
   const location = useLocation();
 
-  const navLinks = ["Home", "Blog",  "About", "Label",
-    // "Accessories"//
-   ];
-
+  const navLinks = ["Home", "Blog", "About", "Label"];
   const accessoriesSubLinks = [
     "Hang Tang String",
     "Custom Sticker",
     "No Waven Bags",
-    // "Tissue Paper",
-    // "Metal Badges",
-    // "Custom Cufflinks",
   ];
-
-  const labelSubLinks = [
-  "Woven labels",
-  "Printed labels",
-  "Heat transfer labels",
-  "Narrow fabric",
-  "Tags",
-  "Tag seals",
-  "Stickers",
-  "Patches or badges",
-  "Flexible labels",
-  "Leather or PU labels",
-  "Security labels",
-  "Metal labels",
-];
-
 
   const getLinkPath = (link) =>
     `/${link === "Home" ? "" : link.toLowerCase().replace(/\s+/g, "-")}`;
 
-  const getSubLinkPath = (subLink) =>
-    `/accessories/${subLink.toLowerCase().replace(/\s+/g, "-")}`;
+  const getSubLinkPath = (type) =>
+    `/label/${type.toLowerCase().replace(/\s+/g, "-")}`;
 
   const isActive = (link) => {
     const currentPath = location.pathname;
@@ -55,7 +33,7 @@ const Navbar = () => {
     return currentPath === targetPath;
   };
 
-   return (
+  return (
     <nav className="w-full bg-white shadow px-6 py-4 fixed top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
@@ -83,23 +61,24 @@ const Navbar = () => {
                     <HiOutlineChevronDown className="ml-1 text-sm transition-transform duration-200 group-hover:rotate-180" />
                   </div>
 
-                  <ul className="absolute top-full left-0 bg-white shadow-lg  rounded w-56 py-2 hidden group-hover:block z-50 transition-all duration-300">
-                    {(link === "Accessories" ? accessoriesSubLinks : labelSubLinks).map(
-                      (sub) => (
-                        <li key={sub}>
-                          <Link
-                            to={
-                              link === "Accessories"
-                                ? getSubLinkPath(sub)
-                                : `/label/${sub.toLowerCase().replace(/\s+/g, "-")}`
-                            }
-                            className="block px-4 py-2 text-sm text-gray-700 font-medium hover:bg-gray-100"
-                          >
-                            {sub}
-                          </Link>
-                        </li>
-                      )
-                    )}
+                  <ul className="absolute top-full left-0 bg-white shadow-lg rounded w-56 py-2 hidden group-hover:block z-50 transition-all duration-300">
+                    {(link === "Accessories"
+                      ? accessoriesSubLinks
+                      : labelHierarchy.map((g) => g.group)
+                    ).map((sub) => (
+                      <li key={sub}>
+                        <Link
+                          to={
+                            link === "Accessories"
+                              ? `/accessories/${sub.toLowerCase().replace(/\s+/g, "-")}`
+                              : getSubLinkPath(sub)
+                          }
+                          className="block px-4 py-2 text-sm text-gray-700 font-medium hover:bg-gray-100"
+                        >
+                          {sub}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </>
               ) : (
@@ -125,7 +104,7 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Toggle Button (Mobile) */}
+        {/* Mobile Menu Button */}
         <button
           className="md:hidden text-3xl text-gray-900"
           onClick={() => setIsOpen(!isOpen)}
@@ -137,64 +116,69 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-16 left-0 w-full bg-white shadow-md px-6 py-4 z-40 ">
-          {navLinks.map((link) =>
-            link === "Accessories" || link === "Label" ? (
-              <div key={link} className="py-2 border-b border-gray-200">
-                <button
-                  onClick={() =>
-                    link === "Accessories"
-                      ? setShowAccessoriesMobile(!showAccessoriesMobile)
-                      : setShowLabelMobile(!showLabelMobile)
-                  }
-                  className="w-full flex justify-between items-center font-medium text-gray-900"
-                >
-                  <span>{link}</span>
-                  <HiOutlineChevronDown
-                    className={`transform transition-transform duration-200 ${
-                      (link === "Accessories" ? showAccessoriesMobile : showLabelMobile)
-                        ? "rotate-180"
-                        : "rotate-0"
-                    }`}
-                  />
-                </button>
-                {(link === "Accessories" ? showAccessoriesMobile : showLabelMobile) && (
-                  <ul className="ml-4 mt-2 space-y-1">
-                    {(link === "Accessories" ? accessoriesSubLinks : labelSubLinks).map(
-                      (sub) => (
+        <div className="md:hidden absolute top-16 left-0 w-full bg-white shadow-md px-6 py-4 z-40">
+          {navLinks.map((link) => (
+            <div key={link} className="py-2 border-b border-gray-200">
+              {link === "Accessories" || link === "Label" ? (
+                <>
+                  <button
+                    onClick={() =>
+                      link === "Accessories"
+                        ? setShowAccessoriesMobile(!showAccessoriesMobile)
+                        : setShowLabelMobile(!showLabelMobile)
+                    }
+                    className="w-full flex justify-between items-center font-medium text-gray-900"
+                  >
+                    <span>{link}</span>
+                    <HiOutlineChevronDown
+                      className={`transform transition-transform duration-200 ${
+                        (link === "Accessories"
+                          ? showAccessoriesMobile
+                          : showLabelMobile)
+                          ? "rotate-180"
+                          : "rotate-0"
+                      }`}
+                    />
+                  </button>
+                  {(link === "Accessories"
+                    ? showAccessoriesMobile
+                    : showLabelMobile) && (
+                    <ul className="ml-4 mt-2 space-y-1">
+                      {(link === "Accessories"
+                        ? accessoriesSubLinks
+                        : labelHierarchy.map((g) => g.group)
+                      ).map((sub) => (
                         <li key={sub}>
                           <Link
                             to={
                               link === "Accessories"
-                                ? getSubLinkPath(sub)
-                                : `/label/${sub.toLowerCase().replace(/\s+/g, "-")}`
+                                ? `/accessories/${sub.toLowerCase().replace(/\s+/g, "-")}`
+                                : getSubLinkPath(sub)
                             }
                             className="block text-sm text-gray-700 hover:text-green-600"
                           >
                             {sub}
                           </Link>
                         </li>
-                      )
-                    )}
-                  </ul>
-                )}
-              </div>
-            ) : (
-              <Link
-                key={link}
-                to={getLinkPath(link)}
-                className={`block py-2 border-b border-gray-200 ${
-                  isActive(link)
-                    ? "text-green-600 font-semibold underline"
-                    : "hover:text-gray-700"
-                }`}
-              >
-                {link}
-              </Link>
-            )
-          )}
+                      ))}
+                    </ul>
+                  )}
+                </>
+              ) : (
+                <Link
+                  to={getLinkPath(link)}
+                  className={`block py-2 ${
+                    isActive(link)
+                      ? "text-green-600 font-semibold underline"
+                      : "hover:text-gray-700"
+                  }`}
+                >
+                  {link}
+                </Link>
+              )}
+            </div>
+          ))}
 
-          {/* Mobile Icons */}
           <div className="flex space-x-6 pt-4 text-xl">
             <button aria-label="Search">
               <FaSearch />
