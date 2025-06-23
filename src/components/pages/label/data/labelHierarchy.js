@@ -1,4 +1,4 @@
-// src/data/labelHierarchy.js
+
 const labelHierarchy = [
   {
     group: "WOVEN LABELS",
@@ -8,17 +8,17 @@ const labelHierarchy = [
     categories: [
       {
         category: "RAPIER LABEL",
-        image : "https://acctrims.com/wp-content/uploads/2023/02/custom-woven-labels_DSC0590-768x512.jpg",
+        image: "https://acctrims.com/wp-content/uploads/2023/02/custom-woven-labels_DSC0590-768x512.jpg",
         items: ["SPLIT EDGE WOVEN LABEL", "HIGH DENSITY WOVEN LABELS"],
       },
       {
         category: "NIDDLE LABEL",
-         image : "https://acctrims.com/wp-content/uploads/2023/02/custom-woven-labels_DSC0590-768x512.jpg",
+        image: "https://acctrims.com/wp-content/uploads/2023/02/custom-woven-labels_DSC0590-768x512.jpg",
         items: ["WOVEN EDGE WOVEN LABEL"],
       },
       {
         category: "SHUTTLE LABEL",
-         image : "https://acctrims.com/wp-content/uploads/2023/02/custom-woven-labels_DSC0590-768x512.jpg",
+        image: "https://acctrims.com/wp-content/uploads/2023/02/custom-woven-labels_DSC0590-768x512.jpg",
         items: ["SOFT EDGE WOVEN LABEL"],
       },
     ],
@@ -31,12 +31,12 @@ const labelHierarchy = [
     categories: [
       {
         category: "CARE LABEL",
-          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtTvLZeea7KYKV6cagzqv8vV-Ty9amSS7Crg&s",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtTvLZeea7KYKV6cagzqv8vV-Ty9amSS7Crg&s",
         items: ["SATIN", "TAFFETA", "COTTON / TWILL / CANVAS / GROSGRAIN"],
       },
       {
         category: "MAIN LABEL",
-          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtTvLZeea7KYKV6cagzqv8vV-Ty9amSS7Crg&s",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtTvLZeea7KYKV6cagzqv8vV-Ty9amSS7Crg&s",
         items: [
           "SATIN",
           "COTTON / TWILL / CANVAS / GROSGRAIN",
@@ -53,28 +53,64 @@ const labelHierarchy = [
     categories: [
       {
         category: "PLASTISOL HEAT TRANSFER",
-         image: "https://acctrims.com/wp-content/uploads/2023/03/DSC0013.jpg",
-        items: ["IRONON HEAT TRANSFER"]
+        image: "https://acctrims.com/wp-content/uploads/2023/03/DSC0013.jpg",
+        items: []
       },
       {
         category: "WATERBASE HEAT TRANSFER",
-         image: "https://acctrims.com/wp-content/uploads/2023/03/DSC0013.jpg",
-        items: ["FOIL HEAT TRANSFER", "REFLECTIVE HEAT TRANSFER"]
+        image: "https://acctrims.com/wp-content/uploads/2023/03/DSC0013.jpg",
+         items: ["IRONON HEAT TRANSFER"]
+        // items: ["FOIL HEAT TRANSFER", "REFLECTIVE HEAT TRANSFER"]
       },
       {
         category: "HIGH DENSITY HEAT TRANSFER",
-         image: "https://acctrims.com/wp-content/uploads/2023/03/DSC0013.jpg",
+        image: "https://acctrims.com/wp-content/uploads/2023/03/DSC0013.jpg",
         items: ["PVC / PLASTISOL HEAT TRANSFER", "SILICON HEAT TRANSFER", "3D HEAT TRANSFER"]
       },
       {
         category: "FLOCK HEAT TRANSFER",
-         image: "https://acctrims.com/wp-content/uploads/2023/03/DSC0013.jpg",
-        items: ["RHINESTONE HEAT TRANSFER", "GLITTER TRANSFER"]
+        image: "https://acctrims.com/wp-content/uploads/2023/03/DSC0013.jpg",
+        items: []
       },
       {
         category: "NEON TRANSFER LABEL",
-         image: "https://acctrims.com/wp-content/uploads/2023/03/DSC0013.jpg",
-        items: ["EMBOSS PRINTING", "PUFF HEAT TRANSFER LABEL"]
+        image: "https://acctrims.com/wp-content/uploads/2023/03/DSC0013.jpg",
+        items: [ ]
+      },
+        {
+        category: "FOIL TRANSFER LABEL",
+        image: "https://acctrims.com/wp-content/uploads/2023/03/DSC0013.jpg",
+        items: [ ]
+      },
+        {
+        category: "REFLECTIVE HEAT TRANSFER",
+        image: "https://acctrims.com/wp-content/uploads/2023/03/DSC0013.jpg",
+        items: [ ]
+      },
+       {
+        category: "PLASTISOL PHOTO HEAT TRANSFER LABEL",
+        image: "https://acctrims.com/wp-content/uploads/2023/03/DSC0013.jpg",
+        items: [ ]
+      },
+       {
+        category: "EMBOSS PRINTING",
+        image: "https://acctrims.com/wp-content/uploads/2023/03/DSC0013.jpg",
+        items: []
+      },
+        {
+        category: "PUFF HEAT TRANSFER LABEL",
+        image: "https://acctrims.com/wp-content/uploads/2023/03/DSC0013.jpg",
+        items: []
+      },
+       {
+        category: "RHINESTONE HEAT TRANSFER",
+        image: "https://acctrims.com/wp-content/uploads/2023/03/DSC0013.jpg",
+        items: []
+      },
+       {
+        category: "GLITTER TRANSFER",
+        image: "https://acctrims.com/wp-content/uploads/2023/03/DSC0013.jpg",
+        items: ["RHINESTONE HEAT TRANSFER", "GLITTER TRANSFER"]
       },
     ],
   },
@@ -112,19 +148,54 @@ const labelHierarchy = [
     image: "https://images.pexels.com/photos/1111319/pexels-photo-1111319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     categories: [
       {
-        category: "GENERAL TAGS",
-        items: [
-          "EMBOSSED TAG",
-          "DE-EMBOSSED TAG",
-          "UV EFFECT TAGS",
-          "FOIL EFFECT TAG",
-          "DIE CUT TAG",
-          "PLASTIC TAG",
-          "FABRIC TAG",
-          "LUGGAGE TAG",
-          "PRODUCT INSERT TAG",
-          "BUTTON POUCH",
-        ],
+        category: "EMBOSSED TAG",
+        image: "https://images.pexels.com/photos/1111319/pexels-photo-1111319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        items: [],
+      },
+      {
+        category: "DE-EMBOSSED TAG",
+        image: "https://images.pexels.com/photos/1111319/pexels-photo-1111319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        items: [],
+      },
+      {
+        category: "UV EFFECT TAGS",
+        image: "https://images.pexels.com/photos/1111319/pexels-photo-1111319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        items: [],
+      },
+      {
+        category: "FOIL EFFECT TAG",
+        image: "https://images.pexels.com/photos/1111319/pexels-photo-1111319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        items: [],
+      },
+      {
+        category: "DIE CUT TAG",
+        image: "https://images.pexels.com/photos/1111319/pexels-photo-1111319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        items: [],
+      },
+      {
+        category: "PLASTIC TAG",
+        image: "https://images.pexels.com/photos/1111319/pexels-photo-1111319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        items: [],
+      },
+      {
+        category: "FABRIC TAG",
+        image: "https://images.pexels.com/photos/1111319/pexels-photo-1111319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        items: [],
+      },
+      {
+        category: "LUGGAGE TAG",
+        image: "https://images.pexels.com/photos/1111319/pexels-photo-1111319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        items: [],
+      },
+      {
+        category: "PRODUCT INSERT TAG",
+        image: "https://images.pexels.com/photos/1111319/pexels-photo-1111319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        items: [],
+      },
+      {
+        category: "BUTTON POUCH",
+        image: "https://images.pexels.com/photos/1111319/pexels-photo-1111319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        items: [],
       },
     ],
   },
@@ -135,8 +206,14 @@ const labelHierarchy = [
     image: "https://5.imimg.com/data5/KD/ZP/EC/SELLER-46123511/img-20200220-wa0020-500x500.jpg",
     categories: [
       {
-        category: "GENERAL",
-        items: ["PLAIN TAG SEALS", "TAG SEAL WITH BRAND SEALS"],
+        category: "PLAIN TAG SEALS",
+        image: "https://5.imimg.com/data5/KD/ZP/EC/SELLER-46123511/img-20200220-wa0020-500x500.jpg",
+        items: [],
+      },
+      {
+        category: "TAG SEAL WITH BRAND SEALS",
+        image: "https://5.imimg.com/data5/KD/ZP/EC/SELLER-46123511/img-20200220-wa0020-500x500.jpg",
+        items: [],
       },
     ],
   },
@@ -147,8 +224,24 @@ const labelHierarchy = [
     image: "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,q_auto:best,t_productPageHeroGalleryTransformation_v2,w_auto/India%20LOB/marketing%20Materials/Labels%20and%20Stickers/Product%20and%20Packaging%20Labels/IN_Product-and-Packaging-Labels_Hero-image_01",
     categories: [
       {
-        category: "GENERAL",
-        items: ["VINYL STICKER", "BARCODE STICKER", "POLYBAG STICKER", "CARTON STICKER"],
+        category: "VINYL STICKER",
+        image: "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,q_auto:best,t_productPageHeroGalleryTransformation_v2,w_auto/India%20LOB/marketing%20Materials/Labels%20and%20Stickers/Product%20and%20Packaging%20Labels/IN_Product-and-Packaging-Labels_Hero-image_01",
+        items: [],
+      },
+      {
+        category: "BARCODE STICKER",
+        image: "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,q_auto:best,t_productPageHeroGalleryTransformation_v2,w_auto/India%20LOB/marketing%20Materials/Labels%20and%20Stickers/Product%20and%20Packaging%20Labels/IN_Product-and-Packaging-Labels_Hero-image_01",
+        items: [],
+      },
+      {
+        category: "POLYBAG STICKER",
+        image: "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,q_auto:best,t_productPageHeroGalleryTransformation_v2,w_auto/India%20LOB/marketing%20Materials/Labels%20and%20Stickers/Product%20and%20Packaging%20Labels/IN_Product-and-Packaging-Labels_Hero-image_01",
+        items: [],
+      },
+      {
+        category: "CARTON STICKER",
+        image: "https://cms.cloudinary.vpsvc.com/image/upload/c_scale,dpr_auto,f_auto,q_auto:best,t_productPageHeroGalleryTransformation_v2,w_auto/India%20LOB/marketing%20Materials/Labels%20and%20Stickers/Product%20and%20Packaging%20Labels/IN_Product-and-Packaging-Labels_Hero-image_01",
+        items: [],
       },
     ],
   },
@@ -159,14 +252,29 @@ const labelHierarchy = [
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGXLy7M2by830jyi6wBTBgOvE3XMBqAsFAL_WkNletP-vQvnXSje11RcJpbr7WvRC25Fg&usqp=CAU",
     categories: [
       {
-        category: "BADGE TYPES",
-        items: [
-          "WOVEN PATCHES OR BADGES",
-          "PRINTED PATCHES OR BADGES",
-          "EMBROIDERY PATCHES OR BADGES",
-          "SUBLIMATION PATCHES OR BADGES",
-          "CHENILLE/BOUCLE PATCHES OR BADGES",
-        ],
+        category: "WOVEN PATCHES OR BADGES",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGXLy7M2by830jyi6wBTBgOvE3XMBqAsFAL_WkNletP-vQvnXSje11RcJpbr7WvRC25Fg&usqp=CAU",
+        items: [],
+      },
+      {
+        category: "PRINTED PATCHES OR BADGES",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGXLy7M2by830jyi6wBTBgOvE3XMBqAsFAL_WkNletP-vQvnXSje11RcJpbr7WvRC25Fg&usqp=CAU",
+        items: [],
+      },
+      {
+        category: "EMBROIDERY PATCHES OR BADGES",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGXLy7M2by830jyi6wBTBgOvE3XMBqAsFAL_WkNletP-vQvnXSje11RcJpbr7WvRC25Fg&usqp=CAU",
+        items: [],
+      },
+      {
+        category: "SUBLIMATION PATCHES OR BADGES",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGXLy7M2by830jyi6wBTBgOvE3XMBqAsFAL_WkNletP-vQvnXSje11RcJpbr7WvRC25Fg&usqp=CAU",
+        items: [],
+      },
+      {
+        category: "CHENILLE/BOUCLE PATCHES OR BADGES",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGXLy7M2by830jyi6wBTBgOvE3XMBqAsFAL_WkNletP-vQvnXSje11RcJpbr7WvRC25Fg&usqp=CAU",
+        items: [],
       },
     ],
   },
@@ -177,8 +285,19 @@ const labelHierarchy = [
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK-53zG_keMefUJV-nywGObl33GlCKVh0POg&s",
     categories: [
       {
-        category: "GENERAL",
-        items: ["PVC LABEL / RUBBER LABEL", "SILICONE BADGE", "HIGH FREQUENCY BADGES"],
+        category: "PVC LABEL / RUBBER LABEL",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK-53zG_keMefUJV-nywGObl33GlCKVh0POg&s",
+        items: [],
+      },
+      {
+        category: "SILICONE BADGE",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK-53zG_keMefUJV-nywGObl33GlCKVh0POg&s",
+        items: [],
+      },
+      {
+        category: "HIGH FREQUENCY BADGES",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK-53zG_keMefUJV-nywGObl33GlCKVh0POg&s",
+        items: [],
       },
     ],
   },
@@ -189,23 +308,31 @@ const labelHierarchy = [
     image: "https://acctrims.com/wp-content/uploads/2022/08/leather-labels_DSC0800.jpg",
     categories: [
       {
-        category: "GENERAL",
-        items: ["EMBOSSED LEATHER LABEL", "DEBOSS LEATHER LABEL"],
+        category: "EMBOSSED LEATHER LABEL",
+        image: "https://acctrims.com/wp-content/uploads/2022/08/leather-labels_DSC0800.jpg",
+        items: [],
+      },
+      {
+        category: "DEBOSS LEATHER LABEL",
+        image: "https://acctrims.com/wp-content/uploads/2022/08/leather-labels_DSC0800.jpg",
+        items: [],
       },
     ],
   },
   {
-    group: "SECURITY LABELS",
+       group: "SECURITY LABELS",
     slug: "security-labels",
     description: "Security labels include RFID or anti-theft tags used in retail to prevent shoplifting and manage inventory.",
     image: "https://geipl.com/wp-content/uploads/2024/06/Security-labels.png",
     categories: [
       {
         category: "SOFT TAGS",
+         image: "https://geipl.com/wp-content/uploads/2024/06/Security-labels.png",
         items: ["AM SCENSOR", "RF SCENSOR"],
       },
       {
         category: "HARD TAGS",
+         image: "https://geipl.com/wp-content/uploads/2024/06/Security-labels.png",
         items: ["HARD TAGS"],
       },
     ],
@@ -217,8 +344,14 @@ const labelHierarchy = [
     image: "https://i.etsystatic.com/14683597/r/il/fc540b/1184273262/il_570xN.1184273262_rdyp.jpg",
     categories: [
       {
-        category: "METAL TYPES",
-        items: ["Brass", "Stainless steel (SS)"],
+        category: "Brass",
+        image: "https://i.etsystatic.com/14683597/r/il/fc540b/1184273262/il_570xN.1184273262_rdyp.jpg",
+        items: [],
+      },
+      {
+        category: "Stainless steel (SS)",
+        image: "https://i.etsystatic.com/14683597/r/il/fc540b/1184273262/il_570xN.1184273262_rdyp.jpg",
+        items: [],
       },
     ],
   },

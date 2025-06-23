@@ -14,9 +14,9 @@ const labelCategoryDetails = {
     bestFor: "Detailed logos, smooth textures, and a premium look"
   },
 
-  "needle-label": {
-    title: "Needle Label (Woven on Needle Looms)",
-    intro: "Needle labels are produced on narrow fabric looms designed for high-speed label weaving, producing labels in continuous rolls.",
+  "niddle-label": {
+    title: "Niddle Label (Woven on Needle Looms)",
+    intro: "Niddle labels are produced on narrow fabric looms designed for high-speed label weaving, producing labels in continuous rolls.",
     features: [
       "Clean, professional-looking medium-complexity designs",
       "Material: Polyester or satin yarns",
@@ -94,7 +94,7 @@ const labelCategoryDetails = {
     bestFor: "Natural finish, minimal texture, and eco-friendliness"
   },
 
-  "foil-heat-transfer": {
+  "foil-transfer-label": {
     title: "Foil Heat Transfer Label",
     intro: "Foil transfers apply a metallic or reflective foil layer onto fabric using heat and adhesive, creating a shiny and luxurious finish.",
     features: [
@@ -118,7 +118,7 @@ const labelCategoryDetails = {
     bestFor: "Garments requiring visibility and safety at night"
   },
 
-  "photo-heat-transfer": {
+  "plastisol-photo-heat-transfer-label": {
     title: "Plastisol Photo Heat Transfer Label",
     intro: "A variation of plastisol transfer designed to reproduce photo-quality images using CMYK screen printing or simulated processes.",
     features: [
@@ -130,7 +130,7 @@ const labelCategoryDetails = {
     bestFor: "Photo-level detail in colorful designs"
   },
 
-  "high-intensity-heat-transfer": {
+  "high-density-heat-transfer": {
     title: "High-Intensity Heat Transfer Label",
     intro: "These labels use special additives or thicker ink layers to achieve a bolder, brighter, or more pronounced effect.",
     features: [
@@ -164,7 +164,7 @@ const labelCategoryDetails = {
     bestFor: "Personalized, glamorous, or festive fashion"
   },
 
-  "glitter-heat-transfer": {
+  "glitter-transfer": {
     title: "Glitter Heat Transfer Label",
     intro: "This technique uses glitter flakes embedded in adhesive films to add a shimmery surface using heat.",
     features: [
@@ -176,7 +176,7 @@ const labelCategoryDetails = {
     bestFor: "Fun, sparkly, or decorative graphics"
   },
 
-  "neon-heat-transfer": {
+  "neon-transfer-label": {
     title: "Neon Heat Transfer Label",
     intro: "Neon transfers use fluorescent inks for glowing, high-visibility colors that pop, especially under UV light.",
     features: [
@@ -188,7 +188,7 @@ const labelCategoryDetails = {
     bestFor: "Loud, eye-catching designs that stand out"
   },
 
-  "emboss-heat-transfer": {
+  "emboss-printing": {
     title: "Emboss Printing (Heat Embossed Transfer)",
     intro: "Emboss printing uses heat and pressure to create a raised effect in the fabric itself, forming logos or textures without ink.",
     features: [
@@ -200,7 +200,7 @@ const labelCategoryDetails = {
     bestFor: "Subtle elegance and texture without ink"
   },
 
-  "puff-heat-transfer": {
+  "puff-heat-transfer-label": {
     title: "Puff Heat Transfer Label",
     intro: "Puff transfers include foaming agents that expand under heat, giving the design a raised, spongy texture.",
     features: [
@@ -237,7 +237,7 @@ const labelCategoryDetails = {
     ]
   },
 
-  "printed-laces": {
+  "printed-lace": {
     title: "Printed Laces",
     intro: "Printed lace refers to lace fabric that has undergone printing processes to apply colorful patterns on the lace surface.",
     features: [
@@ -259,8 +259,26 @@ const labelCategoryDetails = {
   },
 
   // --- New Tag Types Added Below ---
-
-  "embossed-tags": {
+  "general-tags": {
+    title: "General Tags",
+    intro: "General tags refer to standard branding or informational tags used across a wide variety of garments and products. They serve basic identification, pricing, branding, or regulatory purposes.",
+    features: [
+      "Available in printed or woven forms",
+      "Can be made from paper, fabric, plastic, or card stock",
+      "Support barcodes, brand names, product info",
+      "Various shapes and sizes depending on need",
+      "Cost-effective and customizable"
+    ],
+    materials: [
+      "Paper (kraft, coated, recycled)",
+      "Polyester or satin fabric",
+      "Plastic or PVC",
+      "Cardboard or thick cardstock"
+    ],
+    applications: "Common in retail clothing, accessories, home textiles, and mass production. Used for pricing, branding, or compliance.",
+    bestFor: "Everyday use across all product categories where informative or branded tags are needed."
+  },
+  "embossed-tag": {
     title: "Embossed Tags",
     intro: "Embossed tags are made by pressing a design (like a logo, pattern, or text) into the material using heat and pressure, creating a raised (3D) effect. These tags add a tactile and premium touch to branding.",
     features: [
@@ -272,7 +290,8 @@ const labelCategoryDetails = {
     bestFor: "Brands seeking premium, minimalist, or heritage aesthetics"
   },
 
-  "de-embossed-tags": {
+
+  "de-embossed-tag": {
     title: "De-Embossed Tags (Debossed Tags)",
     intro: "De-embossed (or debossed) tags have the design pressed into the material surface, creating a sunken effect instead of a raised one. It’s subtle, elegant, and often combined with foil stamping.",
     features: [
@@ -296,7 +315,7 @@ const labelCategoryDetails = {
     bestFor: "Highlighting key elements like brand names or icons in a sleek way"
   },
 
-  "foil-effect-tags": {
+  "foil-effect-tag": {
     title: "Foil Effect Tags",
     intro: "Foil effect tags use metallic or holographic foil stamping to create a reflective and luxurious finish. Foils can be gold, silver, rose gold, copper, holographic, etc.",
     features: [
@@ -308,7 +327,7 @@ const labelCategoryDetails = {
     bestFor: "Creating luxury appeal or seasonal promotions"
   },
 
-  "die-cut-tags": {
+  "die-cut-tag": {
     title: "Die Cut Tags",
     intro: "Die cut tags are cut into custom shapes instead of traditional rectangles or squares. This allows for unique, brand-specific silhouettes.",
     features: [
@@ -320,7 +339,7 @@ const labelCategoryDetails = {
     bestFor: "Creative, eye-catching tags that stand out"
   },
 
-  "plastic-tags": {
+  "plastic-tag": {
     title: "Plastic Tags",
     intro: "Plastic tags are durable tags made from PVC, PP, or ABS materials. They are water-resistant, long-lasting, and often used in outdoor or rugged conditions.",
     features: [
@@ -332,7 +351,7 @@ const labelCategoryDetails = {
     bestFor: "Durable branding for rough-use or outdoor products"
   },
 
-  "fabric-tags": {
+  "fabric-tag": {
     title: "Fabric Tags (Cloth Tags)",
     intro: "Fabric tags are made from textile materials like cotton, polyester, canvas, or felt and give a soft, natural appeal to branding.",
     features: [
@@ -344,7 +363,7 @@ const labelCategoryDetails = {
     bestFor: "Natural or eco-conscious brand stories"
   },
 
-  "luggage-tags": {
+  "luggage-tag": {
     title: "Luggage Tags",
     intro: "Luggage tags are heavy-duty, often plastic or leather tags used to display branding and contact info on travel gear.",
     features: [
@@ -356,7 +375,7 @@ const labelCategoryDetails = {
     bestFor: "Functional branding in the travel industry"
   },
 
-  "product-insert-tags": {
+  "product-insert-tag": {
     title: "Product Insert Tags",
     intro: "Insert tags are printed cards or booklets placed inside product packaging, providing product details, care instructions, or brand story.",
     features: [
@@ -378,7 +397,337 @@ const labelCategoryDetails = {
     ],
     applications: "Seen in formalwear, jackets, shirts, or any item that comes with replacement buttons.",
     bestFor: "Professional garment packaging and customer convenience"
-  }
+  },
+   "plain-tag-seals": {
+    title: "Plain Tag Seals",
+    intro: "Plain tag seals are basic, non-branded fasteners used to attach hang tags to garments or accessories. These are often made from plastic, thread, or string, and are used solely for functionality and product identification.",
+    features: [
+      "No branding or logos — purely utility-focused",
+      "Available in various shapes, like arrow locks, loop locks, or T-bar locks",
+      "Can be transparent, black, white, or in standard colors",
+      "Commonly made from plastic or wax-coated string"
+    ],
+    applications: "Used in mass-market garments, factory samples, or internal labeling. Common in low-cost or bulk production.",
+    bestFor: "Brands focusing on cost-efficiency, or products where tags are less visible to consumers",
+    visualAppeal: "Simple and minimalistic. Generally not part of the brand presentation or unboxing experience"
+  },
+
+  "tag-seal-with-brand-seals": {
+    title: "Tag Seals with Brand Seals (Branded Tag Seals)",
+    intro: "Branded tag seals are security fasteners that incorporate the brand logo, name, or design on a plastic or metal seal, giving the hang tag a premium and customized look. These seals are both functional and part of the brand identity.",
+    features: [
+      "Include custom-molded logos, names, or initials on one or both sides of the seal",
+      "Can be made from plastic, rubber, or metal",
+      "Available in various shapes (round, square, rectangle, capsule, etc.)",
+      "Often paired with colored strings or elastic cords that match brand colors"
+    ],
+    applications: "Widely used in high-street fashion, luxury clothing, accessories, and footwear. Often used to prevent tampering, as removing the seal breaks the loop.",
+    bestFor: "Brands that want to add a touch of luxury, emphasize authenticity, or enhance brand presence even in small details",
+    visualAppeal: "Enhances packaging aesthetics. Reflects attention to detail and premium brand experience"
+  },
+
+  "vinyl-sticker": {
+    title: "Vinyl Stickers",
+    intro: "Vinyl stickers are made from durable PVC (vinyl) material, known for their waterproof, weather-resistant, and long-lasting properties. These are commonly used for branding, decoration, and labeling on products or packaging.",
+    features: [
+      "Made from flexible vinyl sheet",
+      "Resistant to moisture, UV rays, and scratches",
+      "Can be glossy, matte, transparent, or opaque",
+      "Available in custom shapes, die cuts, or rolls"
+    ],
+    printingType: "Uses solvent, eco-solvent, or UV printing. High-resolution and vibrant color output.",
+    applications: "Used on products, windows, promotional packaging, glass surfaces, and equipment branding. Also used for custom labels or limited-edition branding.",
+    bestFor: "Brands needing durable and stylish sticker labels for outdoor or long-term use"
+  },
+
+  "barcode-sticker": {
+    title: "Barcode Stickers",
+    intro: "Barcode stickers are printed labels that display machine-readable barcodes used for inventory management, product identification, pricing, and retail scanning systems.",
+    features: [
+      "Usually printed on paper or synthetic sticker sheets",
+      "Contains 1D (linear) or 2D (QR) codes",
+      "Can be self-adhesive and come in rolls or sheets",
+      "May include product name, price, batch number, size, or MRP"
+    ],
+    printingType: "Printed using thermal transfer or direct thermal printers. Uses barcode software or ERP systems for generation.",
+    applications: "Essential in retail, warehouses, logistics, e-commerce, and manufacturing. Applied on garment tags, polybags, cartons, and packaging.",
+    bestFor: "Businesses requiring efficient tracking and POS integration"
+  },
+
+  "polybag-sticker": {
+    title: "Polybag Stickers",
+    intro: "Polybag stickers are labels affixed to transparent or opaque polybags used for packing individual garments or products. These stickers often include product details and barcodes.",
+    features: [
+      "Printed on adhesive sticker paper",
+      "Contains info like style code, size, color, MRP, barcode, and brand",
+      "Helps in product identification and sorting"
+    ],
+    material: "Mostly paper-based or semi-glossy self-adhesive labels",
+    applications: "Used on garment polybags, accessory pouches, spare part pouches. Found in retail packaging, export orders, and online order processing.",
+    bestFor: "Providing quick product details and SKU tracking during packaging and dispatch"
+  },
+
+  "carton-sticker": {
+    title: "Carton Stickers (Outer Box Stickers)",
+    intro: "Carton stickers are large labels applied to shipping cartons or master boxes, containing detailed logistics and product information for transportation and warehousing.",
+    features: [
+      "Includes carton number, PO number, size set, quantity, weight, destination, barcodes, etc.",
+      "Generally larger in size (A5, A6, etc.)",
+      "Can be black & white or color printed"
+    ],
+    material: "Printed on kraft paper stickers, coated labels, or synthetic waterproof material for export",
+    applications: "Used in shipping, warehouse stock tracking, customs clearance. Critical in exports, bulk orders, and supply chain operations.",
+    bestFor: "Providing organized and traceable shipment information"
+  },
+   "embossed-leather-label": {
+    title: "Embossed Leather Label",
+    intro: "Embossed leather labels are made by raising a design, logo, or text above the surface of genuine or synthetic leather using heat and pressure. This creates a 3D tactile effect that adds luxury and dimension to the label.",
+    features: [
+      "The design is raised outward from the leather surface",
+      "Created using metal dies and heat press machines",
+      "Can be made from real leather, faux leather, or recycled leather",
+      "Often combined with stitching, metal rivets, or colored foil to enhance visibility",
+      "Available in natural, dyed, or burnished finishes"
+    ],
+    applications: "Common in denim jeans, jackets, bags, belts, caps, and premium footwear",
+    bestFor: "Brands looking to give a premium, rugged, or heritage feel with a label that stands out physically and visually"
+  },
+
+  "deboss-leather-label": {
+    title: "Debossed Leather Label",
+    intro: "Debossed leather labels are made by pressing a design or logo into the leather surface, creating an engraved or sunken look. The result is subtle, elegant, and durable, ideal for sophisticated branding.",
+    features: [
+      "The design is pushed inward, forming a sunken or recessed impression",
+      "Done using custom dies and high-pressure embossing",
+      "May be left plain or filled with contrast ink or foil",
+      "Suitable for natural or synthetic leather",
+      "Offers minimalist yet refined appearance"
+    ],
+    applications: "Used in denim labels, formal wear, leather accessories, luxury goods, and fashion-forward apparel",
+    bestFor: "Brands aiming for a clean, timeless, and high-end aesthetic in their labeling"
+  },
+  "pvc-label--rubber-label": {
+    title: "PVC Label / Rubber Label",
+    intro: "PVC (Polyvinyl Chloride) labels, also known as rubber labels, are soft, molded plastic tags used for branding. They offer a bold, 3D appearance and are perfect for outdoor and rugged use.",
+    features: [
+      "Waterproof and weather-resistant",
+      "Customizable shapes and colors",
+      "2D or 3D effects possible",
+      "Long-lasting and tear-resistant",
+      "Fade-resistant colors (Pantone support)"
+    ],
+    materials: [
+      "Soft PVC (Non-toxic grade available)",
+      "Molded rubber"
+    ],
+    applications: "Stitched or heat-sealed on garments, bags, caps. Can also be attached using Velcro or adhesive",
+    bestFor: "Outdoor wear, jeans, workwear, bags, backpacks, caps, footwear, and brands looking for durable and eye-catching labels"
+  },
+
+  "silicone-badge": {
+    title: "Silicone Badge",
+    intro: "Silicone badges are soft, flexible branding elements made from eco-friendly, food-grade silicone. They are skin-safe and often used in sportswear and children's apparel.",
+    features: [
+      "Eco-friendly and non-toxic",
+      "Extremely flexible and durable",
+      "Resistant to heat, UV, and chemicals",
+      "Available in embossed, debossed, or printed styles",
+      "Soft-touch finish"
+    ],
+    materials: [
+      "100% Silicone (food or medical grade)",
+      "BPA-free and hypoallergenic"
+    ],
+    applications: "Heat-sealed or sewn on garments, shoes, tech accessories. Can also be used on bottles, gadgets, and soft goods",
+    bestFor: "Sportswear, kidswear, swimwear, sustainable brands or eco-conscious labels, fashion accessories and tech gear"
+  },
+
+  "high-frequency-badges": {
+    title: "High Frequency Badges (HF Badges)",
+    intro: "High-frequency badges are created by embossing synthetic materials like PU or PVC using heat and pressure, giving a premium 3D effect. These are seamless, sleek, and very durable.",
+    features: [
+      "3D raised look with clean lines",
+      "No stitching required in most designs",
+      "High durability under washing",
+      "Premium, professional finish",
+      "Custom shapes and logos"
+    ],
+    materials: [
+      "PU (Polyurethane)",
+      "PVC",
+      "EVA",
+      "Faux leather or other synthetic layers"
+    ],
+    applications: "Heat-pressed onto clothing or accessories. Can also be sewn on if needed",
+    bestFor: "Jackets, jeans, bags, belts, footwear, wallets, leather goods, and fashion brands seeking a modern, upscale look"
+  },
+    "soft-tags": {
+    title: "Soft Tag",
+    intro: "Soft tags are flexible, non-rigid branding or information tags made from fabric, silicone, rubber, or other pliable materials. They are designed to bend easily and feel smooth against the skin or product.",
+    features: [
+      "Soft and skin-friendly",
+      "Easily foldable or bendable",
+      "Lightweight and non-bulky",
+      "Customizable in shape, color, and texture",
+      "Can be woven, printed, or molded"
+    ],
+    materials: [
+      "Woven fabric (satin, damask, taffeta)",
+      "Silicone or soft PVC",
+      "TPU (Thermoplastic Polyurethane)",
+      "Cotton, polyester, or felt"
+    ],
+    applications: "Stitched or heat-pressed on garments, bags, shoes, toys. Used as care labels, brand labels, or decorative tags",
+    bestFor: "Clothing (especially innerwear or kidswear), sportswear, bags, soft toys, and brands needing comfort and flexibility in labels"
+  },
+
+  "hard-tags": {
+    title: "Hard Tag",
+    intro: "Hard tags are rigid or semi-rigid branding elements made from materials like metal, acrylic, or hard plastic. These are typically used for premium branding or security purposes.",
+    features: [
+      "Rigid and durable",
+      "Premium, high-end appearance",
+      "Scratch-resistant (in most materials)",
+      "Long-lasting and strong branding impact",
+      "Often used for security (in retail)"
+    ],
+    materials: [
+      "Metal (aluminum, stainless steel)",
+      "Acrylic",
+      "ABS plastic",
+      "Hard PVC"
+    ],
+    applications: "Screwed, riveted, or stitched on products. Some hard tags are detachable (e.g., security tags in retail). Can be engraved, printed, or embossed",
+    bestFor: "Premium fashion wear, handbags, shoes, outdoor gear, electronics, and anti-theft retail tagging (EAS security tags)"
+  },
+
+  "brass": {
+    title: "Brass Tag",
+    intro: "Brass tags are made from an alloy of copper and zinc, giving them a distinct yellow-gold finish. They are commonly used for premium branding, numbering, or nameplates due to their antique and rich appearance.",
+    features: [
+      "Luxurious golden/antique look",
+      "Tarnish-resistant with proper coating",
+      "Can be engraved, etched, or embossed",
+      "Custom shapes and cutouts possible",
+      "Strong and durable for outdoor or indoor use"
+    ],
+    materials: [
+      "Pure or alloyed brass sheets",
+      "Finishes: Polished, matte, antique, or brushed"
+    ],
+    applications: "Riveted or screwed onto leather goods, wood, or metal. Used in badges, product branding, nameplates, keychains",
+    bestFor: "Premium leather goods (bags, belts, wallets), luxury branding, vintage or heritage-style labels, industrial tags, serial numbers, pet ID tags"
+  },
+
+  "stainless-steel-ss": {
+    title: "Stainless Steel Tag",
+    intro: "Stainless steel tags are high-strength, corrosion-resistant tags with a clean, modern metallic finish. They are known for their durability and are widely used in both industrial and fashion applications.",
+    features: [
+      "Rust-proof and weather-resistant",
+      "Sleek, professional appearance",
+      "Very durable, doesn’t tarnish or fade",
+      "Can be laser-engraved, etched, embossed, or screen printed",
+      "Fire and chemical resistant"
+    ],
+    materials: [
+      "Grade 304 or 316 stainless steel (depending on use)",
+      "Finishes: Mirror polish, matte, brushed, or blackened"
+    ],
+    applications: "Screwed, riveted, or tied with cable on products. Used in branding, industrial labeling, or nameplates",
+    bestFor: "Industrial equipment tags, machinery labels, garments with metallic branding elements, bags, wallets, shoes, or outdoor products, high-end packaging, bottle tags, or electronics"
+  },
+   "woven-patches-or-badges": {
+    title: "Woven Patches / Badges",
+    intro: "Woven patches are made using thin threads woven together on a loom to create detailed and clean designs. They allow finer detail than embroidery and have a flat, professional finish.",
+    features: [
+      "High-resolution, detailed graphics",
+      "Thin and lightweight",
+      "Durable and colorfast",
+      "Flat surface – no raised stitches",
+      "Edges can be laser-cut or merrowed"
+    ],
+    materials: [
+      "Polyester or rayon threads",
+      "Twill backing or heat seal backing"
+    ],
+    applications: "Sew-on, heat press, or Velcro attachment. Used on uniforms, caps, bags, jackets",
+    bestFor: "Intricate logo designs, small text, uniforms, corporate wear, fashion labels, lightweight branding with sharp detail"
+  },
+
+  "printed-patches-or-badges": {
+    title: "Printed Patches / Badges",
+    intro: "Printed patches are made by digitally printing the artwork onto fabric and then heat-pressing or stitching it onto garments. They allow photo-quality graphics.",
+    features: [
+      "Photo-quality prints possible",
+      "Very detailed and colorful",
+      "Lightweight and flexible",
+      "Fast production time",
+      "Economical for bulk orders"
+    ],
+    materials: [
+      "Polyester fabric base",
+      "Ink (DTG or heat transfer)",
+      "Heat-activated adhesive or stitching border"
+    ],
+    applications: "Heat press or sew-on. Ideal for t-shirts, jackets, caps, bags",
+    bestFor: "Designs with gradients, shadows, or photos, promotional or fashion garments, cost-effective bulk production"
+  },
+
+  "embroidery-patches-or-badges": {
+    title: "Embroidery Patches / Badges",
+    intro: "Embroidery patches are made by stitching threads on a fabric base to form a design. These patches are classic, textured, and give a premium handcrafted feel.",
+    features: [
+      "Raised, 3D-textured surface",
+      "Strong and long-lasting",
+      "Rich and traditional look",
+      "Limited detailing compared to woven or printed",
+      "Multiple border styles (merrowed, laser-cut)"
+    ],
+    materials: [
+      "Cotton or polyester thread",
+      "Twill fabric base",
+      "Iron-on or Velcro backings"
+    ],
+    applications: "Sew-on or iron-on. Common on uniforms, jackets, denim, hats",
+    bestFor: "Military, biker, school, or sports team patches, classic or bold logo styles, products that need rugged appeal"
+  },
+
+  "sublimation-patches-or-badges": {
+    title: "Sublimation Patches / Badges",
+    intro: "Sublimation patches use heat to transfer dye directly into the fabric, allowing full-color, high-resolution prints that won't crack or peel.",
+    features: [
+      "Full-color designs with photographic quality",
+      "Smooth, no texture surface",
+      "Fade and wash resistant",
+      "No thread – just dye-infused fabric",
+      "Best for complex or colorful designs"
+    ],
+    materials: [
+      "100% polyester fabric",
+      "Sublimation ink",
+      "Heat press machines"
+    ],
+    applications: "Heat pressed or stitched. Ideal for fashionwear, t-shirts, promotional items",
+    bestFor: "Designs with gradients, fine details, or photos, fashion brands, events, promotional use, lightweight applications needing high visual impact"
+  },
+
+  "chenilleboucle-patches-or-badges": {
+    title: "Chenille / Bouclé Patches / Badges",
+    intro: "Chenille (also called bouclé) patches are fluffy, textured patches made with looped yarn, giving a soft and fuzzy appearance – popularly seen on varsity jackets.",
+    features: [
+      "Thick, soft, and 3D fluffy texture",
+      "Retro and sporty appearance",
+      "Usually combined with felt or embroidery",
+      "Bold and tactile surface"
+    ],
+    materials: [
+      "Chenille yarn (acrylic/wool blend)",
+      "Felt or twill base",
+      "Merrow border or laser-cut"
+    ],
+    applications: "Sew-on or heat-sealed on jackets, bags, sweatshirts",
+    bestFor: "College or varsity jackets, sports teams, fashion branding, trendy streetwear or retro collections"
+  },
 };
 
 export default labelCategoryDetails;
