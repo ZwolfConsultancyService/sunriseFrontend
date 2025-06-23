@@ -81,7 +81,7 @@ import Blog from './components/pages/blog/Blog';
 import BlogDetail from './components/pages/blog/BlogDetail';
 import Label from './components/pages/label/Label';
 import Accessories from './components/pages/accessories/Accessories';
-import AccessoryRouter from './components/pages/accessories/router/AccessoryRouter';
+// import AccessoryRouter from './components/pages/accessories/router/AccessoryRouter';
 import AboutNav from './components/pages/about/AboutNav';
 import LabelDetail from './components/pages/label/page/LabelDetail';
 import ScrollToTop from './lib/ScrollToTop';
@@ -92,9 +92,9 @@ import TermsAndConditions from './components/pages/term/TermsAndConditions';
 import ReturnPolicy from './components/pages/policy/ReturnPolicy';
 import RefundPolicy from './components/pages/policy/RefundPolicy';
 import Order from './components/pages/step/Order';
-import LabelGroupPage from './components/pages/label/page/LabelGroupPage';
-import LabelCategoryPage from './components/pages/label/page/LabelCategoryPage';
-import LabelItemPage from './components/pages/label/page/LabelItemPage';
+// import LabelGroupPage from './components/pages/label/page/LabelGroupPage';
+// import LabelCategoryPage from './components/pages/label/page/LabelCategoryPage';
+// import LabelItemPage from './components/pages/label/page/LabelItemPage';
 import CategoryDetail from './components/pages/label/page/CategoryDetail';
 
 function App() {
