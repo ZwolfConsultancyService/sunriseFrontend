@@ -5,8 +5,8 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import Form from './Form';
-import labelHierarchy from '../data/labelHierarchy';
-import LabelGroupPage from './LabelGroupPage';
+// import labelHierarchy from '../data/labelHierarchy';
+import LabelGroupPage from './LabelgroupPage';
 
 const Labeltyp = () => {
   React.useEffect(() => {

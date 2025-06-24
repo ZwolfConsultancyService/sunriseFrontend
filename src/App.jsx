@@ -80,7 +80,7 @@ import Blog from './components/pages/blog/Blog';
 import BlogDetail from './components/pages/blog/BlogDetail';
 import Label from './components/pages/label/Label';
 import Accessories from './components/pages/accessories/Accessories';
-import AccessoryRouter from './components/pages/accessories/router/AccessoryRouter';
+// import AccessoryRouter from './components/pages/accessories/router/AccessoryRouter';
 import AboutNav from './components/pages/about/AboutNav';
 import LabelDetail from './components/pages/label/page/LabelDetail';
 import ScrollToTop from './lib/ScrollToTop';
