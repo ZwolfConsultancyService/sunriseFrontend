@@ -7,7 +7,12 @@ const About = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
-    AOS.init({ duration: 700 });
+    AOS.init({ 
+      duration: 700,
+      once: true, // Animation happens only once
+      disable: 'mobile', // Optional: disable on mobile if causing issues
+      offset: 50, // Trigger animation earlier
+    });
   }, []);
 
   const toggleReadMore = () => {
