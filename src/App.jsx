@@ -70,7 +70,6 @@
 
 // export default App;
 
-
 import React, { useEffect, useState } from 'react';
 import Home from './components/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -94,8 +93,8 @@ import RefundPolicy from './components/pages/policy/RefundPolicy';
 import Order from './components/pages/step/Order';
 import LabelGroupPage from './components/pages/label/page/LabelGroupPage';
 import LabelCategoryPage from './components/pages/label/page/LabelCategoryPage';
-import LabelItemPage from './components/pages/label/page/LabelItemPage';
 import CategoryDetail from './components/pages/label/page/CategoryDetail';
+import LabelItemDetail from './components/pages/label/page/LabelItemDetail';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -119,15 +118,9 @@ function App() {
           <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/about" element={<AboutNav />} />
           <Route path="/label" element={<Label />} />
-          
-          {/* Label routes - Order matters! More specific routes should come first */}
+          <Route path="/label/:groupSlug/:categorySlug/:itemSlug" element={<LabelItemDetail />} />
           <Route path="/label/:groupSlug/:categorySlug" element={<CategoryDetail />} />
           <Route path="/label/:slug" element={<LabelDetail />} />
-          
-          {/* Remove these duplicate/conflicting routes */}
-          {/* <Route path="/label/:group" element={<LabelGroupPage />} /> */}
-          {/* <Route path="/label/:group/:category" element={<LabelCategoryPage />} /> */}
-          {/* <Route path="/label/:group/:category/:item" element={<LabelItemPage />} /> */}
           
           <Route path="/accessories/:slug" element={<Accessories />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />

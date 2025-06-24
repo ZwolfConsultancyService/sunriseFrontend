@@ -1,9 +1,9 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { FiSearch } from "react-icons/fi"; // This import was missing
+import { FiSearch } from "react-icons/fi";
 import labelHierarchy from '../data/labelHierarchy';
 import labelCategoryDetails from '../data/labelCategoryDetails';
+import labelExtendedDetails from '../data/labelExtendedDetails';
 import Navbar from '../../navbar/Navbar';
 import Footer from '../../footer/Footer';
 import Form from './Form';
@@ -13,13 +13,11 @@ const CategoryDetail = () => {
   const decodedGroup = decodeURIComponent(groupSlug).toLowerCase();
   const decodedCategory = decodeURIComponent(categorySlug).toLowerCase();
 
-  // Match the group from slug
   const groupData = labelHierarchy.find(
     (group) => group.slug.toLowerCase() === decodedGroup
   );
 
   const categoryKey = decodedCategory.replace(/[^a-z0-9-]/gi, '').toLowerCase();
-
   const categoryData = labelCategoryDetails[categoryKey];
 
   if (!groupData || !categoryData) {
@@ -30,6 +28,37 @@ const CategoryDetail = () => {
       </div>
     );
   }
+
+  let categoryFromGroup = groupData.categories.find(
+    (cat) => cat.slug && cat.slug.toLowerCase() === categoryKey
+  );
+
+  if (!categoryFromGroup) {
+    categoryFromGroup = groupData.categories.find(
+      (cat) => cat.category && cat.category.toLowerCase().replace(/[^a-z0-9]+/g, '-') === categoryKey
+    );
+  }
+  
+  if (!categoryFromGroup && categoryData) {
+    categoryFromGroup = groupData.categories.find(
+      (cat) => cat.category && cat.category.toLowerCase() === categoryData.title.toLowerCase()
+    );
+  }
+  
+  const itemCards = categoryFromGroup?.items || [];
+
+  console.log('Debug Info:', {
+    groupSlug,
+    categorySlug,
+    decodedGroup,
+    decodedCategory,
+    categoryKey,
+    groupData: groupData?.group,
+    categoryData: categoryData?.title,
+    allCategories: groupData?.categories,
+    categoryFromGroup,
+    itemCards
+  });
 
   return (
     <>
@@ -81,6 +110,57 @@ const CategoryDetail = () => {
             )}
             {categoryData.bestFor && (
               <p className="mb-10"><strong>Best For:</strong> {categoryData.bestFor}</p>
+            )}
+
+            {/* Item Cards Section */}
+            {itemCards.length > 0 && (
+              <>
+                <h3 className="text-xl font-bold mb-6 text-gray-800">Available Items</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                  {itemCards.map((item, i) => {
+                    const itemKey = item.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+                    const itemDetail = labelExtendedDetails[itemKey];
+                    
+                    return (
+                      <Link
+                        key={i}
+                        to={`/label/${groupSlug}/${categorySlug}/${itemKey}`}
+                        className="block border border-gray-200 rounded-lg overflow-hidden shadow hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105"
+                      >
+                        <img
+                          src={itemDetail?.image || groupData.image || "https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg"}
+                          alt={item}
+                          className="w-full h-48 object-cover"
+                        />
+                        <div className="p-4">
+                          <h4 className="text-lg font-semibold text-gray-800 mb-2">
+                            {itemDetail?.title || item}
+                          </h4>
+                          <p className="text-sm text-gray-600 line-clamp-3">
+                            {itemDetail?.description 
+                              ? itemDetail.description.slice(0, 120) + "..." 
+                              : "High-quality " + item.toLowerCase() + " for your branding needs. Click to learn more about specifications and customization options."
+                            }
+                          </p>
+                          <div className="mt-3 text-orange-500 text-sm font-medium">
+                            Learn More →
+                          </div>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </>
+            )}
+
+            {/* If no items found, show a message */}
+            {itemCards.length === 0 && (
+              <div className="bg-gray-100 p-6 rounded-lg mb-10">
+                <h3 className="text-lg font-semibold text-gray-700 mb-2">Items Coming Soon</h3>
+                <p className="text-gray-600">
+                  We're working on adding specific items for this category. Please check back soon or contact us for custom requirements.
+                </p>
+              </div>
             )}
 
             <div className="mt-10">
@@ -168,21 +248,3 @@ const CategoryDetail = () => {
 };
 
 export default CategoryDetail;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
