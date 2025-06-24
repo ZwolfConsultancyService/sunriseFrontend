@@ -47,6 +47,14 @@ const CategoryDetail = () => {
   
   const itemCards = categoryFromGroup?.items || [];
 
+  // Image fallback logic - prioritize categoryData.image, then categoryFromGroup.image, then groupData.image
+  const getCategoryImage = () => {
+    return categoryData.image || 
+           categoryFromGroup?.image || 
+           groupData.image || 
+           "https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg";
+  };
+
   console.log('Debug Info:', {
     groupSlug,
     categorySlug,
@@ -57,7 +65,8 @@ const CategoryDetail = () => {
     categoryData: categoryData?.title,
     allCategories: groupData?.categories,
     categoryFromGroup,
-    itemCards
+    itemCards,
+    categoryImage: getCategoryImage()
   });
 
   return (
@@ -69,8 +78,9 @@ const CategoryDetail = () => {
         <div className="absolute inset-0 bg-black/50 z-10"></div>
         <img
           src={"https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg"}
-          alt={groupData.group}
+          alt={categoryData.title}
           className="w-full object-cover h-64 sm:h-72 md:h-80 lg:h-96"
+
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center z-20 px-4">
           <h1 className="text-white font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-4xl">
@@ -87,11 +97,24 @@ const CategoryDetail = () => {
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-20">
           {/* Left Content */}
           <div className="w-full max-w-4xl mx-auto lg:mx-0">
+          
             <Link to={`/label/${groupData.slug}`} className="text-blue-500 hover:underline mb-4 inline-block">
               ← Back to {groupData.group}
             </Link>
 
             <h2 className="text-2xl font-bold mb-6 text-orange-600">{categoryData.title}</h2>
+            
+            {/* Category Image */}
+            <img
+              src={getCategoryImage()}
+              alt={categoryData.title}
+              className="w-full h-64 object-cover rounded-lg mb-8"
+              onError={(e) => {
+                // Fallback if image fails to load
+                e.target.src = "https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg";
+              }}
+            />
+
             <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6">{categoryData.intro}</p>
 
             {/* Features */}
@@ -121,6 +144,14 @@ const CategoryDetail = () => {
                     const itemKey = item.toLowerCase().replace(/[^a-z0-9]+/g, '-');
                     const itemDetail = labelExtendedDetails[itemKey];
                     
+                    // Image fallback for item cards
+                    const getItemImage = () => {
+                      return itemDetail?.image || 
+                             categoryFromGroup?.image || 
+                             groupData.image || 
+                             "https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg";
+                    };
+                    
                     return (
                       <Link
                         key={i}
@@ -128,9 +159,12 @@ const CategoryDetail = () => {
                         className="block border border-gray-200 rounded-lg overflow-hidden shadow hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105"
                       >
                         <img
-                          src={itemDetail?.image || groupData.image || "https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg"}
+                          src={getItemImage()}
                           alt={item}
                           className="w-full h-48 object-cover"
+                          onError={(e) => {
+                            e.target.src = "https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg";
+                          }}
                         />
                         <div className="p-4">
                           <h4 className="text-lg font-semibold text-gray-800 mb-2">

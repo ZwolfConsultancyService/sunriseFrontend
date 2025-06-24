@@ -27,4 +27,4 @@ const LabelGroupPage = () => {
   )
 }
 
-export default LabelGroupPage
+export default LabelGroupPage;

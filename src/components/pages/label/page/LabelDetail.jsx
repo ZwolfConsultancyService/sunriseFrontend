@@ -90,7 +90,11 @@ const LabelDetail = () => {
             <li key={i}>{item}</li>
           ))}
         </ul>
+        <div className="mt-3 text-orange-500 text-sm font-medium">
+                            Learn More →
+                          </div>
       </div>
+      
       </Link>
     ))}
   </div>
