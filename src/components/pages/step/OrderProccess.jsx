@@ -25,10 +25,10 @@ const OrderProcess = () => {
 
   return (
     <section className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div className="max-w-6xl mx-auto flex flex-col-reverse lg:flex-row gap-12">
         
-        {/* Steps */}
-        <div className="flex flex-col gap-6">
+        {/* Steps - Left Side on Desktop */}
+        <div className="w-full lg:w-3/5 flex flex-col gap-6">
           {steps.map((step, index) => (
             <div
               key={index}
@@ -51,16 +51,16 @@ const OrderProcess = () => {
           ))}
         </div>
 
-        {/* Heading / Description */}
-        <div className="flex flex-col justify-center items-center text-center lg:items-start lg:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 leading-tight mt-0 md:mt-28">
-             Easy Order <br /> <span className="text-green-500">Process</span>
+        {/* Heading - Top on Mobile, Right on Desktop */}
+        <div className="w-full lg:w-2/5 flex flex-col justify-center items-center text-center lg:items-start lg:text-left">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 leading-tight mt-0">
+            Easy Order <br /> <span className="text-green-500">Process</span>
           </h2>
           <p className="mt-4 text-gray-600 text-sm md:text-base max-w-md">
             Follow these steps to ensure a smooth order experience from start to finish.
           </p>
         </div>
-        
+
       </div>
     </section>
   );
