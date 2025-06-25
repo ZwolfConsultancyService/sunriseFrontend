@@ -1,5 +1,4 @@
-// FaqSection.jsx
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
@@ -49,6 +48,7 @@ const faqs = [
 
 const FaqSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const contentRefs = useRef([]);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -57,9 +57,8 @@ const FaqSection = () => {
   const toggle = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
-
-  return (
-    <section className="bg-gray-50 py-16 px-6 md:px-20">
+   return (
+    <section className="bg-gray-50 py-16 px-6 md:px-20 mt-32 sm:mt-4 md:mt-10">
       <div className="max-w-5xl mx-auto" data-aos="fade-up">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-6">
           Frequently Asked Questions
@@ -87,11 +86,19 @@ const FaqSection = () => {
                   <FaChevronDown className="text-gray-400" />
                 )}
               </button>
-              {activeIndex === index && (
-                <div className="px-6 pb-4 text-gray-600">
-                  {faq.answer}
-                </div>
-              )}
+
+              <div
+                ref={(el) => (contentRefs.current[index] = el)}
+                style={{
+                  maxHeight:
+                    activeIndex === index
+                      ? `${contentRefs.current[index]?.scrollHeight}px`
+                      : '0px',
+                }}
+                className="px-6 overflow-hidden transition-all duration-500 ease-in-out text-gray-600"
+              >
+                <div className="py-4">{faq.answer}</div>
+              </div>
             </div>
           ))}
         </div>

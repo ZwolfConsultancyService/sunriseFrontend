@@ -14,7 +14,7 @@ const Navbar = () => {
   const [showAccessoriesMobile, setShowAccessoriesMobile] = useState(false);
   const location = useLocation();
 
-  const navLinks = ["Home", "Blog", "About", "Trims"];
+  const navLinks = ["Home", "Blog", "About", "Trims" ,"Gallery", "Order Process"];
   const accessoriesSubLinks = [
     "Hang Tang String",
     "Custom Sticker",
@@ -37,51 +37,59 @@ const Navbar = () => {
     <nav className="w-full bg-white shadow px-6 py-4 fixed top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
+        <Link to={"/"}>
         <div className="flex items-center space-x-2 font-extrabold text-2xl">
           <span className="text-green-500 text-3xl">⌞</span>
           <span>sun</span>
           <span className="text-green-500">r</span>
           <span>ise</span>
         </div>
+        </Link>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex space-x-8 text-base font-medium">
+        <ul className="hidden md:flex space-x-8 text-base font-medium mr-12">
           {navLinks.map((link) => (
             <li key={link} className="relative group">
-              {link === "Accessories" || link === "Trims" ? (
-                <>
-                  <div
-                    className={`pb-1 cursor-pointer flex items-center hover:text-gray-700 ${
-                      isActive(link)
-                        ? "text-green-600 border-b-2 border-green-600"
-                        : "text-gray-900"
-                    }`}
-                  >
-                    {link}
-                    <HiOutlineChevronDown className="ml-1 text-sm transition-transform duration-200 group-hover:rotate-180" />
-                  </div>
+             {link === "Accessories" || link === "Trims" ? (
+  <>
+    <div
+      className={`pb-1 cursor-pointer flex items-center hover:text-gray-700 ${
+        isActive(link)
+          ? "text-green-600 border-b-2 border-green-600"
+          : "text-gray-900"
+      }`}
+    >
+      <Link
+        to={link === "Accessories" ? "/accessories" : "/label"}
+        className="flex items-center"
+      >
+        {link}
+        <HiOutlineChevronDown className="ml-1 text-sm transition-transform duration-200 group-hover:rotate-180" />
+      </Link>
+    </div>
 
-                  <ul className="absolute top-full left-0 bg-white shadow-lg rounded w-56 py-2 hidden group-hover:block z-50 transition-all duration-300">
-                    {(link === "Accessories"
-                      ? accessoriesSubLinks
-                      : labelHierarchy.map((g) => g.group)
-                    ).map((sub) => (
-                      <li key={sub}>
-                        <Link
-                          to={
-                            link === "Accessories"
-                              ? `/accessories/${sub.toLowerCase().replace(/\s+/g, "-")}`
-                              : getSubLinkPath(sub)
-                          }
-                          className="block px-4 py-2 text-sm text-gray-700 font-medium hover:bg-gray-100"
-                        >
-                          {sub}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              ) : (
+    <ul className="absolute top-full left-0 bg-white shadow-lg rounded w-56 py-2 hidden group-hover:block z-50 transition-all duration-300">
+      {(link === "Accessories"
+        ? accessoriesSubLinks
+        : labelHierarchy.map((g) => g.group)
+      ).map((sub) => (
+        <li key={sub}>
+          <Link
+            to={
+              link === "Accessories"
+                ? `/accessories/${sub.toLowerCase().replace(/\s+/g, "-")}`
+                : getSubLinkPath(sub)
+            }
+            className="block px-4 py-2 text-sm text-gray-700 font-medium hover:bg-gray-100"
+          >
+            {sub}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </>
+) : (
+
                 <Link
                   to={getLinkPath(link)}
                   className={`pb-1 hover:text-gray-700 ${
@@ -97,12 +105,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Desktop Icons */}
-        <div className="hidden md:flex items-center space-x-6 text-xl text-gray-900">
-          <button aria-label="Search">
-            <FaSearch />
-          </button>
-        </div>
+
 
         {/* Mobile Menu Button */}
         <button
@@ -178,12 +181,6 @@ const Navbar = () => {
               )}
             </div>
           ))}
-
-          <div className="flex space-x-6 pt-4 text-xl">
-            <button aria-label="Search">
-              <FaSearch />
-            </button>
-          </div>
         </div>
       )}
     </nav>

@@ -200,7 +200,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="bg-white  px-4 md:px-10 lg:px-20">
+    <section className="bg-white  px-4 md:px-10 lg:px-20 h-[400px] py-4">
       <div className="max-w-7xl mx-auto relative">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-10">
           Hear From Our Clients
@@ -208,7 +208,7 @@ const Testimonials = () => {
         <Slider {...settings}>
           {testimonials.map((t, index) => (
             <div key={index} className="px-4">
-              <div className="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 h-full flex flex-col justify-between">
+              <div className="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 h-[300px] lg:h-[270px] flex flex-col justify-between">
                 <div>
                   <FaQuoteLeft className="text-green-500 text-xl mb-4" />
                   <p className="text-gray-700 text-base leading-relaxed mb-6">“{t.feedback}”</p>

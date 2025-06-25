@@ -162,7 +162,7 @@ const Gallery = () => {
       <div className="relative">
         <div
           ref={scrollRef}
-          className="flex overflow-x-auto scroll-smooth no-scrollbar space-x-4 px-2 sm:px-4 md:px-6 lg:px-10 snap-x"
+          className="flex overflow-x-auto scroll-smooth no-scrollbar space-x-4 px-2 sm:px-4 md:px-6 lg:px-10 snap-x py-4"
         >
           {images.map((img, index) => (
             <div
@@ -172,6 +172,7 @@ const Gallery = () => {
                    sm:w-[85%] 
                  md:w-[48%] 
                  lg:w-[28%] 
+                 h-[400px]
                  flex-shrink-0 
                  bg-white 
                   rounded-xl 
@@ -179,7 +180,9 @@ const Gallery = () => {
                 hover:shadow-2xl 
                  transition-shadow 
                 duration-300 
-                   snap-start"
+                   snap-start
+                   space-y-4
+                   "
             >
               <img
                 src={img.src}

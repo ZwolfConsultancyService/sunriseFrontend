@@ -23,6 +23,7 @@ import Order from './components/pages/step/Order';
 // import LabelCategoryPage from './components/pages/label/page/LabelCategoryPage';
 import CategoryDetail from './components/pages/label/page/CategoryDetail';
 import LabelItemDetail from './components/pages/label/page/LabelItemDetail';
+import Gallerystep from './components/pages/gallery/Gallerystep';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -49,7 +50,7 @@ function App() {
           <Route path="/label/:groupSlug/:categorySlug/:itemSlug" element={<LabelItemDetail />} />
           <Route path="/label/:groupSlug/:categorySlug" element={<CategoryDetail />} />
           <Route path="/label/:slug" element={<LabelDetail />} />
-          
+          <Route path='/gallery' element={<Gallerystep />} />
           <Route path="/accessories/:slug" element={<Accessories />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-&-Conditions" element={<TermsAndConditions />} />
