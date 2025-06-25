@@ -18,6 +18,7 @@ const Homepage = () => {
   return (
     <div
       className="font-sans bg-cover bg-center bg-no-repeat "
+      // style={{ backgroundImage: `url(${HomeImg})` }}
       style={{ backgroundImage: `url(${HomeImg})` }}
     >
       <div className="min-h-screen bg-black/70 flex items-center justify-center px-6 sm:px-10 md:px-20 py-20">

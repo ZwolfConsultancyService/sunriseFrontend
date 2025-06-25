@@ -10,11 +10,11 @@ import labelHierarchy from "../label/data/labelHierarchy";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showLabelMobile, setShowLabelMobile] = useState(false);
+  const [showTrimsMobile, setShowTrimsMobile] = useState(false);
   const [showAccessoriesMobile, setShowAccessoriesMobile] = useState(false);
   const location = useLocation();
 
-  const navLinks = ["Home", "Blog", "About", "Label"];
+  const navLinks = ["Home", "Blog", "About", "Trims"];
   const accessoriesSubLinks = [
     "Hang Tang String",
     "Custom Sticker",
@@ -48,7 +48,7 @@ const Navbar = () => {
         <ul className="hidden md:flex space-x-8 text-base font-medium">
           {navLinks.map((link) => (
             <li key={link} className="relative group">
-              {link === "Accessories" || link === "Label" ? (
+              {link === "Accessories" || link === "Trims" ? (
                 <>
                   <div
                     className={`pb-1 cursor-pointer flex items-center hover:text-gray-700 ${
@@ -119,13 +119,13 @@ const Navbar = () => {
         <div className="md:hidden absolute top-16 left-0 w-full bg-white shadow-md px-6 py-4 z-40">
           {navLinks.map((link) => (
             <div key={link} className="py-2 border-b border-gray-200">
-              {link === "Accessories" || link === "Label" ? (
+              {link === "Accessories" || link === "Trims" ? (
                 <>
                   <button
                     onClick={() =>
                       link === "Accessories"
                         ? setShowAccessoriesMobile(!showAccessoriesMobile)
-                        : setShowLabelMobile(!showLabelMobile)
+                        : setShowTrimsMobile(!showTrimsMobile)
                     }
                     className="w-full flex justify-between items-center font-medium text-gray-900"
                   >
@@ -134,7 +134,7 @@ const Navbar = () => {
                       className={`transform transition-transform duration-200 ${
                         (link === "Accessories"
                           ? showAccessoriesMobile
-                          : showLabelMobile)
+                          : showTrimsMobile)
                           ? "rotate-180"
                           : "rotate-0"
                       }`}
@@ -142,7 +142,7 @@ const Navbar = () => {
                   </button>
                   {(link === "Accessories"
                     ? showAccessoriesMobile
-                    : showLabelMobile) && (
+                    : showTrimsMobile) && (
                     <ul className="ml-4 mt-2 space-y-1">
                       {(link === "Accessories"
                         ? accessoriesSubLinks
