@@ -1,9 +1,11 @@
 import React from 'react'
 import { FiSearch } from "react-icons/fi";
+import labelHierarchy from '../data/labelHierarchy';
 
 const Asidepage = () => {
   return (
     <div>
+	{/* right side bar content */}
 	<form className="mb-6">
 			<div className="relative text-gray-400 focus-within:text-gray-600">
 			  <input
@@ -19,24 +21,32 @@ const Asidepage = () => {
 		     </form>
 	
 		     {/* Hot Products */}
-		     <div className="mb-8">
-			<h2 className="text-lg font-semibold mb-3">Hot Products</h2>
-			<ul className="text-[#f79433] text-base space-y-2">
-			  {[
-			    'Leather tags', 'Metal tags', 'Hem tags', 'Damask woven labels',
-			    'Silicone heat transfer labels', 'PVC labels', 'Iron on patches',
-			    'Woven patches', 'Elastic band', 'Aglets for shoelaces and hoodies',
-			    'Faux leather labels', 'Luxury hang tags', 'Custom price tags',
-			    'Epoxy dome stickers', 'Wrapping paper', 'Velvet pouches',
-			    'Ziplock bags', 'Metal eyelets', 'Rubber buttons', 'Brand labels',
-			  ].map((item, index) => (
-			    <li key={index}><a href="#" className="hover:underline">{item}</a></li>
-			  ))}
-			</ul>
-		     </div>
-	
+		  {/* Explore Labels */}
+<div className="mb-8">
+  <h2 className="text-lg font-semibold mb-4">Explore Labels</h2>
+  <div className="space-y-4">
+    {labelHierarchy.map((group, index) => (
+      <div key={index}>
+        <h3 className="text-base font-bold text-orange-500 mb-1">{group.group}</h3>
+        <ul className="ml-3 list-disc space-y-1 text-sm text-gray-700">
+          {group.categories.map((category, i) => (
+            <li key={i}>
+              <a
+                href={`/label/${group.slug}/${category.category.toLowerCase().replace(/\s+/g, "-")}`}
+                className="hover:underline hover:text-orange-600"
+              >
+                {category.category}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</div>
+
 		     {/* Recent Posts */}
-		     <div className="mb-8">
+		     {/* <div className="mb-8">
 			<h2 className="text-base font-bold mb-2">Recent Posts</h2>
 			<ul className="text-base text-gray-700 space-y-3">
 			  {[
@@ -54,10 +64,10 @@ const Asidepage = () => {
 			    <li key={index} className="hover:text-orange-600 cursor-pointer">{post}</li>
 			  ))}
 			</ul>
-		     </div>
+		     </div> */}
 	
 		     {/* Tags */}
-		     <div className="space-y-2 text-base font-medium text-gray-700 mb-10">
+		     {/* <div className="space-y-2 text-base font-medium text-gray-700 mb-10">
 			{[
 			  'bags', 'buttons', 'company news', 'fasteners', 'garment accessories',
 			  'garment trims', 'hang tag string', 'hang tags', 'hangers',
@@ -71,7 +81,7 @@ const Asidepage = () => {
 			    {tag}
 			  </a>
 			))}
-		     </div>
+		     </div> */}
 	
     </div>
   )
