@@ -3,9 +3,10 @@ import { useParams, Link } from 'react-router-dom';
 
 import Navbar from '../../navbar/Navbar';
 import Footer from '../../footer/Footer';
-import { FiSearch } from "react-icons/fi";
+
 import Form from './Form';
 import labelHierarchy from '../data/labelHierarchy';
+import Asidepage from './Asidepage';
 
 const LabelDetail = () => {
   const { slug } = useParams();
@@ -14,6 +15,7 @@ const LabelDetail = () => {
   const label = labelHierarchy.find(
     (item) => item.slug.trim().toLowerCase() === decodedSlug.trim()
   );
+
 
   if (!label) {
     return (
@@ -67,7 +69,7 @@ const LabelDetail = () => {
             <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-10">
               {label.description}
             </p>
-\
+
 {/* Category Cards for this Group */}
 <div className="mb-12">
   <h2 className="text-xl font-bold mb-4 text-orange-600">Explore Categories in {label.group}</h2>
@@ -86,6 +88,7 @@ const LabelDetail = () => {
             className="w-full h-40 object-cover rounded mb-4"
           />
           <h3 className="font-semibold text-lg mb-2 text-gray-800">{cat.category}</h3>
+   
          <ul className="text-sm text-gray-600 list-disc ml-4 space-y-1">
   {cat.items.slice(0, 3).map((item, i) => (
     <li key={i}>{item}</li>
@@ -126,77 +129,7 @@ const LabelDetail = () => {
           {/* Right Sidebar */}
           <aside className="w-full lg:max-w-sm mt-10 lg:mt-0">
             {/* Search */}
-            <form className="mb-6">
-              <div className="relative text-gray-400 focus-within:text-gray-600">
-                <input
-                  type="search"
-                  name="search"
-                  placeholder="Search for..."
-                  className="w-full rounded border border-gray-300 py-2 pl-3 pr-10 text-sm placeholder-gray-400 focus:ring focus:ring-gray-400"
-                />
-                <span className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                  <FiSearch />
-                </span>
-              </div>
-            </form>
-
-            {/* Hot Products */}
-            <div className="mb-8">
-              <h2 className="text-lg font-semibold mb-3">Hot Products</h2>
-              <ul className="text-[#f79433] text-base space-y-2">
-                {[
-                  'Leather tags', 'Metal tags', 'Hem tags', 'Damask woven labels',
-                  'Silicone heat transfer labels', 'PVC labels', 'Iron on patches',
-                  'Woven patches', 'Elastic band', 'Aglets for shoelaces and hoodies',
-                  'Faux leather labels', 'Luxury hang tags', 'Custom price tags',
-                  'Epoxy dome stickers', 'Wrapping paper', 'Velvet pouches',
-                  'Ziplock bags', 'Metal eyelets', 'Rubber buttons', 'Brand labels',
-                ].map((item, index) => (
-                  <li key={index}><a href="#" className="hover:underline">{item}</a></li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Recent Posts */}
-            <div className="mb-8">
-              <h2 className="text-base font-bold mb-2">Recent Posts</h2>
-              <ul className="text-base text-gray-700 space-y-3">
-                {[
-                  'Clothing name labels for business branding',
-                  'White paper bags for brand business',
-                  'Stock size: plastic PE packaging bags',
-                  'Custom packaging boxes for business',
-                  'Branded Custom Poly Mailers Make a Lasting Impression',
-                  'In-stock size courier bags',
-                  'Wholesale cotton drawstring bags for brands',
-                  'Custom Logo Stickers to Elevate Your Brand Identity',
-                  'Wholesale transparent plastic bags with personalized logos',
-                  'Supply custom rigid boxes for brands'
-                ].map((post, index) => (
-                  <li key={index} className="hover:text-orange-600 cursor-pointer">{post}</li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Tags */}
-            <div className="space-y-2 text-base font-medium text-gray-700 mb-10">
-              {[
-                'bags', 'buttons', 'company news', 'fasteners', 'garment accessories',
-                'garment trims', 'hang tag string', 'hang tags', 'hangers',
-                'ideas and inspirations', 'labels and tags', 'leather',
-                'metal accessories', 'packaging solutions', 'paper bags',
-                'patches', 'plastic bags', 'project samples',
-                'ribbon & tape & bands', 'stickers', 'textiles and fabrics',
-                'tissue paper', 'woven labels', 'zipper pulls'
-              ].map((tag, index) => (
-                <a key={index} href="#" className="block text-orange-400 hover:underline">
-                  {tag}
-                </a>
-              ))}
-            </div>
-
-            {/* Contact Form (Optional - already have Form component below images) */}
-            {/* You can remove if duplicate */}
+           <Asidepage />
           </aside>
         </div>
       </div>
