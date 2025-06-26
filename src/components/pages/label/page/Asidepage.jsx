@@ -1,6 +1,7 @@
 import React from 'react'
 import { FiSearch } from "react-icons/fi";
 import labelHierarchy from '../data/labelHierarchy';
+import { Link } from 'react-router-dom';
 
 const Asidepage = () => {
   return (
@@ -31,12 +32,12 @@ const Asidepage = () => {
         <ul className="ml-3 list-disc space-y-1 text-sm text-gray-700">
           {group.categories.map((category, i) => (
             <li key={i}>
-              <a
-                href={`/label/${group.slug}/${category.category.toLowerCase().replace(/\s+/g, "-")}`}
+              <Link
+                to={`/label/${group.slug}/${category.category.toLowerCase().replace(/\s+/g, "-")}`}
                 className="hover:underline hover:text-orange-600"
               >
                 {category.category}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
