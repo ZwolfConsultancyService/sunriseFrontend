@@ -96,41 +96,12 @@ const Form = () => {
           </div>
         </div>
 
-        <div className="mb-6">
-          <label htmlFor="comment" className="block text-gray-900 text-sm mb-1">
-            Comment *
-          </label>
-          <textarea
-            id="comment"
-            rows={8}
-            className="w-full border border-gray-200 p-2 resize-y"
-            value={formData.comment}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        <div className="mb-6 text-gray-900 text-sm">
-          <label className="inline-flex items-center">
-            <input
-              type="checkbox"
-              id="saveInfo"
-              className="form-checkbox border-gray-300"
-              checked={formData.saveInfo}
-              onChange={handleChange}
-            />
-            <span className="ml-2">
-              Save my name, email, and website in this browser for the next time I
-              comment.
-            </span>
-          </label>
-        </div>
-
+  
         <button
           type="submit"
           className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-6"
         >
-          Post Comment
+          Sumbit
         </button>
       </form>
     </div>

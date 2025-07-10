@@ -8,6 +8,7 @@ import Footer from '../footer/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import blogImg from "../../../assets/homew.jpg"
 
 
 const BlogDetail = () => {
@@ -34,10 +35,10 @@ const BlogDetail = () => {
       <Navbar />
    <section
   className="w-full h-64 md:h-96 bg-cover bg-center"
-  style={{ backgroundImage: 'url(...)' }}
+  style={{ backgroundImage: `url(${blogImg})` }}
   data-aos="fade-down"
 >
-  <div className="bg-black bg-opacity-50 flex items-center justify-center h-full">
+  <div className="bg-black/50 bg-opacity-50 flex items-center justify-center h-full">
     <h1 className="text-white text-4xl font-bold">{blog.title}</h1>
   </div>
 </section>

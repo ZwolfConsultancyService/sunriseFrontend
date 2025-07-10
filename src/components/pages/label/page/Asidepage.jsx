@@ -6,21 +6,6 @@ import { Link } from 'react-router-dom';
 const Asidepage = () => {
   return (
     <div>
-	{/* right side bar content */}
-	<form className="mb-6">
-			<div className="relative text-gray-400 focus-within:text-gray-600">
-			  <input
-			    type="search"
-			    name="search"
-			    placeholder="Search for..."
-			    className="w-full rounded border border-gray-300 py-2 pl-3 pr-10 text-sm placeholder-gray-400 focus:ring focus:ring-gray-400"
-			  />
-			  <span className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-			    <FiSearch />
-			  </span>
-			</div>
-		     </form>
-	
 		     {/* Hot Products */}
 		  {/* Explore Labels */}
 <div className="mb-8">
