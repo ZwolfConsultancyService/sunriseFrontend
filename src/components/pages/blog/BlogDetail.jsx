@@ -100,7 +100,7 @@ const BlogDetail = () => {
     return (
       <div className="min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-grow flex items-center justify-center">
+        <main className="flex-grow flex items-center justify-center mt-16">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto mb-4"></div>
             <p className="text-gray-600">Loading blog...</p>
@@ -115,7 +115,7 @@ const BlogDetail = () => {
     return (
       <div className="min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-grow flex items-center justify-center">
+        <main className="flex-grow flex items-center justify-center mt-16">
           <div className="text-center">
             <p className="text-red-600 mb-4">Error: {error}</p>
             <div className="space-x-4">
@@ -143,7 +143,7 @@ const BlogDetail = () => {
     return (
       <div className="min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-grow flex items-center justify-center">
+        <main className="flex-grow flex items-center justify-center mt-16">
           <div className="text-center">
             <p className="text-gray-600 mb-4">Blog not found</p>
             <button 
@@ -165,7 +165,7 @@ const BlogDetail = () => {
       
       {/* Hero Section */}
       <section
-        className="w-full h-64 md:h-96 bg-cover bg-center"
+        className="w-full h-64 md:h-96 bg-cover bg-center mt-16"
         style={{ backgroundImage: `url(${blogImg})` }}
         data-aos="fade-down"
       >

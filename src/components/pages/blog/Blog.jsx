@@ -63,7 +63,7 @@ const Blog = () => {
     return (
       <div className="min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-grow flex items-center justify-center">
+        <main className="flex-grow flex items-center justify-center mt-16">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto mb-4"></div>
             <p className="text-gray-600">Loading blogs...</p>
@@ -78,7 +78,7 @@ const Blog = () => {
     return (
       <div className="min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-grow flex items-center justify-center">
+        <main className="flex-grow flex items-center justify-center mt-16">
           <div className="text-center">
             <p className="text-red-600 mb-4">Error: {error}</p>
             <button 
@@ -98,7 +98,7 @@ const Blog = () => {
     return (
       <div className="min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-grow flex items-center justify-center">
+        <main className="flex-grow flex items-center justify-center mt-16">
           <div className="text-center">
             <p className="text-gray-600 mb-4">No blogs found</p>
             <button 
@@ -118,7 +118,7 @@ const Blog = () => {
     <>
       <div className="hidden md:block min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-grow container mx-auto px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-48 py-16 space-y-32">
+        <main className="flex-grow container mx-auto px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-48 py-16 space-y-32 mt-16">
           {blogProducts.slice(0, 5).map((product, index) => (
             <section
               key={product._id}
