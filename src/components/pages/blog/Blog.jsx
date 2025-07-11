@@ -19,7 +19,7 @@ const Blog = () => {
     // Fetch blog data from API
     const fetchBlogs = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/blogs/fetch');
+        const response = await fetch('https://zwolfconsultancyservice-newsunrisebackend.onrender.com/api/blogs/fetch');
         if (!response.ok) {
           throw new Error('Failed to fetch blogs');
         }

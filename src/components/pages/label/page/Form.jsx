@@ -21,7 +21,7 @@ const Form = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch('http://localhost:5000/api/form', {
+      const res = await fetch('https://zwolfconsultancyservice-newsunrisebackend.onrender.com/api/form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
