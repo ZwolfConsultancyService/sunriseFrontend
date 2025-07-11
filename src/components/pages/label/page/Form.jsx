@@ -21,7 +21,7 @@ const Form = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch('http://localhost:5000/api/comments', {
+      const res = await fetch('http://localhost:5000/api/form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
