@@ -7,6 +7,7 @@ import {
   FaInstagram,
   FaTwitter,
   FaLinkedinIn,
+  FaWhatsapp, // ✅ New Import
 } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -30,12 +31,11 @@ const Footer = () => {
   const footerLinks = [
     { name: "Gallery", path: "/gallery" },
     { name: "Blog", path: "/blog" },
-    {name : "Order Proccess", path: "/order-process"},
-        { name: "Return Policy", path: "/return-policy" },
+    { name: "Order Proccess", path: "/order-process" },
+    { name: "Return Policy", path: "/return-policy" },
   ];
 
   const legalLinks = [
-
     { name: "Privacy Policy", path: "/privacy-policy" },
     { name: "Terms & Conditions", path: "/terms-&-Conditions" },
     { name: "Refund Policy", path: "/refund-policy" },
@@ -55,14 +55,13 @@ const Footer = () => {
                 </Link>
               ))}
             </div>
-          <div className="flex flex-col space-y-6 text-gray-800 text-base sm:text-lg font-semibold">
-  {legalLinks.map((item) => (
-    <Link key={item.name} to={item.path} className="hover:underline">
-      {item.name}
-    </Link>
-  ))}
-</div>
-
+            <div className="flex flex-col space-y-6 text-gray-800 text-base sm:text-lg font-semibold">
+              {legalLinks.map((item) => (
+                <Link key={item.name} to={item.path} className="hover:underline">
+                  {item.name}
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Newsletter */}
@@ -146,6 +145,17 @@ const Footer = () => {
           </button>
         )}
       </footer>
+
+      {/* ✅ Floating WhatsApp Icon */}
+      <a
+        href="https://wa.me/919876543210" // Replace with your WhatsApp number
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        className="fixed bottom-8 left-8 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg shadow-gray-400 text-2xl z-50 transition-all duration-300"
+      >
+        <FaWhatsapp />
+      </a>
     </div>
   );
 };
