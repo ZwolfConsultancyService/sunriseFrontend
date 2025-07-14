@@ -4,8 +4,7 @@ const Form = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    website: '',
-    comment: '',
+    phone: '',
     saveInfo: false,
   });
 
@@ -35,8 +34,7 @@ const Form = () => {
         setFormData({
           name: '',
           email: '',
-          website: '',
-          comment: '',
+          phone: '',
           saveInfo: false,
         });
       } else {
@@ -82,26 +80,27 @@ const Form = () => {
               required
             />
           </div>
-          <div className="flex-1">
-            <label htmlFor="website" className="block text-gray-900 text-sm mb-1">
-              Website
-            </label>
-            <input
-              id="website"
-              type="url"
-              className="w-full border border-gray-200 p-2"
-              value={formData.website}
-              onChange={handleChange}
-            />
-          </div>
         </div>
 
-  
+        <div className="mb-6">
+          <label htmlFor="phone" className="block text-gray-900 text-sm mb-1">
+            Phone *
+          </label>
+          <input
+            id="phone"
+            type="tel"
+            className="w-56 border border-gray-200 p-2"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
         <button
           type="submit"
           className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-3 px-6"
         >
-          Sumbit
+          Submit
         </button>
       </form>
     </div>
