@@ -31,7 +31,7 @@ const About = () => {
           <img
             src={Aboutimg}
             alt="About Sunrise Label"
-            className="w-full h-96 rounded-lg shadow-lg md:h-[660px] object-cover"
+            className="w-full h-full rounded-lg shadow-lg md:h-[660px] object-contain"
           />
         </div>
 
