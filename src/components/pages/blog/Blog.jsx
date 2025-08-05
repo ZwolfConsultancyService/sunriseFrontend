@@ -1,6 +1,6 @@
 import Navbar from '../navbar/Navbar';
 import Footer from '../footer/Footer';
-import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -11,41 +11,60 @@ const Blog = () => {
   const [blogProducts, setBlogProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [pagination, setPagination] = useState({
+    currentPage: 1,
+    totalPages: 1,
+    totalBlogs: 0,
+    hasNext: false,
+    hasPrev: false
+  });
+  
+  const blogsPerPage = 5; // You can adjust this value
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    
-    // Fetch blog data from API
-    const fetchBlogs = async () => {
-      try {
-        const response = await fetch('https://zwolfconsultancyservice-newsunrisebackend.onrender.com/api/blogs/fetch');
-        if (!response.ok) {
-          throw new Error('Failed to fetch blogs');
-        }
-        const data = await response.json();
-        
-        // Check if data is an array, if not, check if it has a data property
-        if (Array.isArray(data)) {
-          setBlogProducts(data);
-        } else if (data.data && Array.isArray(data.data)) {
-          setBlogProducts(data.data);
-        } else if (data.blogs && Array.isArray(data.blogs)) {
-          setBlogProducts(data.blogs);
-        } else {
-          console.log('API Response:', data); // Debug log
-          setBlogProducts([]); // Set empty array as fallback
-        }
-      } catch (err) {
-        setError(err.message);
-        setBlogProducts([]); // Set empty array on error
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchBlogs();
   }, []);
+
+  useEffect(() => {
+    fetchBlogs(pagination.currentPage);
+  }, [pagination.currentPage]);
+
+  // Fetch blog data from API with pagination
+  const fetchBlogs = async (page = 1) => {
+    try {
+      setLoading(true);
+      const response = await fetch(
+        `https://zwolfconsultancyservice-newsunrisebackend.onrender.com/api/blogs/fetch?page=${page}&limit=${blogsPerPage}`
+      );
+      
+      if (!response.ok) {
+        throw new Error('Failed to fetch blogs');
+      }
+      
+      const data = await response.json();
+      
+      if (data.success && data.data) {
+        setBlogProducts(data.data);
+        setPagination(data.pagination);
+      } else {
+        console.log('API Response:', data);
+        setBlogProducts([]);
+      }
+    } catch (err) {
+      setError(err.message);
+      setBlogProducts([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handlePageChange = (newPage) => {
+    if (newPage >= 1 && newPage <= pagination.totalPages) {
+      setPagination(prev => ({ ...prev, currentPage: newPage }));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   const handleReadMore = (slug) => {
     navigate(`/blog/${slug}`);
@@ -58,6 +77,120 @@ const Blog = () => {
     tempDiv.innerHTML = html;
     return tempDiv.textContent || tempDiv.innerText || '';
   };
+
+  // Generate page numbers for pagination
+  const getPageNumbers = () => {
+    const { currentPage, totalPages } = pagination;
+    const pageNumbers = [];
+    const maxVisiblePages = 5;
+    
+    if (totalPages <= maxVisiblePages) {
+      for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(i);
+      }
+    } else {
+      let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+      let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+      
+      if (endPage - startPage + 1 < maxVisiblePages) {
+        startPage = Math.max(1, endPage - maxVisiblePages + 1);
+      }
+      
+      for (let i = startPage; i <= endPage; i++) {
+        pageNumbers.push(i);
+      }
+    }
+    
+    return pageNumbers;
+  };
+
+  // Pagination Component
+  const PaginationControls = () => (
+    <div className="flex flex-col items-center space-y-4 mt-16">
+      {/* Page Info */}
+      <div className="text-sm text-gray-600">
+        Showing {((pagination.currentPage - 1) * blogsPerPage) + 1} to{' '}
+        {Math.min(pagination.currentPage * blogsPerPage, pagination.totalBlogs)} of{' '}
+        {pagination.totalBlogs} blogs
+      </div>
+      
+      {/* Pagination Controls */}
+      <div className="flex items-center space-x-2">
+        {/* Previous Button */}
+        <button
+          onClick={() => handlePageChange(pagination.currentPage - 1)}
+          disabled={!pagination.hasPrev}
+          className={`flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+            pagination.hasPrev
+              ? 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+              : 'bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed'
+          }`}
+        >
+          <FaChevronLeft className="w-3 h-3 mr-1" />
+          Previous
+        </button>
+
+        {/* Page Numbers */}
+        <div className="flex space-x-1">
+          {pagination.currentPage > 3 && pagination.totalPages > 5 && (
+            <>
+              <button
+                onClick={() => handlePageChange(1)}
+                className="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+              >
+                1
+              </button>
+              {pagination.currentPage > 4 && (
+                <span className="px-3 py-2 text-sm text-gray-500">...</span>
+              )}
+            </>
+          )}
+
+          {getPageNumbers().map((pageNum) => (
+            <button
+              key={pageNum}
+              onClick={() => handlePageChange(pageNum)}
+              className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                pageNum === pagination.currentPage
+                  ? 'bg-green-600 text-white border border-green-600'
+                  : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+              }`}
+            >
+              {pageNum}
+            </button>
+          ))}
+
+          {pagination.currentPage < pagination.totalPages - 2 && pagination.totalPages > 5 && (
+            <>
+              {pagination.currentPage < pagination.totalPages - 3 && (
+                <span className="px-3 py-2 text-sm text-gray-500">...</span>
+              )}
+              <button
+                onClick={() => handlePageChange(pagination.totalPages)}
+                className="px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+              >
+                {pagination.totalPages}
+              </button>
+            </>
+          )}
+        </div>
+
+        {/* Next Button */}
+        <button
+          onClick={() => handlePageChange(pagination.currentPage + 1)}
+          disabled={!pagination.hasNext}
+          className={`flex items-center px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+            pagination.hasNext
+              ? 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
+              : 'bg-gray-100 text-gray-400 border border-gray-200 cursor-not-allowed'
+          }`}
+        >
+          Next
+          <FaChevronRight className="w-3 h-3 ml-1" />
+        </button>
+      </div>
+    </div>
+  );
 
   if (loading) {
     return (
@@ -83,7 +216,7 @@ const Blog = () => {
             <p className="text-red-600 mb-4">Error: {error}</p>
             <button 
               className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition"
-              onClick={() => window.location.reload()}
+              onClick={() => fetchBlogs(pagination.currentPage)}
             >
               Try Again
             </button>
@@ -103,7 +236,7 @@ const Blog = () => {
             <p className="text-gray-600 mb-4">No blogs found</p>
             <button 
               className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition"
-              onClick={() => window.location.reload()}
+              onClick={() => fetchBlogs(1)}
             >
               Refresh
             </button>
@@ -119,7 +252,7 @@ const Blog = () => {
       <div className="hidden md:block min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-grow container mx-auto px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-48 py-16 space-y-32 mt-16">
-          {blogProducts.slice(0, 5).map((product, index) => (
+          {blogProducts.map((product, index) => (
             <section
               key={product._id}
               className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}
@@ -174,6 +307,9 @@ const Blog = () => {
               </article>
             </section>
           ))}
+          
+          {/* Pagination Controls */}
+          {pagination.totalPages > 1 && <PaginationControls />}
         </main>
         <Footer />
       </div>
@@ -181,7 +317,7 @@ const Blog = () => {
       <div className="block md:hidden min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-grow container mx-auto px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-48 py-16 space-y-32">
-          {blogProducts.slice(0, 5).map((product, index) => (
+          {blogProducts.map((product, index) => (
             <section
               key={product._id}
               className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'md:grid-flow-col-dense' : ''}`}
@@ -235,6 +371,9 @@ const Blog = () => {
               </article>
             </section>
           ))}
+          
+          {/* Pagination Controls for Mobile */}
+          {pagination.totalPages > 1 && <PaginationControls />}
         </main>
         <Footer />
       </div>
