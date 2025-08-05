@@ -74,7 +74,7 @@ const Product = () => {
     <div className="bg-gray-50 font-sans text-gray-900 mt-8 p-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         <h1 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-center leading-tight">
-          Your fit. Your style
+          Our Products
         </h1>
         <p className="mt-3 text-center text-gray-600 text-sm sm:text-base max-w-xl mx-auto">
           Sunrise – Shop smart and Live better..
