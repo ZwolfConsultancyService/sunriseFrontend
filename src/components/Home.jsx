@@ -7,7 +7,7 @@ import WhyChooseUs from './pages/whyChoose/WhyChooseUs';
 import FaqSection from './pages/faq/FaqSection';
 import Testimonials from './pages/Testimonial/Testimonials';
 import OrderProccess from './pages/step/OrderProccess';
-import Gallery from './pages/gallery/Gallery';
+import Product from './pages/product/Product';
 const Home = () => {
   return (
     <div>
@@ -17,8 +17,8 @@ const Home = () => {
   <About />
   <OrderProccess />
   <WhyChooseUs />
-  <Gallery />
-    {/* <Product /> */}
+  {/* <Gallery /> */}
+    <Product />
     <Testimonials />
     <FaqSection />
 	<Footer />
