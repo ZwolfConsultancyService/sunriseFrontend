@@ -31,7 +31,7 @@ const About = () => {
           <img
             src={Aboutimg}
             alt="About Sunrise Label"
-            className="w-full h-full rounded-lg shadow-lg md:h-[660px] object-contain"
+            className="w-full h-full rounded-lg   object-contain"
           />
         </div>
 
@@ -40,7 +40,7 @@ const About = () => {
             About Sunrise Label Co. Pvt. Ltd.
           </h2>
 
-          <div className={`text-gray-600 text-base md:text-lg leading-relaxed transition-all duration-500 ease-in-out ${isExpanded ? '' : 'line-clamp-6 lg:line-clamp-none'}`}>
+          <div className={`text-gray-600 text-base md:text-lg leading-relaxed transition-all duration-500 ease-in-out ${isExpanded ? '' : 'line-clamp-6 xl:line-clamp-none'}`}>
             <p>
               Sunrise Label Co. Pvt. Ltd. was started with a goal of designing and manufacturing tickets, packing materials, tags, as well as various other types of labels required by the retail and apparels industries.
             </p>
@@ -63,7 +63,7 @@ const About = () => {
 
           <button
             onClick={toggleReadMore}
-            className="text-blue-600 font-semibold hover:underline focus:outline-none block lg:hidden"
+            className="text-blue-600 font-semibold hover:underline focus:outline-none block xl:hidden"
           >
             {isExpanded ? "Read Less" : "Read More"}
           </button>
