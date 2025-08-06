@@ -8,17 +8,20 @@ import FaqSection from './pages/faq/FaqSection';
 import Testimonials from './pages/Testimonial/Testimonials';
 import OrderProccess from './pages/step/OrderProccess';
 import Product from './pages/product/Product';
+import BestSellerBanner from './pages/bestseller/BestSellerBanner';
 const Home = () => {
   return (
     <div>
 	<Navbar />
   <div className='mt-16'>
   <Homepage />
+      <Product />
   <About />
   <OrderProccess />
+  <BestSellerBanner />
   <WhyChooseUs />
   {/* <Gallery /> */}
-    <Product />
+
     <Testimonials />
     <FaqSection />
 	<Footer />
