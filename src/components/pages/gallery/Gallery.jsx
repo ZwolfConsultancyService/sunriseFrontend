@@ -44,9 +44,9 @@ const Gallery = () => {
     AOS.init({ duration: 1000 });
   }, []);
 
-  // Configuration arrays - yahan specify karo kon se indexes modify karne hain
-  const reduceWidthIndexes = [2, 3, 5, 7, 11, 13]; // Prime numbers - width kam
-  const reduceHeightIndexes = [1, 4, 8, 12]; // Custom indexes - height kam
+  
+  const reduceWidthIndexes = [2, 3, 5, 7, 11, 13]; 
+  const reduceHeightIndexes = [1, 4, 8, 12]; 
   
   // Helper functions
   const shouldReduceWidth = (index) => reduceWidthIndexes.includes(index);
@@ -62,12 +62,12 @@ const Gallery = () => {
             key={index}
             className={`relative group rounded-xl overflow-hidden shadow-lg cursor-pointer ${
               shouldReduceWidth(index) 
-                ? "md:col-span-1 lg:w-3/4 mx-auto" // Reduced width
-                : "md:col-span-1" // Normal width
+                ? "md:col-span-1 lg:w-3/4 mx-auto" 
+                : "md:col-span-1" 
             } ${
               shouldReduceHeight(index)
-                ? "h-[250px]" // Reduced height
-                : "h-[400px]" // Normal height
+                ? "h-[250px]" 
+                : "h-[400px]" 
             }`}
             onClick={() =>
               setVisibleTitleIndex(
