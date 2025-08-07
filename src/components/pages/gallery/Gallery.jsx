@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -39,116 +38,61 @@ const images = [
 ];
 
 const Gallery = () => {
-  const scrollRef = useRef(null);
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
-  const [visibleTitleIndex, setVisibleTitleIndex] = useState(null); // 🔑 for mobile tap
+  const [visibleTitleIndex, setVisibleTitleIndex] = useState(null);
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
-
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 1024);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    if (!isDesktop) return;
-
-    const interval = setInterval(() => {
-      const container = scrollRef.current;
-      const cardWidth = container.clientWidth / 3.5;
-
-      container.scrollBy({ left: cardWidth, behavior: "smooth" });
-
-      if (
-        container.scrollLeft + container.clientWidth >=
-        container.scrollWidth
-      ) {
-        container.scrollTo({ left: 0, behavior: "smooth" });
-      }
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, [isDesktop]);
-
-  const scroll = (dir) => {
-    const container = scrollRef.current;
-    const cardWidth = container.clientWidth / 3.5;
-    container.scrollBy({
-      left: dir === "left" ? -cardWidth : cardWidth,
-      behavior: "smooth",
-    });
-  };
+  // Configuration arrays - yahan specify karo kon se indexes modify karne hain
+  const reduceWidthIndexes = [2, 3, 5, 7, 11, 13]; // Prime numbers - width kam
+  const reduceHeightIndexes = [1, 4, 8, 12]; // Custom indexes - height kam
+  
+  // Helper functions
+  const shouldReduceWidth = (index) => reduceWidthIndexes.includes(index);
+  const shouldReduceHeight = (index) => reduceHeightIndexes.includes(index);
 
   return (
     <div className="w-full bg-gray-50 py-10" data-aos="fade-up">
       <h2 className="text-4xl font-bold text-center mb-8">Our Gallery</h2>
 
-      <div className="relative">
-        <div
-          ref={scrollRef}
-          className={`${
-            isDesktop
-              ? "flex overflow-x-auto scroll-smooth no-scrollbar space-x-4 px-10 snap-x py-4"
-              : "grid grid-cols-1 gap-6 px-6"
-          }`}
-        >
-          {images.map((img, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 max-w-7xl mx-auto">
+        {images.map((img, index) => (
+          <div
+            key={index}
+            className={`relative group rounded-xl overflow-hidden shadow-lg cursor-pointer ${
+              shouldReduceWidth(index) 
+                ? "md:col-span-1 lg:w-3/4 mx-auto" // Reduced width
+                : "md:col-span-1" // Normal width
+            } ${
+              shouldReduceHeight(index)
+                ? "h-[250px]" // Reduced height
+                : "h-[400px]" // Normal height
+            }`}
+            onClick={() =>
+              setVisibleTitleIndex(
+                visibleTitleIndex === index ? null : index
+              )
+            }
+          >
+            <img
+              src={img.src}
+              alt={img.title}
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
             <div
-              key={index}
-              className={`relative group rounded-xl overflow-hidden shadow-lg ${
-                isDesktop
-                  ? "w-[28%] h-[400px] flex-shrink-0 snap-start"
-                  : "w-full h-[400px]"
+              className={`absolute inset-0 bg-black/50 flex items-center justify-center transition-opacity duration-300 ${
+                visibleTitleIndex === index
+                  ? "opacity-100"
+                  : "opacity-0 group-hover:opacity-100"
               }`}
-              onClick={() =>
-                setVisibleTitleIndex(
-                  visibleTitleIndex === index ? null : index
-                )
-              }
             >
-              <img
-                src={img.src}
-                alt={img.title}
-                className="w-full h-full object-cover"
-              />
-              <div
-                className={`absolute inset-0 bg-black/50 flex items-center justify-center transition-opacity duration-300 ${
-                  isDesktop
-                    ? "opacity-0 group-hover:opacity-100"
-                    : visibleTitleIndex === index
-                    ? "opacity-100"
-                    : "opacity-0"
-                }`}
-              >
-                <h3 className="text-white text-xl font-semibold">
-                  {img.title}
-                </h3>
-              </div>
+              <h3 className="text-white text-xl font-semibold text-center px-4">
+                {img.title}
+              </h3>
             </div>
-          ))}
-        </div>
-
-        {/* Arrows only on Desktop */}
-        {isDesktop && (
-          <>
-            <button
-              className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-200 z-10"
-              onClick={() => scroll("left")}
-            >
-              <FaArrowLeft />
-            </button>
-            <button
-              className="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-200 z-10"
-              onClick={() => scroll("right")}
-            >
-              <FaArrowRight />
-            </button>
-          </>
-        )}
+          </div>
+        ))}
       </div>
     </div>
   );
