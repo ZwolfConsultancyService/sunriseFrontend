@@ -45,7 +45,6 @@ const BlogDetail = () => {
         }
         
         const data = await response.json();
-        console.log('API Response:', data); // Debug log
         
         // Handle different response structures
         let blogs = [];
@@ -72,7 +71,6 @@ const BlogDetail = () => {
         
         setBlog(foundBlog);
       } catch (err) {
-        console.error('Error fetching blog:', err);
         setError(err.message);
       } finally {
         setLoading(false);

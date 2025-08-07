@@ -48,7 +48,6 @@ const Blog = () => {
         setBlogProducts(data.data);
         setPagination(data.pagination);
       } else {
-        console.log('API Response:', data);
         setBlogProducts([]);
       }
     } catch (err) {

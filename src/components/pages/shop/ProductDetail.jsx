@@ -40,7 +40,6 @@ const ProductDetail = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Data:', form);
     alert('Thank you for your inquiry!');
     setForm({ name: '', email: '', phone: '' });
   };
