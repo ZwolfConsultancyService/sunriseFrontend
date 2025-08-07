@@ -9,6 +9,6 @@
   scrollbar-width: none;
 }
 
-html {
-  scroll-behavior: smooth;
+.no-scrollbar {
+  overflow: -moz-scrollbars-none;
 }
