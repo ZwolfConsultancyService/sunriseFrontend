@@ -29,12 +29,12 @@ const bestSellerItems = [
   },
   {
     title: "TAGS",
-    image: "https://images.pexels.com/photos/1111319/pexels-photo-1111319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    image: "https://paulgordonbrown.com/wp-content/uploads/2017/01/tags2.png?w=1400",
     link: "/label/tags", 
   },
   {
     title: "TAG SEAL",
-    image: "https://5.imimg.com/data5/KD/ZP/EC/SELLER-46123511/img-20200220-wa0020-500x500.jpg",
+    image: "https://s.alicdn.com/@sc04/kf/H5a25f17ef0504745be4824956d12a6edB/Custom-Gold-logo-Label-Design-Plastic-Seal-Tag-Garment-Plastic-hang-Tag-With-String.jpg",
     link: "/label/tag-seals", 
   },
   {

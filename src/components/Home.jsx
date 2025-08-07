@@ -17,7 +17,6 @@ const Home = () => {
   <Homepage />
       <Product />
   <About />
- 
   <BestSellerBanner />
   <WhyChooseUs />
   <Gallery />
