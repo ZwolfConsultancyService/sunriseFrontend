@@ -20,13 +20,11 @@ import ironOnImg from '../../../../assets/web-img/iron on heat label.jpg';
 import pvcPlastiolImg from '../../../../assets/web-img/pvc or plastiol heat transfer.jpg';
 import plastiolHeatImg from '../../../../assets/web-img/plastiol heat transfer.jpg';
 import siliconImg from '../../../../assets/web-img/silicon heat transfer.jpg';
-import waterbaseImg from '../../../../assets/web-img/waterbase heat transfer.jpg';
 import puffImg from '../../../../assets/web-img/puff heat transfer label.jpg';
 import rhinestoneImg from '../../../../assets/web-img/rhinestone heat transfer.jpg';
 import glitterImg from '../../../../assets/web-img/glitter transfer.jpg';
 import foilImg from '../../../../assets/web-img/foil heat transfer.jpg';
 import reflectiveImg from '../../../../assets/web-img/reflective heat transfer.jpg';
-import embossImg from '../../../../assets/web-img/emboss printing.jpg';
 import photoHeatTransferImg from '../../../../assets/web-img/plastiol photo heat tranfer label.jpg';
 import neonImg from '../../../../assets/web-img/neon transfer label.jpg';
 import flockImg from '../../../../assets/web-img/flock heat transfer.jpg';
@@ -151,13 +149,13 @@ const labelHierarchy = [
       },
       {
         category: "WATERBASE HEAT TRANSFER",
-        image: waterbaseImg,
+        image: "https://cdn.prod.website-files.com/670fe58f410a6c2d407036b1/671172f3ff11abf6fcb9856b_6553afb3c1ed762c23c5095d_5fd3a4a0aaebb0d5c536f357_printed-tee-heat-transfer-1024x512.jpeg",
          items: ["IRONON HEAT TRANSFER"]
         // items: ["FOIL HEAT TRANSFER", "REFLECTIVE HEAT TRANSFER"]
       },
       {
         category: "HIGH DENSITY HEAT TRANSFER",
-        image: heatTransferGeneric,
+        image: "https://5.imimg.com/data5/SELLER/Default/2024/4/409782195/QT/ZC/NK/11019494/heat-transfer-label.png",
         items: ["PVC / PLASTISOL HEAT TRANSFER", "SILICON HEAT TRANSFER", "3D HEAT TRANSFER"]
       },
       {
@@ -187,7 +185,7 @@ const labelHierarchy = [
       },
        {
         category: "EMBOSS PRINTING",
-        image: embossImg,
+        image: "https://superlabels.in/wp-content/uploads/2025/01/Blog4b-1024x683.jpg",
         items: []
       },
         {

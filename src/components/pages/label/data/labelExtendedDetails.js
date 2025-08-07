@@ -39,7 +39,7 @@ const labelExtendedDetails = {
 
   "high-density-woven-labels": {
     title: "High-Intensity Woven Label",
-    image: wovenEdgeWovenImg, // Using woven edge image as closest match
+    image: "https://globaltrim.com/wp-content/uploads/2018/06/DSC_2441.jpg", 
     description:
       "These are crafted using fine denier threads on advanced looms, allowing extremely sharp detailing in the logo and text. The weaving is dense and high-definition, offering a premium texture and an almost printed-like clarity. The labels are soft yet substantial, offering a luxurious tactile feel.",
     applications:
