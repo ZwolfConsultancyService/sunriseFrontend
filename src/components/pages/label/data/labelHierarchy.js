@@ -97,7 +97,7 @@ const labelHierarchy = [
     group: "WOVEN LABELS",
     slug: "woven-labels",
     description: "Woven labels are garment labels woven on a loom. It expresses logo, text, pattern, size, and wash symbols by fixing warp and weft...",
-    image: "https://acctrims.com/wp-content/uploads/2023/02/custom-woven-labels_DSC0590-768x512.jpg",
+    image: "https://i.etsystatic.com/9001642/r/il/920af3/1070281893/il_570xN.1070281893_eg2g.jpg",
     categories: [
       {
         category: "RAPIER LABEL",
@@ -120,7 +120,7 @@ const labelHierarchy = [
     group: "PRINTED LABELS",
     slug: "printed-labels",
     description: "Printed labels are made by printing directly on fabric materials like satin, cotton, or polyester. They are economical and suitable for lightweight garments.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtTvLZeea7KYKV6cagzqv8vV-Ty9amSS7Crg&s",
+    image: "https://www.labelpartners.com/img/woevenlabels_high_end_2-o.jpg",
     categories: [
       {
         category: "CARE LABEL",
@@ -142,7 +142,7 @@ const labelHierarchy = [
     group: "HEAT TRANSFER LABELS",
     slug: "heat-transfer-labels",
     description: "Thermal transfer labels include embossed, flat oil, 3D silicone, and thick plate labels. They are applied using heat and are eco-friendly.",
-    image: "https://acctrims.com/wp-content/uploads/2023/03/DSC0013.jpg",
+    image: "https://cruzlabel.com/cdn/shop/products/IMG_2398_2000x2000_e766c8d3-d608-492a-bfe5-462ef6e4b06e_2000x2000.jpg?v=1654894831",
     categories: [
       {
         category: "PLASTISOL HEAT TRANSFER",
@@ -211,7 +211,7 @@ const labelHierarchy = [
     group: "NARROW FABRIC",
     slug: "narrow-fabric",
     description: "Narrow fabrics include tapes, ribbons, webbings, and elastic bands used for various garment trims and decorations.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7dsqBkLF-btA66PI3wws_ctzhomoUB-RtNQ&s",
+    image: "https://images.jdmagicbox.com/quickquotes/images_main/double-damask-labels-2009874306-1q8tkwzr.jpg",
     categories: [
       {
         category: "LACES",
@@ -238,7 +238,7 @@ const labelHierarchy = [
     group: "TAGS",
     slug: "tags",
     description: "Tags include hang tags, price tags, and brand tags made from paper, plastic, or fabric and attached to garments for branding or info.",
-    image: "https://images.pexels.com/photos/1111319/pexels-photo-1111319.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    image: "https://paulgordonbrown.com/wp-content/uploads/2017/01/tags2.png?w=1400",
     categories: [
       {
         category: "EMBOSSED TAG",
@@ -296,7 +296,7 @@ const labelHierarchy = [
     group: "TAG SEALS",
     slug: "tag-seals",
     description: "Tag seals are small locking mechanisms used to secure tags to garments, often customized with logos.",
-    image: "https://5.imimg.com/data5/KD/ZP/EC/SELLER-46123511/img-20200220-wa0020-500x500.jpg",
+    image: "https://s.alicdn.com/@sc04/kf/H5a25f17ef0504745be4824956d12a6edB/Custom-Gold-logo-Label-Design-Plastic-Seal-Tag-Garment-Plastic-hang-Tag-With-String.jpg",
     categories: [
       {
         category: "PLAIN TAG SEALS",
@@ -342,7 +342,7 @@ const labelHierarchy = [
     group: "PATCHES or BADGES",
     slug: "patches-or-badges",
     description: "Patches or badges are embroidered or printed pieces attached to clothing for branding or decoration.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGXLy7M2by830jyi6wBTBgOvE3XMBqAsFAL_WkNletP-vQvnXSje11RcJpbr7WvRC25Fg&usqp=CAU",
+    image: "https://images.squarespace-cdn.com/content/v1/5f8fb8ef8b6352418b169f42/d595a2ff-c9af-46cc-8734-7cd64e4800e2/20240621_151555.jpg",
     categories: [
       {
         category: "WOVEN PATCHES OR BADGES",
@@ -375,7 +375,7 @@ const labelHierarchy = [
     group: "FLEXIBLE LABELS",
     slug: "flexible-labels",
     description: "Flexible labels are soft and adaptable, made from rubber, silicone, or soft PVC, used on activewear, bags, or footwear.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK-53zG_keMefUJV-nywGObl33GlCKVh0POg&s",
+    image: "https://unitedlabelcorp.com/wdpr/wp-content/uploads/2023/04/shutterstock_1885945663.jpg",
     categories: [
       {
         category: "PVC LABEL / RUBBER LABEL",
@@ -398,7 +398,7 @@ const labelHierarchy = [
     group: "LEATHER OR PU LABELS",
     slug: "leather-or-pu-labels",
     description: "Leather or PU labels are sewn onto garments like jeans, bags, or jackets. They can be genuine or synthetic leather.",
-    image: "https://acctrims.com/wp-content/uploads/2022/08/leather-labels_DSC0800.jpg",
+    image: "https://www.clothinglabels.cn/wp-content/uploads/2023/04/DSC0577.jpg",
     categories: [
       {
         category: "EMBOSSED LEATHER LABEL",
@@ -434,7 +434,7 @@ const labelHierarchy = [
     group: "METAL LABELS",
     slug: "metal-labels",
     description: "Metal labels are durable decorative pieces, usually with embossed logos, used on jeans, bags, or shoes.",
-    image: "https://i.etsystatic.com/14683597/r/il/fc540b/1184273262/il_570xN.1184273262_rdyp.jpg",
+    image: "https://cdn.pixabay.com/photo/2015/03/01/12/42/tag-654697_1280.jpg",
     categories: [
       {
         category: "Brass",
