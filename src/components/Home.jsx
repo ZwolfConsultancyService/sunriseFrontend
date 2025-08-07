@@ -17,11 +17,11 @@ const Home = () => {
   <Homepage />
       <Product />
   <About />
-  <OrderProccess />
+ 
   <BestSellerBanner />
   <WhyChooseUs />
   {/* <Gallery /> */}
-
+ <OrderProccess />
     <Testimonials />
     <FaqSection />
 	<Footer />
