@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { FiSearch } from "react-icons/fi";
+import { FiSearch, FiPhone, FiFileText } from "react-icons/fi";
 import labelHierarchy from '../data/labelHierarchy';
 import labelCategoryDetails from '../data/labelCategoryDetails';
 import labelExtendedDetails from '../data/labelExtendedDetails';
@@ -20,6 +20,9 @@ const CategoryDetail = () => {
 
   const categoryKey = decodedCategory.replace(/[^a-z0-9-]/gi, '').toLowerCase();
   const categoryData = labelCategoryDetails[categoryKey];
+
+  // State for managing gallery images
+  const [selectedImage, setSelectedImage] = useState(0);
 
   if (!groupData || !categoryData) {
     return (
@@ -56,6 +59,13 @@ const CategoryDetail = () => {
            "https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg";
   };
 
+  // Gallery images - all 3 images for professional gallery
+  const galleryImages = [
+    getCategoryImage(),
+    categoryData.image2 || "https://superlabelstore.com/wp-content/uploads/2022/10/woven-label-design-and-best-practices.jpg",
+    categoryData.image3 || "https://superlabelstore.com/en-au/wp-content/uploads/sites/8/2022/05/custom-clothing-labels-127.jpg"
+  ];
+
   console.log('Debug Info:', {
     groupSlug,
     categorySlug,
@@ -81,7 +91,6 @@ const CategoryDetail = () => {
           src={"https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg"}
           alt={categoryData.title}
           className="w-full object-cover h-64 sm:h-72 md:h-80 lg:h-96"
-
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center z-20 px-4">
           <h1 className="text-white font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-4xl">
@@ -105,36 +114,106 @@ const CategoryDetail = () => {
 
             <h2 className="text-2xl font-bold mb-6 text-orange-600">{categoryData.title}</h2>
             
-            {/* Category Image */}
-            <img
-              src={getCategoryImage()}
-              alt={categoryData.title}
-              className="w-full h-64 object-cover rounded-lg mb-8"
-              onError={(e) => {
-                // Fallback if image fails to load
-                e.target.src = "https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg";
-              }}
-            />
-
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6">{categoryData.intro}</p>
-
-            {/* Features */}
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold mb-2 text-gray-800">Key Features:</h3>
-              <ul className="list-disc ml-5 space-y-1 text-gray-700">
-                {categoryData.features?.map((feature, i) => (
-                  <li key={i}>{feature}</li>
+            {/* Professional Image Gallery Section */}
+            <div className="mb-8">
+              {/* Main Image */}
+              <div className="mb-4">
+                <img
+                  src={galleryImages[selectedImage]}
+                  alt={categoryData.title}
+                  className="w-full h-96 object-cover rounded-xl shadow-lg transition-all duration-300"
+                  onError={(e) => {
+                    e.target.src = "https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg";
+                  }}
+                />
+              </div>
+              
+              {/* Thumbnail Gallery - Bottom Panel */}
+              <div className="flex gap-2 justify-start">
+                {galleryImages.map((image, index) => (
+                  <div 
+                    key={index} 
+                    className={`relative cursor-pointer rounded-lg overflow-hidden transition-all duration-300 ${
+                      selectedImage === index 
+                        ? 'ring-2 ring-orange-500 ring-offset-2' 
+                        : 'hover:opacity-80'
+                    }`}
+                    onClick={() => setSelectedImage(index)}
+                  >
+                    <img
+                      src={image}
+                      alt={`${categoryData.title} ${index + 1}`}
+                      className="w-20 h-16 object-cover"
+                      onError={(e) => {
+                        e.target.src = "https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg";
+                      }}
+                    />
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
 
-            {/* Applications & Best For */}
-            {categoryData.applications && (
-              <p className="mb-3"><strong>Applications:</strong> {categoryData.applications}</p>
+            {/* Product Description Box */}
+            <div className="bg-white border border-gray-200 rounded-lg p-6 mb-6 shadow-sm">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">Product Description</h3>
+              <p className="text-base text-gray-700 leading-relaxed mb-4">{categoryData.intro}</p>
+              
+              {categoryData.applications && (
+                <p className="text-gray-700 mb-2"><strong>Applications:</strong> {categoryData.applications}</p>
+              )}
+              {categoryData.bestFor && (
+                <p className="text-gray-700"><strong>Best For:</strong> {categoryData.bestFor}</p>
+              )}
+            </div>
+
+            {/* Key Features Box */}
+            {categoryData.features && (
+              <div className="bg-white border border-gray-200 rounded-lg p-6 mb-6 shadow-sm">
+                <h3 className="text-xl font-semibold mb-4 text-gray-800">Key Features</h3>
+                <ul className="list-disc ml-5 space-y-2 text-gray-700">
+                  {categoryData.features?.map((feature, i) => (
+                    <li key={i}>{feature}</li>
+                  ))}
+                </ul>
+              </div>
             )}
-            {categoryData.bestFor && (
-              <p className="mb-10"><strong>Best For:</strong> {categoryData.bestFor}</p>
-            )}
+
+            {/* Enquiry Section */}
+            <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10 shadow-sm">
+              <h3 className="text-xl font-semibold mb-4 text-gray-800">Get Quote & Enquiry</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Call Button */}
+                <a 
+                  href="tel:+911234567890" 
+                  className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
+                >
+                  <FiPhone className="w-5 h-5 mr-2" />
+                  Call Now
+                </a>
+                
+                {/* Enquiry Form Button */}
+                <button 
+                  onClick={() => {
+                    setTimeout(() => {
+                      document.getElementById('enquiry-form')?.scrollIntoView({ 
+                        behavior: 'smooth' 
+                      });
+                    }, 100);
+                  }}
+                  className="flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
+                >
+                  <FiFileText className="w-5 h-5 mr-2" />
+                  Send Enquiry
+                </button>
+              </div>
+              
+              <div className="mt-4 text-center">
+                <p className="text-gray-600 text-sm">
+                  Get instant quote or detailed information about this product
+                </p>
+              </div>
+            </div>
+
 
             {/* Item Cards Section */}
             {itemCards.length > 0 && (
@@ -198,14 +277,14 @@ const CategoryDetail = () => {
               </div>
             )}
 
-            <div className="mt-10">
+            {/* Enquiry Form Section - After Items */}
+            <div className="mt-10" id="enquiry-form">
               <Form />
             </div>
           </div>
 
           {/* Right Sidebar */}
           <aside className="w-full lg:max-w-sm mt-10 lg:mt-0">
-            {/* Search */}
             <Asidepage />
           </aside>
         </div>

@@ -40,11 +40,9 @@ const LabelDetail = () => {
         />
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center z-20 px-4">
           <h1 className="text-white font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-4xl">
-            Custom care labels’ photo gallery
+           {label.group}
           </h1>
-          <p className="text-white text-sm sm:text-base mt-2 max-w-3xl">
-            by Nancy / fasteners, garment accessories, hang tag string, hang tags, ideas and inspirations
-          </p>
+        
         </div>
       </div>
 
@@ -81,33 +79,33 @@ const LabelDetail = () => {
         to={`/label/${label.slug}/${cat.category.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/gi, '')}`}
         className="h-full"
       >
-        <div className="p-4 border rounded-lg hover:shadow transition duration-300 flex flex-col h-[350px]">
+        <div className="p-4  rounded-lg shadow transition duration-300 flex flex-col h-full">
           <img
             src={cat.image}
             alt={cat.category}
-            className="w-full h-40 object-cover rounded mb-4"
+            className="w-full h-[300px] object-cover rounded mb-4"
           />
           <h3 className="font-semibold text-lg mb-2 text-gray-800">{cat.category}</h3>
    
-         <ul className="text-sm text-gray-600 list-disc ml-4 space-y-1">
+         {/* <ul className="text-sm text-gray-600 list-disc ml-4 space-y-1">
   {cat.items.slice(0, 3).map((item, i) => (
     <li key={i}>{item}</li>
   ))}
 
-  {/* If less than 3, add invisible placeholders to equalize height */}
+
   {cat.items.length < 3 &&
     Array.from({ length: 3 - cat.items.length }).map((_, idx) => (
       <li key={`placeholder-${idx}`} className="opacity-0 select-none">Placeholder</li>
     ))
   }
 
-  {/* If more than 3, show "+ N more" */}
+  
   {cat.items.length > 3 && (
     <li className="text-orange-500 font-medium">
       + {cat.items.length - 3} more
     </li>
   )}
-</ul>
+</ul> */}
 
           <div className="mt-auto text-orange-500 text-sm font-medium">
             Learn More →
