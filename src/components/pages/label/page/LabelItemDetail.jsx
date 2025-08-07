@@ -71,44 +71,45 @@ const LabelItemDetail = () => {
 
             <h2 className="text-2xl font-bold mb-6 text-orange-600">{itemData.title}</h2>
             
-            {/* Professional Image Gallery Section */}
-            <div className="mb-8">
-              {/* Main Image */}
-              <div className="mb-4">
-                <img
-                  src={galleryImages[selectedImage]}
-                  alt={itemData.title}
-                  className="w-full h-96 object-cover rounded-xl shadow-lg transition-all duration-300"
-                  onError={(e) => {
-                    e.target.src = "https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg";
-                  }}
-                />
-              </div>
-              
-              {/* Thumbnail Gallery - Bottom Panel */}
-              <div className="flex gap-2 justify-start">
-                {galleryImages.map((image, index) => (
-                  <div 
-                    key={index} 
-                    className={`relative cursor-pointer rounded-lg overflow-hidden transition-all duration-300 ${
-                      selectedImage === index 
-                        ? 'ring-2 ring-orange-500 ring-offset-2' 
-                        : 'hover:opacity-80'
-                    }`}
-                    onClick={() => setSelectedImage(index)}
-                  >
-                    <img
-                      src={image}
-                      alt={`${itemData.title} ${index + 1}`}
-                      className="w-20 h-16 object-cover"
-                      onError={(e) => {
-                        e.target.src = "https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg";
-                      }}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
+         {/* Professional Image Gallery Section */}
+<div className="mb-8 flex flex-col md:flex-row gap-4">
+  {/* Thumbnail Gallery */}
+  <div className="flex md:flex-col gap-2 justify-center items-center order-2 md:order-1">
+    {galleryImages.map((image, index) => (
+      <div 
+        key={index} 
+        className={`relative cursor-pointer rounded-lg overflow-hidden transition-all duration-300 ${
+          selectedImage === index 
+            ? 'ring-2 ring-orange-500 ring-offset-2' 
+            : 'hover:opacity-80'
+        }`}
+        onClick={() => setSelectedImage(index)}
+      >
+        <img
+          src={image}
+          alt={`${itemData.title} ${index + 1}`}
+          className="w-20 h-16 object-cover"
+          onError={(e) => {
+            e.target.src = "https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg";
+          }}
+        />
+      </div>
+    ))}
+  </div>
+
+  {/* Main Image */}
+  <div className="flex-1 order-1 md:order-2">
+    <img
+      src={galleryImages[selectedImage]}
+      alt={itemData.title}
+      className="w-full h-96 object-cover rounded-xl shadow-lg transition-all duration-300"
+      onError={(e) => {
+        e.target.src = "https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg";
+      }}
+    />
+  </div>
+</div>
+
 
             {/* Product Description Box */}
             <div className="bg-white border border-gray-200 rounded-lg p-6 mb-6 shadow-sm">
