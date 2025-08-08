@@ -59,12 +59,13 @@ const CategoryDetail = () => {
            "https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg";
   };
 
-  // Gallery images - all 3 images for professional gallery
-  const galleryImages = [
-    getCategoryImage(),
-    categoryData.image2 || "https://superlabelstore.com/wp-content/uploads/2022/10/woven-label-design-and-best-practices.jpg",
-    categoryData.image3 || "https://superlabelstore.com/en-au/wp-content/uploads/sites/8/2022/05/custom-clothing-labels-127.jpg"
-  ];
+  // Gallery images - include up to 4 images from labelHierarchy
+const galleryImages = [
+  categoryFromGroup?.image || getCategoryImage(),
+  categoryFromGroup?.image2 || categoryData.image2,
+  categoryFromGroup?.image3 || categoryData.image3,
+  categoryFromGroup?.image4 || categoryData.image4
+].filter(Boolean); // remove undefined
 
   console.log('Debug Info:', {
     groupSlug,
@@ -117,14 +118,14 @@ const CategoryDetail = () => {
            {/* Professional Image Gallery Section */}
 <div className="mb-8 flex flex-col md:flex-row gap-4">
   {/* Thumbnail Gallery */}
-  <div className="flex md:flex-col gap-2 justify-center items-center order-2 md:order-1">
+  <div className="flex md:flex-col gap-2 justify-center  items-center order-2 md:order-1 ">
     {galleryImages.map((image, index) => (
       <div 
         key={index} 
-        className={`relative cursor-pointer rounded-lg overflow-hidden transition-all duration-300 ${
+        className={`relative cursor-pointer rounded-lg overflow-hidden transition-all duration-300 border border-red-500${
           selectedImage === index 
             ? 'ring-2 ring-orange-500 ring-offset-2' 
-            : 'hover:opacity-80'
+            : 'hover:opacity-80 border border-gray-300 hover:ring-2 hover:ring-orange-500 hover:ring-offset-2'
         }`}
         onClick={() => setSelectedImage(index)}
       >
@@ -143,7 +144,7 @@ const CategoryDetail = () => {
   {/* Main Image */}
   <div className="flex-1 order-1 md:order-2">
     <img
-      src={galleryImages[selectedImage]}
+     src={galleryImages[selectedImage]}
       alt={categoryData.title}
       className="w-full h-96 object-cover rounded-xl shadow-lg transition-all duration-300"
       onError={(e) => {

@@ -1,7 +1,21 @@
+//rapier
+import rapierImg from '../../../../assets/rapier label/rapierlabel.jpg';
+import rapierImg1 from '../../../../assets/rapier label/rapierlabel1.jpg';
+import rapierImg2 from '../../../../assets/rapier label/rapierlabel2.jpg';
+import rapierImg3 from '../../../../assets/rapier label/rapierlabel3.jpg';
 
-import rapierImg from '../../../../assets/web-img/rapier images.jpg';
-import niddleImg from '../../../../assets/web-img/niddle label.jpg';
-import shuttleImg from '../../../../assets/web-img/shuttle label.jpg';
+
+import niddleImg from '../../../../assets/niddle/nidle.jpg';
+import niddleImg1 from '../../../../assets/niddle/nidle1.jpg';
+import niddleImg2 from '../../../../assets/niddle/nidle2.jpg';
+import niddleImg3 from '../../../../assets/niddle/nidle3.jpg';
+
+
+import shuttleImg from '../../../../assets/shuttleLabel/shuttle.jpg';
+import shuttleImg1 from '../../../../assets/shuttleLabel/shuttle1.jpg';
+import shuttleImg2 from '../../../../assets/shuttleLabel/shuttle2.jpg';
+import shuttleImg3 from '../../../../assets/shuttleLabel/shuttle3.jpg';
+
 import splitEdgeWovenImg from '../../../../assets/web-img/split edge woven label.jpg';
 import wovenEdgeWovenImg from '../../../../assets/web-img/woven edge woven label.jpg';
 import softEdgeWovenImg from '../../../../assets/web-img/soft edge woven label.jpg';
@@ -22,11 +36,27 @@ import plastiolHeatImg from '../../../../assets/web-img/plastiol heat transfer.j
 import siliconImg from '../../../../assets/web-img/silicon heat transfer.jpg';
 import puffImg from '../../../../assets/web-img/puff heat transfer label.jpg';
 import rhinestoneImg from '../../../../assets/web-img/rhinestone heat transfer.jpg';
-import glitterImg from '../../../../assets/web-img/glitter transfer.jpg';
-import foilImg from '../../../../assets/web-img/foil heat transfer.jpg';
+
+
+import glitterImg from '../../../../assets/glitter/glitter.jpg';
+import glitterImg1 from '../../../../assets/glitter/glitter1.jpg';
+import glitterImg2 from '../../../../assets/glitter/glitter2.jpg';
+import glitterImg3 from '../../../../assets/glitter/glitter3.jpg';
+
+import foilImg from '../../../../assets/foillabel/foil.jpg';
+import foilImg1 from '../../../../assets/foillabel/foil1.jpg';
+import foilImg2 from '../../../../assets/foillabel/foil2.jpg';
+import foilImg3 from '../../../../assets/foillabel/foil3.jpg';
+
+
+
 import reflectiveImg from '../../../../assets/web-img/reflective heat transfer.jpg';
 import photoHeatTransferImg from '../../../../assets/web-img/plastiol photo heat tranfer label.jpg';
-import neonImg from '../../../../assets/web-img/neon transfer label.jpg';
+import neonImg from '../../../../assets/neonLabel/neon.jpg';
+import neonImg1 from '../../../../assets/neonLabel/neon1.jpg';
+import neonImg2 from '../../../../assets/neonLabel/neon2.jpg';
+import neonImg3 from '../../../../assets/neonLabel/neon3.jpg';
+
 import flockImg from '../../../../assets/web-img/flock heat transfer.jpg';
 
 // Narrow Fabric
@@ -59,7 +89,12 @@ import plainSealImg from '../../../../assets/web-img/plain tag seal.jpg';
 import brandSealImg from '../../../../assets/web-img/tag seal with brand seal.jpg';
 
 // Stickers
-import vinylStickerImg from '../../../../assets/web-img/vinly steaker.jpg';
+import vinylStickerImg from '../../../../assets/vynl/vynl.jpg';
+import vinylStickerImg1 from '../../../../assets/vynl/vynl1.jpg';
+import vinylStickerImg2 from '../../../../assets/vynl/vynl2.jpg';
+import vinylStickerImg3 from '../../../../assets/vynl/vynl3.jpg';
+
+
 import barcodeImg from '../../../../assets/web-img/barcode sticker.png';
 import polybagImg from '../../../../assets/web-img/polybag sticker.jpg';
 import cartonImg from '../../../../assets/web-img/cartoon sticker.jpg';
@@ -100,16 +135,25 @@ const labelHierarchy = [
       {
         category: "RAPIER LABEL",
         image: rapierImg,
+        image2: rapierImg1,
+        image3: rapierImg2,
+        image4: rapierImg3,
         items: ["SPLIT EDGE WOVEN LABEL", "HIGH DENSITY WOVEN LABELS"],
       },
       {
         category: "NIDDLE LABEL",
         image: niddleImg ,
+        image2: niddleImg1,
+        image3: niddleImg2,
+        image4: niddleImg3,
         items: ["WOVEN EDGE WOVEN LABEL"],
       },
       {
         category: "SHUTTLE LABEL",
         image: shuttleImg ,
+        image2: shuttleImg1,
+        image3: shuttleImg2,
+        image4: shuttleImg3,
         items: ["SOFT EDGE WOVEN LABEL"],
       },
     ],
@@ -122,12 +166,18 @@ const labelHierarchy = [
     categories: [
       {
         category: "CARE LABEL",
-        image: careLabelImg,
+        image: "https://coats.com/wp-content/uploads/2024/01/Care-Labels_tcm.jpg?x74327",
+        image2: "https://images.squarespace-cdn.com/content/v1/5f5fc80e1b3b901c417c5ff1/1617291712738-HP3VMRWXOSTHF4PC43X6/care-label.jpeg?format=1500w",
+        image3 : "https://img.freepik.com/premium-photo/care-instructions-label_624181-2220.jpg",
+        image4: "https://www.labelpartners.com/img/woevenlabels_high_end_2-o.jpg",
         items: ["SATIN", "TAFFETA", "COTTON / TWILL / CANVAS / GROSGRAIN"],
       },
       {
         category: "MAIN LABEL",
-        image: mainLabelImg,
+        image: "https://image.made-in-china.com/2f0j00ndhlLfRJfGbe/Apparel-Main-Label-Woven-Fabric-Label-for-Dress.webp",
+        image2 : "https://image.made-in-china.com/202f0j00ywliDsUhrYkC/Apparel-Main-Label-Woven-Fabric-Label-for-Dress.webp",
+        image3: "https://www.thespruce.com/thmb/ALepJZVhZEg4K__jaS7CPjreZKc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-label-clothes-2146215-01-c1c10f4ed6e14c2cb2689b7b05c40a79.jpg",
+        image4: "https://blog.planetcare.org/wp-content/uploads/2021/07/final-1024x768.jpg",
         items: [
           "SATIN",
           "COTTON / TWILL / CANVAS / GROSGRAIN",
@@ -144,63 +194,99 @@ const labelHierarchy = [
     categories: [
       {
         category: "PLASTISOL HEAT TRANSFER",
-        image: plastiolHeatImg,
+        image: "https://threadbird.com/sites/default/files/2022-04/Plastisol4.png",
+        image2 : "https://threadbird.com/sites/default/files/2022-04/Plastisol5.png",
+        image3: "https://threadbird.com/sites/default/files/2022-04/Plastisol1.png",
+        image4: "https://www.deconetwork.com/wp-content/uploads/2023/06/screen-printed-plastisol-transfer-001-1200x900.jpg",
         items: []
       },
       {
         category: "WATERBASE HEAT TRANSFER",
         image: "https://cdn.prod.website-files.com/670fe58f410a6c2d407036b1/671172f3ff11abf6fcb9856b_6553afb3c1ed762c23c5095d_5fd3a4a0aaebb0d5c536f357_printed-tee-heat-transfer-1024x512.jpeg",
+        image2 : "https://cdn.prod.website-files.com/670fe58f410a6c2d407036b1/671172f3ff11abf6fcb98554_6553afb3c1ed762c23c50966_5fd3a4a041d20b7eb24f27ea_hat-with-water-based-heat-transfer.jpeg",
+        image3 : "https://cdn.prod.website-files.com/670fe58f410a6c2d407036b1/671172f3ff11abf6fcb9855a_6553afb3c1ed762c23c5096d_5fd3a4a0c0c74573a692702f_heat-transfer-cap-2.jpeg",
+        image4 : "https://labeloom.com/cdn/shop/products/HighdefinitionWovenLabels_7095e825-55b4-4343-98a5-15dbb980c312.png?v=1645948111",
          items: ["IRONON HEAT TRANSFER"]
         // items: ["FOIL HEAT TRANSFER", "REFLECTIVE HEAT TRANSFER"]
       },
       {
         category: "HIGH DENSITY HEAT TRANSFER",
-        image: "https://5.imimg.com/data5/SELLER/Default/2024/4/409782195/QT/ZC/NK/11019494/heat-transfer-label.png",
+        image: "https://images.squarespace-cdn.com/content/v1/63f0117aa88f8f7b473de18f/591d0aa0-0122-4b57-91a8-18058a07f1cf/labeltex_fear_of_god_heat_transfers.jpg",
+        image2: "https://s.alicdn.com/@sc04/kf/H0cb93df8cf194c4cb8b92d800646db273/Custom-High-Density-3d-logo-Tag-Iron-on-Heat-Press-Rubber-Satin-Dimension-Care-Neck-Woven-Label-for-Clothing.jpg",
+        image3 : "https://www.encytrim.com/Products/Hangtag/Hangtag.jpg",
+        image4 : "https://www.encytrim.com/Products/Label/Rubber-Label.jpg",
         items: ["PVC / PLASTISOL HEAT TRANSFER", "SILICON HEAT TRANSFER", "3D HEAT TRANSFER"]
       },
       {
         category: "FLOCK HEAT TRANSFER",
-        image: flockImg,
+        image: "https://www.jmb.es/wp-content/uploads/2023/02/transfer-flock-1.jpg",
+        image2: "https://www.jmb.es/wp-content/uploads/2023/02/transfer-flock-2.jpg",
+        image3: "https://www.jmb.es/wp-content/uploads/2023/02/transfer-flock-4.jpg",
+        image4:"https://www.jmb.es/wp-content/uploads/2023/02/transfer-flock-3.jpg",
         items: []
       },
       {
         category: "NEON TRANSFER LABEL",
         image: neonImg,
+        image2: neonImg1,
+        image3: neonImg2,
+        image4: neonImg3,
         items: [ ]
       },
         {
         category: "FOIL TRANSFER LABEL",
         image:foilImg,
+        image2: foilImg1,
+        image3: foilImg2,
+        image4: foilImg3,
         items: [ ]
       },
         {
         category: "REFLECTIVE HEAT TRANSFER",
-        image: reflectiveImg,
+        image4: "https://cdn.chimpify.net/5d68e0c7a858721b6f8b456b/2021/02/28_RFX_PU_Ecofilm_TBX01.jpg",
+        image2:"https://cdn.chimpify.net/5d68e0c7a858721b6f8b456b/2021/02/29_RFX_PU_Ecofilm_Print_TBX01.jpg",
+        image3:"https://cdn.chimpify.net/5d68e0c7a858721b6f8b456b/2021/02/28_RFX_PU_Ecofilm_TBX01.jpg",
+        image:"https://cdn.chimpify.net/5d68e0c7a858721b6f8b456b/2024/07/RFX-SILICONE-I-DWR.jpg",
         items: [ ]
       },
        {
         category: "PLASTISOL PHOTO HEAT TRANSFER LABEL",
-        image: photoHeatTransferImg,
+        image: "https://cdn-1.tonatelier.ca/wp-content/uploads/2020/03/IMG_2162.jpg?strip=all&lossy=1&ssl=1",
+        image2:"https://cdn-1.tonatelier.ca/wp-content/uploads/2020/03/IMG_2159.jpg?strip=all&lossy=1&ssl=1",
+        image3:"https://cdn-1.tonatelier.ca/wp-content/uploads/2020/03/IMG_2158.jpg?strip=all&lossy=1&ssl=1",
+        image4:"https://cdn-1.tonatelier.ca/wp-content/uploads/2020/03/Add-a-subheading.jpg?strip=all&lossy=1&ssl=1",
         items: [ ]
       },
        {
         category: "EMBOSS PRINTING",
-        image: "https://superlabels.in/wp-content/uploads/2025/01/Blog4b-1024x683.jpg",
+        image: "https://thepackagingpro.com/media/images/product/2023/6/Cheap-Luxury-Design-Printing-Embossed-Logo-Die-Cut-Paper-Garment-Hangtag-Labels-Clothing-Hang-Tags-with-String_MMZbqH4.jpg",
+        image2: "https://pakfactory-blog-media.s3.ca-central-1.amazonaws.com/blog1/wp-content/uploads/2023/05/uncategorized/2023_05_debossing.jpeg",
+        image3:"https://static.allstickerprinting.com/v2/images/thumbnail/emboss_sticker.png",
+        image4:"https://image.made-in-china.com/202f0j00veckVuMGfoqB/Custom-Luxury-Fashion-Paper-Clothing-Hang-Tags-for-Clothes-Garment-Printed-Brand-Logo-Hanging-Tags.webp",
         items: []
       },
         {
         category: "PUFF HEAT TRANSFER LABEL",
-        image: puffImg,
+        image: "https://platinumcraftvinyl.com/cdn/shop/files/PuffMetalMatte.png?v=1715190844",
+        image2:"https://www.instagraph.com/wp-content/uploads/2016/06/e1fceb7e3b721570b1a996f29546.png",
+        image3:"https://www.aomingprinting.com/uploads/8c99b82d.jpg",
+        image4 : "https://newyorkcustomlabels.com/pub/media/wysiwyg/description_images/NYCL_HeatTransfersLabels/1.webp",
         items: []
       },
        {
         category: "RHINESTONE HEAT TRANSFER",
-        image: rhinestoneImg,
+        image3: "https://cdn.chimpify.net/5d68e0c7a858721b6f8b456b/2021/02/83_Rhinestones_Nailheads_TBX01.jpg",
+        image2:"https://iprorwxhmolpjj5p-static.micyjz.com/cloud/jjBpnKpjjnSRjkmlkokijq/Shinny-Alphabet-Heat-Transfer.jpg",
+        image:"https://e0.pxfuel.com/wallpapers/284/247/desktop-wallpaper-sublime-printing-printing-apparel-fashion-clothing.jpg",
+        image4:"https://media.istockphoto.com/id/544099280/photo/fashionable-background-jeans-inlaid-rhinestones.jpg?s=612x612&w=0&k=20&c=zCVIyEtGeffhLG7eOVPOaSkMYZwgmc_-VIPqrcm5zl8=",
         items: []
       },
        {
         category: "GLITTER TRANSFER",
         image: glitterImg,
+        image2: glitterImg1,
+        image3: glitterImg2,
+        image4: glitterImg3,
         items: []
       },
     ],
@@ -317,6 +403,9 @@ const labelHierarchy = [
       {
         category: "VINYL STICKER",
         image: vinylStickerImg,
+        image2: vinylStickerImg1,
+        image3: vinylStickerImg2,
+        image4: vinylStickerImg3,
         items: [],
       },
       {

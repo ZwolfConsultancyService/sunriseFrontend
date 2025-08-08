@@ -4,7 +4,7 @@ import Navbar from '../navbar/Navbar';
 import Footer from '../footer/Footer';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import blogImg from "../../../assets/homew.jpg";
+import blogImg from "../../../assets/hero3.jpg";
 
 const BlogDetail = () => {
   const { slug } = useParams(); // This is the blog ID from URL
@@ -163,7 +163,7 @@ const BlogDetail = () => {
       
       {/* Hero Section */}
       <section
-        className="w-full h-64 md:h-96 bg-cover bg-center mt-16"
+        className="w-full h-64 md:h-[400px] bg-cover bg-center mt-16"
         style={{ backgroundImage: `url(${blogImg})` }}
         data-aos="fade-down"
       >
