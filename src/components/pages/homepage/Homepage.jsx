@@ -93,7 +93,7 @@ const Homepage = () => {
           animation: zoomIn 6s ease-in-out infinite alternate;
         }
         .slide-transition {
-          transition: opacity 0.8s ease-in-out;
+          transition: opacity 0.9s ease-in-out;
         }
       `}</style>
 
@@ -110,7 +110,7 @@ const Homepage = () => {
               alt={slide.title}
               className="w-full h-full object-cover zoom-animation"
             />
-            <div className="absolute inset-0 bg-black/70 flex items-center justify-center px-4 md:px-8 lg:px-20">
+            <div className="absolute inset-0 bg-black/50 flex items-center justify-center px-4 md:px-8 lg:px-20">
               <div className="text-white w-full max-w-screen-xl text-center mx-auto pt-10 sm:pt-12 md:pt-16 lg:pt-24">
                 <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-snug mb-4">
                   {slide.title}
