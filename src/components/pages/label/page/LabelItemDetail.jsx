@@ -6,6 +6,7 @@ import Navbar from '../../navbar/Navbar';
 import Footer from '../../footer/Footer';
 import Form from './Form';
 import Asidepage from './Asidepage';
+import HeroLabel from './HeroLabel';
 
 const LabelItemDetail = () => {
   const { groupSlug, categorySlug, itemSlug } = useParams();
@@ -42,23 +43,11 @@ const galleryImages = [
     <>
       <Navbar />
 
-      {/* Hero Section */}
-      <div className="relative w-full mt-14">
-        <div className="absolute inset-0 bg-black/50 z-10"></div>
-        <img
-          src={"https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg"}
-          alt={itemData.title}
-          className="w-full object-cover h-64 sm:h-72 md:h-80 lg:h-96"
-        />
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center z-20 px-4">
-          <h1 className="text-white font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-4xl">
-            {itemData.title}
-          </h1>
-          <p className="text-white text-sm sm:text-base mt-2 max-w-3xl">
-            Discover detailed specifications and features
-          </p>
-        </div>
-      </div>
+    <HeroLabel
+  title={itemData.title}
+  description="Explore premium label categories"
+  
+/>
 
       {/* Main Content Section */}
       <div className="bg-white text-gray-900 font-sans max-w-7xl mx-auto px-4 py-10">
