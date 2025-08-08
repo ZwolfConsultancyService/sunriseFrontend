@@ -55,8 +55,7 @@ const CategoryDetail = () => {
   const getCategoryImage = () => {
     return categoryData.image || 
            categoryFromGroup?.image || 
-           groupData.image || 
-           "https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg";
+           groupData.image ;
   };
 
   // Gallery images - include up to 4 images from labelHierarchy
@@ -133,9 +132,6 @@ const galleryImages = [
           src={image}
           alt={`${categoryData.title} ${index + 1}`}
           className="w-20 h-16 object-cover"
-          onError={(e) => {
-            e.target.src = "https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg";
-          }}
         />
       </div>
     ))}
@@ -147,9 +143,6 @@ const galleryImages = [
      src={galleryImages[selectedImage]}
       alt={categoryData.title}
       className="w-full h-96 object-cover rounded-xl shadow-lg transition-all duration-300"
-      onError={(e) => {
-        e.target.src = "https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg";
-      }}
     />
   </div>
 </div>
