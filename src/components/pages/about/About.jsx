@@ -76,7 +76,7 @@ const About = () => {
         <a
           href={CompanyProfilePDF}
           download="Company-Profile.pdf"
-          className="bg-white hover:bg-green-400 hover:text-white text-green-400 border border-green-400 text-lg font-semibold py-3 px-6 rounded-lg transition-all duration-300"
+          className="bg-white hover:bg-gray-200  text-green-400 border border-green-400 text-lg font-semibold py-3 px-6 rounded-lg transition-all duration-300 "
         >
           📄 Download Company Profile
         </a>
