@@ -31,12 +31,12 @@ const LabelItemDetail = () => {
     );
   }
 
-  // Gallery images for item detail
-  const galleryImages = [
-    itemData.image || "https://superlabelstore.com/wp-content/uploads/2021/08/custom-care-labels-hero.jpg",
-    itemData.image2 || "https://superlabelstore.com/wp-content/uploads/2022/10/woven-label-design-and-best-practices.jpg",
-    itemData.image3 || "https://superlabelstore.com/en-au/wp-content/uploads/sites/8/2022/05/custom-clothing-labels-127.jpg"
-  ];
+const galleryImages = [
+  itemData.image,
+  itemData.image2,
+  itemData.image3,
+  itemData.image4
+].filter(Boolean); 
 
   return (
     <>
