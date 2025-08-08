@@ -63,34 +63,6 @@ const Footer = () => {
               ))}
             </div>
           </div>
-
-          {/* Newsletter */}
-          <div className="flex flex-col space-y-6 max-w-xs w-full">
-            <p className="text-gray-900 text-lg font-semibold">
-              Discover the latest trends
-            </p>
-            <form className="w-full">
-              <label htmlFor="email" className="sr-only">
-                Email address
-              </label>
-              <div className="relative">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="w-full rounded-md border border-gray-300 px-6 py-4 text-gray-900 text-base placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-600 focus:border-green-600"
-                />
-                <button
-                  type="submit"
-                  aria-label="Submit email"
-                  className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-900 text-2xl"
-                >
-                  <FaArrowRight />
-                </button>
-              </div>
-            </form>
-          </div>
         </div>
 
         {/* Bottom row */}
