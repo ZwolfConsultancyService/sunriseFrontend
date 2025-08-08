@@ -5,6 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Aboutimg from "../../../assets/about.jpg";
 import Form from '../label/page/Form';  
+import CompanyProfilePDF from "../../../assets/sunriseCompany.pdf"
 
 const About = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -24,14 +25,14 @@ const About = () => {
   const closeContactForm = () => setShowContactForm(false);
 
   return (
-    <div className="w-full bg-white py-16 px-4 md:px-10 lg:px-20" id="about">
+    <div className="w-full bg-white py-8 mt-8 px-4 md:px-10 lg:px-20" id="about">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 items-center gap-10">
 
         <div data-aos="fade-right">
           <img
             src={Aboutimg}
             alt="About Sunrise Label"
-            className="w-full h-full rounded-lg   object-contain"
+            className="w-full h-full rounded-lg object-contain"
           />
         </div>
 
@@ -70,7 +71,17 @@ const About = () => {
         </div>
       </div>
 
-    
+      {/* 📄 Company Profile Button */}
+      <div className="mt-12 flex justify-center">
+        <a
+          href={CompanyProfilePDF}
+          download="Company-Profile.pdf"
+          className="bg-white hover:bg-green-400 hover:text-white text-green-400 border border-green-400 text-lg font-semibold py-3 px-6 rounded-lg transition-all duration-300"
+        >
+          📄 Download Company Profile
+        </a>
+      </div>
+
       {showContactForm && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 w-11/12 md:w-1/2 lg:w-1/3 shadow-xl relative">
