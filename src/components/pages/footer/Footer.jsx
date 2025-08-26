@@ -10,6 +10,7 @@ import {
   FaWhatsapp, // ✅ New Import
 } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import sunrise from "../../../assets/sunrise.jpg"
 
 const Footer = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -68,15 +69,16 @@ const Footer = () => {
         {/* Bottom row */}
         <div className="max-w-7xl mx-auto mt-24 flex flex-col md:flex-row md:justify-between md:items-center text-gray-700 text-sm sm:text-base font-medium">
           <div className="flex flex-wrap items-center gap-3 mb-8 md:mb-0">
-            <div
-              className="flex items-center space-x-2 font-extrabold text-2xl cursor-pointer"
-              onClick={() => navigate("/")}
-            >
-              <span className="text-green-500 text-3xl">⌞</span>
-              <span>sun</span>
-              <span className="text-green-500">r</span>
-              <span>ise</span>
-            </div>
+             <Link to={"/"}>
+             <div className="flex items-center font-extrabold text-2xl">
+               <img 
+                 src={sunrise}
+                 alt="Sunrise Logo" 
+                 className="w-16 h-16 rounded-full object-contain"
+               />
+             </div>
+           </Link>
+           
 
             <span className="text-gray-700">
               © {new Date().getFullYear()} sunrise. All rights reserved.

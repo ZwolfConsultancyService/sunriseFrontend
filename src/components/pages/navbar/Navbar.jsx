@@ -7,6 +7,7 @@ import {
 import { FaSearch } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import labelHierarchy from "../label/data/labelHierarchy";
+import sunrise from "../../../assets/sunrise.jpg"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -37,14 +38,25 @@ const Navbar = () => {
     <nav className="w-full bg-white shadow px-6 py-4 fixed top-0 left-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
-        <Link to={"/"}>
+        {/* <Link to={"/"}>
         <div className="flex items-center space-x-2 font-extrabold text-2xl">
           <span className="text-green-500 text-3xl">⌞</span>
           <span>sun</span>
           <span className="text-green-500">r</span>
           <span>ise</span>
         </div>
-        </Link>
+        </Link> */}
+
+
+        <Link to={"/"}>
+  <div className="flex items-center font-extrabold text-2xl">
+    <img 
+      src={sunrise}
+      alt="Sunrise Logo" 
+      className="w-16 h-16 rounded-full object-contain"
+    />
+  </div>
+</Link>
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex space-x-8 text-base font-medium mr-12">
