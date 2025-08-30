@@ -3,13 +3,13 @@ import Navbar from '../navbar/Navbar';
 import Footer from '../footer/Footer';
 import Asidepage from './page/Asidepage';
 import LabelGroupPage from './page/LabelgroupPage';
-import Form from './page/Form';
+// import Form from './page/Form';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useState } from 'react';
 
 const Label = () => {
-  const [activeGroupIndex, setActiveGroupIndex] = useState(0); // Default to first group
+  const [activeGroupIndex, setActiveGroupIndex] = useState(0);
 
   React.useEffect(() => {
     Aos.init({ duration: 1000 });
@@ -30,7 +30,7 @@ const Label = () => {
         {/* Main Content */}
         <main className="w-3/4">
           <LabelGroupPage activeGroupIndex={activeGroupIndex} />
-          <Form />
+          {/* <Form /> */}
         </main>
       </div>
       <Footer />

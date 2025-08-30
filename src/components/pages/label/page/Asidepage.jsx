@@ -4,15 +4,14 @@ import labelHierarchy from '../data/labelHierarchy';
 import { Link } from 'react-router-dom';
 
 const Asidepage = ({ activeGroupIndex, setActiveGroupIndex }) => {
-  const [openGroups, setOpenGroups] = useState({ 0: true }); // First group open by default
-  const [openCategories, setOpenCategories] = useState({});
+  const [openGroups, setOpenGroups] = useState({ 0: true });   const [openCategories, setOpenCategories] = useState({});
 
   const toggleGroup = (groupIndex) => {
     setOpenGroups(prev => ({
       ...prev,
       [groupIndex]: !prev[groupIndex]
     }));
-    // Set this group as active when clicked
+
     setActiveGroupIndex(groupIndex);
   };
 
@@ -26,7 +25,7 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex }) => {
 
   const handleGroupClick = (groupIndex) => {
     setActiveGroupIndex(groupIndex);
-    // Also open the group if it's not open
+   
     if (!openGroups[groupIndex]) {
       setOpenGroups(prev => ({
         ...prev,
@@ -37,7 +36,6 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex }) => {
 
   return (
     <div>
-      {/* Explore Labels */}
       <div className="mb-8">
         <h2 className="text-lg font-semibold mb-4">Explore Labels</h2>
         <div className="space-y-2">
@@ -46,21 +44,21 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex }) => {
               key={groupIndex} 
               className={`border rounded-lg transition-all duration-200 ${
                 activeGroupIndex === groupIndex 
-                  ? 'border-orange-500 shadow-md bg-orange-50' 
-                  : 'border-gray-200'
+                  ? 'border-orange-500 shadow-md ' 
+                  : 'border-gray-200 '
               }`}
             >
-              {/* Group Header */}
+        
               <button
                 onClick={() => handleGroupClick(groupIndex)}
-                className={`w-full flex items-center justify-between p-3 text-left transition-colors ${
+                className={`w-full flex items-center justify-between p-3 text-left transition-colors cursor-pointer ${
                   activeGroupIndex === groupIndex
                     ? 'hover:bg-orange-100'
                     : 'hover:bg-gray-50'
                 }`}
               >
                 <h3 className={`text-base font-bold ${
-                  activeGroupIndex === groupIndex ? 'text-orange-600' : 'text-orange-500'
+                  activeGroupIndex === groupIndex ? 'text-orange-500' : 'text-orange-500'
                 }`}>
                   {group.group}
                 </h3>
@@ -83,7 +81,7 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex }) => {
                       >
                         <Link
                           to={`/label/${group.slug}/${category.category.toLowerCase().replace(/\s+/g, "-")}`}
-                          className="text-sm font-medium text-gray-700 hover:text-orange-600 flex-1 mr-2"
+                          className="text-sm font-medium text-gray-700 hover:text-orange-500 flex-1 mr-2"
                           onClick={(e) => e.stopPropagation()}
                         >
                           {category.category}
