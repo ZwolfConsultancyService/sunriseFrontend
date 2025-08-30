@@ -44,35 +44,18 @@ const Gallery = () => {
     AOS.init({ duration: 1000 });
   }, []);
 
-  
-  const reduceWidthIndexes = [2, 3, 5, 7, 11, 13]; 
-  const reduceHeightIndexes = [1, 4, 8, 12]; 
-  
-  // Helper functions
-  const shouldReduceWidth = (index) => reduceWidthIndexes.includes(index);
-  const shouldReduceHeight = (index) => reduceHeightIndexes.includes(index);
-
   return (
     <div className="w-full bg-gray-50 py-10" data-aos="fade-up">
       <h2 className="text-4xl font-bold text-center mb-8">Our Gallery</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-6 max-w-7xl mx-auto">
+      {/* gap-0 for no spacing */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 max-w-7xl mx-auto">
         {images.map((img, index) => (
           <div
             key={index}
-            className={`relative group rounded-xl overflow-hidden shadow-lg cursor-pointer ${
-              shouldReduceWidth(index) 
-                ? "md:col-span-1 lg:w-3/4 mx-auto" 
-                : "md:col-span-1" 
-            } ${
-              shouldReduceHeight(index)
-                ? "h-[250px]" 
-                : "h-[400px]" 
-            }`}
+            className="relative group overflow-hidden cursor-pointer h-[300px]"
             onClick={() =>
-              setVisibleTitleIndex(
-                visibleTitleIndex === index ? null : index
-              )
+              setVisibleTitleIndex(visibleTitleIndex === index ? null : index)
             }
           >
             <img

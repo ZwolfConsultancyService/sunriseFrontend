@@ -1,74 +1,102 @@
-import React from 'react'
-import { FiSearch } from "react-icons/fi";
+import React, { useState } from 'react'
+import { FiSearch, FiChevronDown, FiChevronRight } from "react-icons/fi";
 import labelHierarchy from '../data/labelHierarchy';
 import { Link } from 'react-router-dom';
 
 const Asidepage = () => {
+  const [openGroups, setOpenGroups] = useState({});
+  const [openCategories, setOpenCategories] = useState({});
+
+  const toggleGroup = (groupIndex) => {
+    setOpenGroups(prev => ({
+      ...prev,
+      [groupIndex]: !prev[groupIndex]
+    }));
+  };
+
+  const toggleCategory = (groupIndex, categoryIndex) => {
+    const key = `${groupIndex}-${categoryIndex}`;
+    setOpenCategories(prev => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
+  };
+
   return (
     <div>
-		     {/* Hot Products */}
-		  {/* Explore Labels */}
-<div className="mb-8">
-  <h2 className="text-lg font-semibold mb-4">Explore Labels</h2>
-  <div className="space-y-4">
-    {labelHierarchy.map((group, index) => (
-      <div key={index}>
-        <h3 className="text-base font-bold text-orange-500 mb-1">{group.group}</h3>
-        <ul className="ml-3 list-disc space-y-1 text-sm text-gray-700">
-          {group.categories.map((category, i) => (
-            <li key={i}>
-              <Link
-                to={`/label/${group.slug}/${category.category.toLowerCase().replace(/\s+/g, "-")}`}
-                className="hover:underline hover:text-orange-600"
+      {/* Explore Labels */}
+      <div className="mb-8">
+        <h2 className="text-lg font-semibold mb-4">Explore Labels</h2>
+        <div className="space-y-2">
+          {labelHierarchy.map((group, groupIndex) => (
+            <div key={groupIndex} className="border border-gray-200 rounded-lg">
+              {/* Group Header */}
+              <button
+                onClick={() => toggleGroup(groupIndex)}
+                className="w-full flex items-center justify-between p-3 text-left hover:bg-gray-50 transition-colors"
               >
-                {category.category}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    ))}
-  </div>
-</div>
+                <h3 className="text-base font-bold text-orange-500">{group.group}</h3>
+                {openGroups[groupIndex] ? (
+                  <FiChevronDown className="text-orange-500 w-4 h-4 flex-shrink-0" />
+                ) : (
+                  <FiChevronRight className="text-orange-500 w-4 h-4 flex-shrink-0" />
+                )}
+              </button>
 
-		     {/* Recent Posts */}
-		     {/* <div className="mb-8">
-			<h2 className="text-base font-bold mb-2">Recent Posts</h2>
-			<ul className="text-base text-gray-700 space-y-3">
-			  {[
-			    'Clothing name labels for business branding',
-			    'White paper bags for brand business',
-			    'Stock size: plastic PE packaging bags',
-			    'Custom packaging boxes for business',
-			    'Branded Custom Poly Mailers Make a Lasting Impression',
-			    'In-stock size courier bags',
-			    'Wholesale cotton drawstring bags for brands',
-			    'Custom Logo Stickers to Elevate Your Brand Identity',
-			    'Wholesale transparent plastic bags with personalized logos',
-			    'Supply custom rigid boxes for brands'
-			  ].map((post, index) => (
-			    <li key={index} className="hover:text-orange-600 cursor-pointer">{post}</li>
-			  ))}
-			</ul>
-		     </div> */}
-	
-		     {/* Tags */}
-		     {/* <div className="space-y-2 text-base font-medium text-gray-700 mb-10">
-			{[
-			  'bags', 'buttons', 'company news', 'fasteners', 'garment accessories',
-			  'garment trims', 'hang tag string', 'hang tags', 'hangers',
-			  'ideas and inspirations', 'labels and tags', 'leather',
-			  'metal accessories', 'packaging solutions', 'paper bags',
-			  'patches', 'plastic bags', 'project samples',
-			  'ribbon & tape & bands', 'stickers', 'textiles and fabrics',
-			  'tissue paper', 'woven labels', 'zipper pulls'
-			].map((tag, index) => (
-			  <a key={index} href="#" className="block text-orange-400 hover:underline">
-			    {tag}
-			  </a>
-			))}
-		     </div> */}
-	
+              {/* Group Content */}
+              {openGroups[groupIndex] && (
+                <div className="border-t border-gray-200">
+                  {group.categories.map((category, categoryIndex) => (
+                    <div key={categoryIndex} className="border-b border-gray-100 last:border-b-0">
+                      {/* Category Header */}
+                      <button
+                        onClick={() => toggleCategory(groupIndex, categoryIndex)}
+                        className="w-full flex items-center justify-between p-3 pl-6 text-left hover:bg-gray-50 transition-colors"
+                      >
+                        <Link
+                          to={`/label/${group.slug}/${category.category.toLowerCase().replace(/\s+/g, "-")}`}
+                          className="text-sm font-medium text-gray-700 hover:text-orange-600 flex-1 mr-2"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {category.category}
+                        </Link>
+                        {category.items && category.items.length > 0 && (
+                          openCategories[`${groupIndex}-${categoryIndex}`] ? (
+                            <FiChevronDown className="text-gray-500 w-3 h-3 flex-shrink-0" />
+                          ) : (
+                            <FiChevronRight className="text-gray-500 w-3 h-3 flex-shrink-0" />
+                          )
+                        )}
+                      </button>
+
+                      {/* Category Items */}
+                      {openCategories[`${groupIndex}-${categoryIndex}`] && 
+                       category.items && 
+                       category.items.length > 0 && (
+                        <div className="bg-gray-50 px-6 pb-3">
+                          <ul className="space-y-1">
+                            {category.items.map((item, itemIndex) => (
+                              <li key={itemIndex} className="text-xs text-gray-600 pl-4 relative">
+                                <span className="absolute left-0 top-1">•</span>
+                                <Link
+                                  to={`/label/${group.slug}/${category.category.toLowerCase().replace(/\s+/g, "-")}/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                                  className="hover:text-orange-600 hover:underline"
+                                >
+                                  {item}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   )
 }

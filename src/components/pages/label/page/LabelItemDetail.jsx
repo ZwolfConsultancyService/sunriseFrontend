@@ -42,12 +42,12 @@ const galleryImages = [
   return (
     <>
       <Navbar />
-
+{/* 
     <HeroLabel
   title={itemData.title}
   description="Explore premium label categories"
   
-/>
+/> */}
 
       {/* Main Content Section */}
       <div className="bg-white text-gray-900 font-sans max-w-7xl mx-auto px-4 py-10">
@@ -221,7 +221,7 @@ const galleryImages = [
           </div>
 
           {/* Right Sidebar */}
-          <aside className="w-full lg:max-w-sm mt-10 lg:mt-0">
+          {/* <aside className="w-full lg:max-w-sm mt-10 lg:mt-0">
             <div className="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg mb-6 border border-orange-200">
               <h2 className="text-lg font-semibold mb-3 text-orange-800">Product Information</h2>
               <div className="space-y-2 text-sm">
@@ -252,9 +252,9 @@ const galleryImages = [
               </div>
             </div>
 
-            {/* Hot Products */}
+            
             <Asidepage />
-          </aside>
+          </aside> */}
         </div>
       </div>
 

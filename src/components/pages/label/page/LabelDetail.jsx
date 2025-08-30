@@ -31,11 +31,11 @@ const LabelDetail = () => {
     <>
       <Navbar />
 
-     <HeroLabel
+     {/* <HeroLabel
   title={label.group}
   description="Explore premium label categories"
  
-/>
+/> */}
 
       {/* Main Section */}
       <div className="bg-white text-gray-900 font-sans max-w-7xl mx-auto px-4 py-10">
@@ -116,10 +116,10 @@ const LabelDetail = () => {
           </div>
 
           {/* Right Sidebar */}
-          <aside className="w-full lg:max-w-sm mt-10 lg:mt-0">
-            {/* Search */}
+          {/* <aside className="w-full lg:max-w-sm mt-10 lg:mt-0">
+          
            <Asidepage />
-          </aside>
+          </aside> */}
         </div>
       </div>
 

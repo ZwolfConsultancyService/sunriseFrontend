@@ -7,7 +7,6 @@ import labelExtendedDetails from '../data/labelExtendedDetails';
 import Navbar from '../../navbar/Navbar';
 import Footer from '../../footer/Footer';
 import Form from './Form';
-import Asidepage from './Asidepage';
 import HeroLabel from './HeroLabel';
 
 const CategoryDetail = () => {
@@ -85,11 +84,11 @@ const galleryImages = [
     <>
       <Navbar />
 
-     <HeroLabel
+     {/* <HeroLabel
   title={categoryData.title}
   description="Explore premium label categories"
   
-/>
+/> */}
 
       {/* Content Section */}
       <div className="bg-white text-gray-900 font-sans max-w-7xl mx-auto px-4 py-10">
@@ -268,9 +267,9 @@ const galleryImages = [
           </div>
 
           {/* Right Sidebar */}
-          <aside className="w-full lg:max-w-sm mt-10 lg:mt-0">
+          {/* <aside className="w-full lg:max-w-sm mt-10 lg:mt-0">
             <Asidepage />
-          </aside>
+          </aside> */}
         </div>
       </div>
       <Footer />
