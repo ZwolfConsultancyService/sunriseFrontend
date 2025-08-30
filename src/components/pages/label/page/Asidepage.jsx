@@ -3,8 +3,8 @@ import { FiSearch, FiChevronDown, FiChevronRight } from "react-icons/fi";
 import labelHierarchy from '../data/labelHierarchy';
 import { Link } from 'react-router-dom';
 
-const Asidepage = () => {
-  const [openGroups, setOpenGroups] = useState({});
+const Asidepage = ({ activeGroupIndex, setActiveGroupIndex }) => {
+  const [openGroups, setOpenGroups] = useState({ 0: true }); // First group open by default
   const [openCategories, setOpenCategories] = useState({});
 
   const toggleGroup = (groupIndex) => {
@@ -12,6 +12,8 @@ const Asidepage = () => {
       ...prev,
       [groupIndex]: !prev[groupIndex]
     }));
+    // Set this group as active when clicked
+    setActiveGroupIndex(groupIndex);
   };
 
   const toggleCategory = (groupIndex, categoryIndex) => {
@@ -22,6 +24,17 @@ const Asidepage = () => {
     }));
   };
 
+  const handleGroupClick = (groupIndex) => {
+    setActiveGroupIndex(groupIndex);
+    // Also open the group if it's not open
+    if (!openGroups[groupIndex]) {
+      setOpenGroups(prev => ({
+        ...prev,
+        [groupIndex]: true
+      }));
+    }
+  };
+
   return (
     <div>
       {/* Explore Labels */}
@@ -29,13 +42,28 @@ const Asidepage = () => {
         <h2 className="text-lg font-semibold mb-4">Explore Labels</h2>
         <div className="space-y-2">
           {labelHierarchy.map((group, groupIndex) => (
-            <div key={groupIndex} className="border border-gray-200 rounded-lg">
+            <div 
+              key={groupIndex} 
+              className={`border rounded-lg transition-all duration-200 ${
+                activeGroupIndex === groupIndex 
+                  ? 'border-orange-500 shadow-md bg-orange-50' 
+                  : 'border-gray-200'
+              }`}
+            >
               {/* Group Header */}
               <button
-                onClick={() => toggleGroup(groupIndex)}
-                className="w-full flex items-center justify-between p-3 text-left hover:bg-gray-50 transition-colors"
+                onClick={() => handleGroupClick(groupIndex)}
+                className={`w-full flex items-center justify-between p-3 text-left transition-colors ${
+                  activeGroupIndex === groupIndex
+                    ? 'hover:bg-orange-100'
+                    : 'hover:bg-gray-50'
+                }`}
               >
-                <h3 className="text-base font-bold text-orange-500">{group.group}</h3>
+                <h3 className={`text-base font-bold ${
+                  activeGroupIndex === groupIndex ? 'text-orange-600' : 'text-orange-500'
+                }`}>
+                  {group.group}
+                </h3>
                 {openGroups[groupIndex] ? (
                   <FiChevronDown className="text-orange-500 w-4 h-4 flex-shrink-0" />
                 ) : (
