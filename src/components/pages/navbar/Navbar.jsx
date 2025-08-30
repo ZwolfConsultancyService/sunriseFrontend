@@ -81,7 +81,7 @@ const Navbar = () => {
                         >
                           <Link
                             to={getSubLinkPath(group.group)}
-                            className="text-xs font-bold text-pink-600 hover:text-green-600 uppercase tracking-wide"
+                            className="text-xs font-bold text-orange-500 hover:text-green-600 uppercase tracking-wide"
                           >
                             {group.group}
                           </Link>
