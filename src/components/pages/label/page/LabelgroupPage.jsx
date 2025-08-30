@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react';
 import labelHierarchy from '../data/labelHierarchy';
 import { Link } from 'react-router-dom';
 
@@ -17,7 +17,7 @@ const LabelGroupPage = ({ activeGroupIndex }) => {
   }
 
   return (
-    <div className="px-3 md:px-8 mb-5 mt-24">
+    <div className="px-3 md:px-8 mb-5 mt-20">
       {/* Group Title and Description */}
       <div className="mb-8 text-center">
         <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
@@ -35,6 +35,7 @@ const LabelGroupPage = ({ activeGroupIndex }) => {
             <Link 
               to={`/label/${activeGroup.slug}/${category.category.toLowerCase().replace(/\s+/g, "-")}`} 
               className="flex flex-col items-center w-full max-w-sm group"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               <div className="w-full aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border-2 border-transparent group-hover:border-orange-200">
                 <img

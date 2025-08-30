@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from '../navbar/Navbar';
 import Footer from '../footer/Footer';
 import Asidepage from './page/Asidepage';
@@ -6,10 +6,9 @@ import LabelGroupPage from './page/LabelgroupPage';
 // import Form from './page/Form';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { useState } from 'react';
 
 const Label = () => {
-  const [activeGroupIndex, setActiveGroupIndex] = useState(0);
+  const [activeGroupIndex, setActiveGroupIndex] = useState(0); // Default to first group
 
   React.useEffect(() => {
     Aos.init({ duration: 1000 });
