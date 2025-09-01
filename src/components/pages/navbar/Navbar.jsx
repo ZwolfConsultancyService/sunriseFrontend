@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import {
   HiOutlineMenu,
@@ -20,7 +21,6 @@ const Navbar = () => {
   const getSubLinkPath = (type) =>
     `/label/${type.toLowerCase().replace(/\s+/g, "-")}`;
 
-  // ✅ Fixed Active logic
   const isActive = (link) => {
     const currentPath = location.pathname;
 
@@ -32,8 +32,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full bg-white shadow px-6 py-4 fixed top-0 left-0 z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+    <nav className="w-full bg-white shadow px-6 py-4 fixed top-0 left-0 z-50
+    ">
+      <div className="max-w-7xl mx-auto flex items-center justify-between relative group">
         {/* Logo */}
         <Link to={"/"}>
           <div className="flex items-center space-x-2 font-extrabold text-2xl">
@@ -47,7 +48,7 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <ul className="hidden md:flex space-x-8 text-base font-medium mr-12">
           {navLinks.map((link) => (
-            <li key={link} className="relative group">
+            <li key={link} className="">
               {link === "Trims" ? (
                 <>
                   {/* Nav Link with dropdown trigger */}
@@ -64,43 +65,51 @@ const Navbar = () => {
                     </Link>
                   </div>
 
-                  {/* Dropdown: Use CSS Grid to avoid column height gaps */}
+                  {/* Responsive Dropdown */}
                   <div
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 bg-white shadow-lg border-t border-gray-200 
-                    w-[900px] p-6 max-h-[400px] overflow-y-auto rounded-md z-50
+                    className="absolute top-full right-0 bg-white shadow-lg border-t border-gray-200 
+                    w-screen max-w-none p-4 sm:p-6 rounded-md z-[999]
                     opacity-0 translate-y-2 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible 
                     transition-all duration-300 ease-out"
-                    style={{ minWidth: 700 }}
+                    style={{ 
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      width: 'calc(100vw - 2rem)',
+                      maxWidth: '1400px',
+                      maxHeight: 'calc(100vh - 120px)'
+                    }}
                   >
-                    {/* Grid container with 5 columns and no vertical gap to avoid gaps */}
-                    <div className="grid grid-cols-5 gap-x-8 gap-y-0">
-                      {labelHierarchy.map((group) => (
-                        <div
-                          key={group.group}
-                          className="flex flex-col min-w-[150px] max-w-[180px] space-y-2"
-                        >
-                          <Link
-                            to={getSubLinkPath(group.group)}
-                            className="text-xs font-bold text-orange-500 hover:text-green-600 uppercase tracking-wide"
+                    {/* Responsive grid layout */}
+                    <div className="container mx-auto px-4">
+                      <div className="columns-2 sm:columns-3 md:columns-4 lg:columns-5 xl:columns-6 gap-4 sm:gap-6 space-y-0">
+                        {labelHierarchy.map((group) => (
+                          <div
+                            key={group.group}
+                            className="break-inside-avoid mb-6 inline-block w-full"
                           >
-                            {group.group}
-                          </Link>
-                          <ul className="space-y-1">
-                            {group.categories.map((category) => (
-                              <li key={category.category}>
-                                <Link
-                                  to={`/label/${group.slug}/${category.category
-                                    .toLowerCase()
-                                    .replace(/\s+/g, "-")}`}
-                                  className="text-xs text-gray-800 hover:text-green-600 transition-colors"
-                                >
-                                  {category.category}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
+                            <Link
+                              to={getSubLinkPath(group.group)}
+                              className="text-xs font-bold text-orange-500 hover:text-green-600 uppercase tracking-wide mb-3 block leading-tight"
+                            >
+                              {group.group}
+                            </Link>
+                            <ul className="space-y-1">
+                              {group.categories.map((category) => (
+                                <li key={category.category}>
+                                  <Link
+                                    to={`/label/${group.slug}/${category.category
+                                      .toLowerCase()
+                                      .replace(/\s+/g, "-")}`}
+                                    className="text-xs text-gray-800 hover:text-green-600 transition-colors block py-0.5 leading-relaxed"
+                                  >
+                                    {category.category}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </>
@@ -133,7 +142,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-16 left-0 w-full bg-white shadow-md px-6 py-4 z-40">
+        <div className="md:hidden absolute top-16 left-0 w-full bg-white shadow-md px-6 py-4 z-40 max-h-[calc(100vh-4rem)] overflow-y-auto">
           {navLinks.map((link) => (
             <div key={link} className="py-2 border-b border-gray-200">
               {link === "Trims" ? (
@@ -150,11 +159,11 @@ const Navbar = () => {
                     />
                   </button>
                   {showTrimsMobile && (
-                    <div className="ml-4 mt-2 space-y-3 max-h-[300px] overflow-y-auto">
+                    <div className="ml-4 mt-2 space-y-3">
                       {labelHierarchy.map((group) => (
                         <div
                           key={group.group}
-                          className="border-b border-gray-100 pb-2"
+                          className="border-b border-gray-100 pb-2 last:border-b-0"
                         >
                           <Link
                             to={getSubLinkPath(group.group)}
