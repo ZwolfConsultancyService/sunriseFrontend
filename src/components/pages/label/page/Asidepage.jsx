@@ -4,20 +4,39 @@ import labelHierarchy from "../data/labelHierarchy";
 import { Link } from "react-router-dom";
 
 const Asidepage = ({ activeGroupIndex, setActiveGroupIndex }) => {
-  const [openGroups, setOpenGroups] = useState({ 0: true }); // First group open by default
+  const [openGroups, setOpenGroups] = useState({ 0: false });
   const [openCategories, setOpenCategories] = useState({});
 
-  const toggleGroup = (groupIndex) => {
-    // Close all other groups and open only the clicked one
-    setOpenGroups({ [groupIndex]: !openGroups[groupIndex] });
-    // Close all categories when switching groups
-    setOpenCategories({});
+  
+  const handleGroupClick = (groupIndex) => {
     setActiveGroupIndex(groupIndex);
-    // Scroll to top smoothly
+
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const toggleCategory = (groupIndex, categoryIndex) => {
+  const toggleGroup = (groupIndex, e) => {
+    e.stopPropagation(); 
+    const willBeClosed = openGroups[groupIndex];
+    setOpenGroups(prev => ({
+      ...prev,
+      [groupIndex]: !prev[groupIndex]
+    }));
+    
+    if (willBeClosed) {
+
+      const categoriesToClose = {};
+      Object.keys(openCategories).forEach(key => {
+        if (!key.startsWith(`${groupIndex}-`)) {
+          categoriesToClose[key] = openCategories[key];
+        }
+      });
+      setOpenCategories(categoriesToClose);
+    }
+  };
+
+ 
+  const toggleCategory = (groupIndex, categoryIndex, e) => {
+    e.stopPropagation(); 
     const key = `${groupIndex}-${categoryIndex}`;
     setOpenCategories((prev) => ({
       ...prev,
@@ -25,19 +44,8 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex }) => {
     }));
   };
 
-  const handleGroupClick = (groupIndex) => {
-    setActiveGroupIndex(groupIndex);
-    // Close all other groups and open only the clicked one
-    setOpenGroups({ [groupIndex]: true });
-    // Close all categories when switching groups
-    setOpenCategories({});
-    // Scroll to top smoothly
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   const handleCategoryClick = (e) => {
-    e.stopPropagation();
-    // Scroll to top smoothly
+  
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -62,16 +70,17 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex }) => {
               }`}
             >
               {/* Group Header */}
-              <button
-                onClick={() => handleGroupClick(groupIndex)}
-                className={`w-full flex items-center justify-between p-3 text-left transition-colors cursor-pointer ${
+              <div
+                className={`w-full flex items-center justify-between p-3 cursor-pointer transition-colors ${
                   activeGroupIndex === groupIndex
                     ? "hover:bg-orange-100"
                     : "hover:bg-gray-50"
                 }`}
               >
+                {/* Group Text - Click to activate only */}
                 <h3
-                  className={`text-base font-bold ${
+                  onClick={() => handleGroupClick(groupIndex)}
+                  className={`text-base font-bold flex-1 cursor-pointer ${
                     activeGroupIndex === groupIndex
                       ? "text-orange-400"
                       : "text-orange-500"
@@ -79,12 +88,19 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex }) => {
                 >
                   {group.group}
                 </h3>
-                {openGroups[groupIndex] ? (
-                  <FiChevronDown className="text-orange-500 w-4 h-4 flex-shrink-0" />
-                ) : (
-                  <FiChevronRight className="text-orange-500 w-4 h-4 flex-shrink-0" />
-                )}
-              </button>
+
+                {/* Arrow - Click to expand/collapse */}
+                <span
+                  onClick={(e) => toggleGroup(groupIndex, e)}
+                  className="p-1 cursor-pointer hover:bg-orange-50 rounded"
+                >
+                  {openGroups[groupIndex] ? (
+                    <FiChevronDown className="text-orange-500 w-4 h-4 flex-shrink-0" />
+                  ) : (
+                    <FiChevronRight className="text-orange-500 w-4 h-4 flex-shrink-0" />
+                  )}
+                </span>
+              </div>
 
               {/* Group Content */}
               {openGroups[groupIndex] && (
@@ -95,12 +111,8 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex }) => {
                       className="border-b border-gray-100 last:border-b-0"
                     >
                       {/* Category Header */}
-                      <button
-                        onClick={() =>
-                          toggleCategory(groupIndex, categoryIndex)
-                        }
-                        className="w-full flex items-center justify-between p-3 pl-6 text-left hover:bg-gray-50 transition-colors"
-                      >
+                      <div className="w-full flex items-center justify-between p-3 pl-6 hover:bg-gray-50 transition-colors">
+                        {/* Category Link - Click to navigate only */}
                         <Link
                           to={`/label/${group.slug}/${category.category
                             .toLowerCase()
@@ -110,14 +122,21 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex }) => {
                         >
                           {category.category}
                         </Link>
-                        {category.items &&
-                          category.items.length > 0 &&
-                          (openCategories[`${groupIndex}-${categoryIndex}`] ? (
-                            <FiChevronDown className="text-gray-500 w-3 h-3 flex-shrink-0" />
-                          ) : (
-                            <FiChevronRight className="text-gray-500 w-3 h-3 flex-shrink-0" />
-                          ))}
-                      </button>
+                        
+                        {/* Category Arrow - Click to expand/collapse items */}
+                        {category.items && category.items.length > 0 && (
+                          <span
+                            onClick={(e) => toggleCategory(groupIndex, categoryIndex, e)}
+                            className="p-1 cursor-pointer hover:bg-gray-100 rounded"
+                          >
+                            {openCategories[`${groupIndex}-${categoryIndex}`] ? (
+                              <FiChevronDown className="text-gray-500 w-3 h-3 flex-shrink-0" />
+                            ) : (
+                              <FiChevronRight className="text-gray-500 w-3 h-3 flex-shrink-0" />
+                            )}
+                          </span>
+                        )}
+                      </div>
 
                       {/* Category Items */}
                       {openCategories[`${groupIndex}-${categoryIndex}`] &&
