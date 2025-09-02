@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import { FiSearch, FiChevronDown, FiChevronRight } from "react-icons/fi";
+import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 import labelHierarchy from "../data/labelHierarchy";
 import { Link } from "react-router-dom";
 
-const Asidepage = ({ activeGroupIndex, setActiveGroupIndex }) => {
-  const [openGroups, setOpenGroups] = useState({ 0: false });
+const Asidepage = ({ activeGroupIndex, setActiveGroupIndex, isMobile = false }) => {
+  const [openGroups, setOpenGroups] = useState({});
   const [openCategories, setOpenCategories] = useState({});
 
-  
   const handleGroupClick = (groupIndex) => {
-    setActiveGroupIndex(groupIndex);
-
+    if (setActiveGroupIndex && typeof setActiveGroupIndex === 'function') {
+      setActiveGroupIndex(groupIndex);
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -23,7 +23,6 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex }) => {
     }));
     
     if (willBeClosed) {
-
       const categoriesToClose = {};
       Object.keys(openCategories).forEach(key => {
         if (!key.startsWith(`${groupIndex}-`)) {
@@ -34,7 +33,6 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex }) => {
     }
   };
 
- 
   const toggleCategory = (groupIndex, categoryIndex, e) => {
     e.stopPropagation(); 
     const key = `${groupIndex}-${categoryIndex}`;
@@ -45,15 +43,77 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex }) => {
   };
 
   const handleCategoryClick = (e) => {
-  
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const handleItemClick = () => {
-    // Scroll to top smoothly
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // Mobile Layout: Dropdown Box (like sort by)
+  if (isMobile) {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    return (
+      <div className="mb-8 mt-0 lg:mt-16">
+        <h2 className="text-lg font-semibold mb-4 text-center">Explore Labels</h2>
+        
+        {/* Mobile: Dropdown Box */}
+        <div className="relative">
+          <button
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            className="w-full flex items-center justify-between p-4 border border-gray-300 rounded-lg bg-white hover:border-orange-300 transition-colors"
+          >
+            <span className="text-gray-700 font-medium">
+              {labelHierarchy[activeGroupIndex]?.group || "All Categories"}
+            </span>
+            <FiChevronDown 
+              className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${
+                isDropdownOpen ? 'rotate-180' : ''
+              }`} 
+            />
+          </button>
+
+          {/* Dropdown Menu */}
+          {isDropdownOpen && (
+            <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+              <div className="py-2 max-h-60 overflow-y-auto">
+                {labelHierarchy.map((group, groupIndex) => (
+                  <button
+                    key={groupIndex}
+                    onClick={() => {
+                      handleGroupClick(groupIndex);
+                      setIsDropdownOpen(false);
+                    }}
+                    className={`w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors ${
+                      activeGroupIndex === groupIndex
+                        ? "bg-orange-50 text-orange-600 border-r-2 border-orange-500"
+                        : "text-gray-700"
+                    }`}
+                  >
+                    <div className="font-medium">{group.group}</div>
+                    <div className="text-xs text-gray-500 mt-1">
+                      {group.categories.length} {group.categories.length === 1 ? 'Category' : 'Categories'}
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Close dropdown when clicking outside */}
+        {isDropdownOpen && (
+          <div 
+            className="fixed inset-0 z-40" 
+            onClick={() => setIsDropdownOpen(false)}
+          />
+        )}
+      </div>
+    );
+  }
+
+  // Desktop Layout: Sidebar with expandable sections
   return (
     <div>
       {/* Explore Labels */}
