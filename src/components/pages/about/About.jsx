@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Aboutimg from "../../../assets/about.jpg";
+import Aboutimg from "../../../assets/about/about.jpg";
 import Form from '../label/page/Form';  
 import CompanyProfilePDF from "../../../assets/sunriseCompany.pdf"
 
