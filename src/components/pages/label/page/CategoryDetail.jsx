@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { FiSearch, FiPhone, FiFileText } from "react-icons/fi";
+import { FiSearch, FiFileText } from "react-icons/fi";
 import labelHierarchy from '../data/labelHierarchy';
 import labelCategoryDetails from '../data/labelCategoryDetails';
 import labelExtendedDetails from '../data/labelExtendedDetails';
@@ -8,6 +8,7 @@ import Navbar from '../../navbar/Navbar';
 import Footer from '../../footer/Footer';
 import Form from './Form';
 import HeroLabel from './HeroLabel';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const CategoryDetail = () => {
   const { groupSlug, categorySlug } = useParams();
@@ -170,8 +171,8 @@ const galleryImages = [
                   href="tel:+911234567890" 
                   className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
                 >
-                  <FiPhone className="w-5 h-5 mr-2" />
-                  Call Now
+                  <FaWhatsapp className="w-5 h-5 mr-2" />
+                  Whatsapp Now
                 </a>
                 
                 {/* Enquiry Form Button */}
