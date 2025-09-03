@@ -1,13 +1,16 @@
-// src/pages/About.jsx
-
 import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Aboutimg from "../../../assets/about/about.jpg";
 import Form from '../label/page/Form';  
-import CompanyProfilePDF from "../../../assets/sunriseCompany.pdf"
+import CompanyProfilePDF from "../../../assets/sunriseCompany.pdf";
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const About = () => {
+  const location = useLocation();
+  const isAboutRoute = location.pathname === '/about';
+  const navigate = useNavigate();
+
   const [isExpanded, setIsExpanded] = useState(false);
   const [showContactForm, setShowContactForm] = useState(false);
 
@@ -20,9 +23,13 @@ const About = () => {
     });
   }, []);
 
-  const toggleReadMore = () => setIsExpanded(!isExpanded);
   const openContactForm = () => setShowContactForm(true);
   const closeContactForm = () => setShowContactForm(false);
+
+  // When clicked on Read More button, navigate to "/about"
+  const handleReadMoreClick = () => {
+    navigate('/about');
+  };
 
   return (
     <div className="w-full bg-white py-8 mt-8 px-4 md:px-10 lg:px-20" id="about">
@@ -41,7 +48,8 @@ const About = () => {
             About Sunrise Label Co. Pvt. Ltd.
           </h2>
 
-          <div className={`text-gray-600 text-base md:text-lg leading-relaxed transition-all duration-500 ease-in-out ${isExpanded ? '' : 'line-clamp-6 xl:line-clamp-none'}`}>
+          <div className={`text-gray-600 text-base md:text-lg leading-relaxed transition-all duration-500 ease-in-out 
+            ${isAboutRoute ? '' : (isExpanded ? '' : 'line-clamp-6 ')}`}>
             <p>
               Sunrise Label Co. Pvt. Ltd. was started with a goal of designing and manufacturing tickets, packing materials, tags, as well as various other types of labels required by the retail and apparels industries.
             </p>
@@ -62,21 +70,25 @@ const About = () => {
             </p>
           </div>
 
-          <button
-            onClick={toggleReadMore}
-            className="text-green-500 font-semibold hover:underline focus:outline-none block xl:hidden"
-          >
-            {isExpanded ? "Read Less" : "Read More"}
-          </button>
+          {/* Show Read More button only when NOT on /about route */}
+          {!isAboutRoute && (
+            <button
+              onClick={handleReadMoreClick}
+              className="text-green-500 font-semibold hover:underline focus:outline-none block "
+            >
+              Read More
+            </button>
+          )}
+
         </div>
       </div>
 
-      {/* 📄 Company Profile Button */}
+      {/* Company Profile Download Button */}
       <div className="mt-12 flex justify-center">
         <a
           href={CompanyProfilePDF}
           download="Company-Profile.pdf"
-          className="bg-white hover:bg-gray-200  text-green-400 border border-green-400 text-lg font-semibold py-3 px-6 rounded-lg transition-all duration-300 "
+          className="bg-white hover:bg-gray-200 text-green-400 border border-green-400 text-lg font-semibold py-3 px-6 rounded-lg transition-all duration-300"
         >
           📄 Download Company Profile
         </a>

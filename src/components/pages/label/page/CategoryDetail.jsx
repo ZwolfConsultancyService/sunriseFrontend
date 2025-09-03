@@ -91,7 +91,7 @@ const galleryImages = [
 /> */}
 
       {/* Content Section */}
-      <div className="bg-white text-gray-900 font-sans max-w-7xl mx-auto px-4 py-10">
+      <div className="bg-white text-gray-900 font-sans max-w-7xl mx-auto px-4 py-10 mt-16">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-20">
           {/* Left Content */}
           <div className="w-full max-w-4xl mx-auto lg:mx-0">
