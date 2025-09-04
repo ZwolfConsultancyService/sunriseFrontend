@@ -6,16 +6,7 @@ import Form from "../label/page/Form";
 import ManufacturingProcess from "./ManufacturingProcess";
 
 const AboutNav = () => {
-  const [showForm, setShowForm] = useState(false);
 
-  useEffect(() => {
-
-    const timer = setTimeout(() => {
-      setShowForm(true);
-    }, 20000);
-
-    return () => clearTimeout(timer); 
-  }, []);
 
   return (
     <div>
@@ -27,7 +18,7 @@ const AboutNav = () => {
 
       <ManufacturingProcess />
 
-      {showForm && (
+      {/* {showForm && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
           <div className="bg-white p-6 rounded-2xl shadow-lg w-[90%] max-w-lg relative">
   
@@ -41,7 +32,7 @@ const AboutNav = () => {
             <Form />
           </div>
         </div>
-      )}
+      )} */}
 
       <Footer />
     </div>

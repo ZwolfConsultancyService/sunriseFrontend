@@ -11,7 +11,6 @@ const Order = () => {
 	<div className='mt-16'>
 		<OrderProcess />
 		</div>
-		<Form />
 		<Footer />
     </div>
   )

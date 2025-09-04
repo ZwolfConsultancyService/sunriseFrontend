@@ -95,7 +95,7 @@ const ReturnPolicy = () => {
           </div>
         </section>
       </div>
-      <Form />
+  
       <Footer />
     </>
   );

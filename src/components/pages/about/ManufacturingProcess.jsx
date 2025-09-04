@@ -37,14 +37,7 @@ const ManufacturingProcess = () => {
               {companyInfo.description}
             </p>
  
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mt-12" data-aos="fade-up" data-aos-delay="200">
-              {companyInfo.features.map((feature, index) => (
-                <div key={index} className="flex flex-col items-center p-3 sm:p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
-                  <FaStar className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-300 mb-2" />
-                  <span className="text-xs sm:text-sm font-medium text-center leading-tight">{feature}</span>
-                </div>
-              ))}
-            </div>
+         
           </div>
         </div>
       </div>

@@ -75,7 +75,6 @@ const RefundPolicy = () => {
           </div>
         </section>
       </div>
-      <Form />
       <Footer />
     </>
   );

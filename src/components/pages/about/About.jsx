@@ -83,7 +83,6 @@ const About = () => {
         </div>
       </div>
 
-      {/* Company Profile Download Button */}
       <div className="mt-12 flex justify-center">
         <a
           href={CompanyProfilePDF}

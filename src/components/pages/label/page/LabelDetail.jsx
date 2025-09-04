@@ -107,12 +107,6 @@ const LabelDetail = () => {
   </div>
 </div>
 
-
-
-
-            <div className="mt-10">
-              <Form />
-            </div>
           </div>
 
           {/* Right Sidebar */}

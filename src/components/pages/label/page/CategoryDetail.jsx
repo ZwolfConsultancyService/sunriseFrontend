@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { FiSearch, FiFileText } from "react-icons/fi";
+import { FiSearch, FiFileText, FiPhone } from "react-icons/fi";
 import labelHierarchy from '../data/labelHierarchy';
 import labelCategoryDetails from '../data/labelCategoryDetails';
 import labelExtendedDetails from '../data/labelExtendedDetails';
 import Navbar from '../../navbar/Navbar';
 import Footer from '../../footer/Footer';
-import Form from './Form';
 import HeroLabel from './HeroLabel';
 import { FaWhatsapp } from 'react-icons/fa';
 
@@ -24,6 +23,10 @@ const CategoryDetail = () => {
 
   // State for managing gallery images
   const [selectedImage, setSelectedImage] = useState(0);
+
+  // Contact details - Update these with your actual numbers
+  const PHONE_NUMBER = "+911234567890"; // Replace with your actual phone number
+  const WHATSAPP_NUMBER = "911234567890"; // Replace with your actual WhatsApp number (without +)
 
   if (!groupData || !categoryData) {
     return (
@@ -66,6 +69,18 @@ const galleryImages = [
   categoryFromGroup?.image3 || categoryData.image3,
   categoryFromGroup?.image4 || categoryData.image4
 ].filter(Boolean); // remove undefined
+
+  // WhatsApp message handler
+  const handleWhatsAppClick = () => {
+    const message = `Hi, I'm interested in ${categoryData.title}. Can you please provide more details about pricing and availability?`;
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  // Phone call handler
+  const handlePhoneCall = () => {
+    window.open(`tel:${PHONE_NUMBER}`, '_self');
+  };
 
   console.log('Debug Info:', {
     groupSlug,
@@ -162,39 +177,38 @@ const galleryImages = [
               </div>
             )}
 
-            {/* Enquiry Section */}
+            {/* Updated Enquiry Section with WhatsApp and Call */}
             <div className="bg-white border border-gray-200 rounded-lg p-6 mb-10 shadow-sm">
               <h3 className="text-xl font-semibold mb-4 text-gray-800">Get Quote & Enquiry</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {/* Call Button */}
-                <a 
-                  href="tel:+911234567890" 
-                  className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
+                
+                {/* WhatsApp Button */}
+                <button 
+                  onClick={handleWhatsAppClick}
+                  className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg"
                 >
                   <FaWhatsapp className="w-5 h-5 mr-2" />
-                  Whatsapp Now
-                </a>
+                  WhatsApp Enquiry
+                </button>
                 
-                {/* Enquiry Form Button */}
+                {/* Call Button */}
                 <button 
-                  onClick={() => {
-                    setTimeout(() => {
-                      document.getElementById('enquiry-form')?.scrollIntoView({ 
-                        behavior: 'smooth' 
-                      });
-                    }, 100);
-                  }}
-                  className="flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300"
+                  onClick={handlePhoneCall}
+                  className="flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg"
                 >
-                  <FiFileText className="w-5 h-5 mr-2" />
-                  Send Enquiry
+                  <FiPhone className="w-5 h-5 mr-2" />
+                  Call Now
                 </button>
               </div>
               
               <div className="mt-4 text-center">
                 <p className="text-gray-600 text-sm">
-                  Get instant quote or detailed information about this product
+                  Contact us instantly via WhatsApp or call for immediate assistance
                 </p>
+                <div className="mt-2 flex justify-center space-x-4 text-xs text-gray-500">
+                  <span>📱 WhatsApp: {WHATSAPP_NUMBER}</span>
+                  <span>📞 Call: {PHONE_NUMBER}</span>
+                </div>
               </div>
             </div>
 
@@ -261,10 +275,7 @@ const galleryImages = [
               </div>
             )}
 
-            {/* Enquiry Form Section - After Items */}
-            <div className="mt-10" id="enquiry-form">
-              <Form />
-            </div>
+          
           </div>
 
           {/* Right Sidebar */}
