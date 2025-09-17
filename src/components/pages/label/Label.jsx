@@ -1,17 +1,32 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Navbar from '../navbar/Navbar';
 import Footer from '../footer/Footer';
 import Asidepage from './page/Asidepage';
 import LabelGroupPage from './page/LabelgroupPage';
+import labelHierarchy from './data/labelHierarchy';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
 const Label = () => {
   const [activeGroupIndex, setActiveGroupIndex] = useState(0);
+  const { groupSlug } = useParams(); 
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
-  }, []);
+    
+    
+    if (groupSlug) {
+      const groupIndex = labelHierarchy.findIndex(
+        group => group.slug === groupSlug || 
+                 group.group.toLowerCase().replace(/\s+/g, '-') === groupSlug
+      );
+      
+      if (groupIndex !== -1) {
+        setActiveGroupIndex(groupIndex);
+      }
+    }
+  }, [groupSlug]);
 
   return (
     <>

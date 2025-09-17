@@ -46,7 +46,8 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogDetail />} />
           <Route path="/about" element={<AboutNav />} />
-          <Route path="/label" element={<Label />} />
+          {/* <Route path="/label" element={<Label />} /> */}
+<Route path="/label/:groupSlug?" element={<Label />} />
           <Route path="/label/:groupSlug/:categorySlug/:itemSlug" element={<LabelItemDetail />} />
           <Route path="/label/:groupSlug/:categorySlug" element={<CategoryDetail />} />
           <Route path="/label/:slug" element={<LabelDetail />} />

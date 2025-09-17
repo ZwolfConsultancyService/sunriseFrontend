@@ -1,16 +1,25 @@
 import React, { useState } from "react";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 import labelHierarchy from "../data/labelHierarchy";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Asidepage = ({ activeGroupIndex, setActiveGroupIndex, isMobile = false }) => {
   const [openGroups, setOpenGroups] = useState({});
   const [openCategories, setOpenCategories] = useState({});
+  const navigate = useNavigate();
 
   const handleGroupClick = (groupIndex) => {
+    const group = labelHierarchy[groupIndex];
+    const groupSlug = group.slug || group.group.toLowerCase().replace(/\s+/g, '-');
+    
+    // URL change karo
+    navigate(`/label/${groupSlug}`);
+    
+    // State bhi update karo (agar function available hai)
     if (setActiveGroupIndex && typeof setActiveGroupIndex === 'function') {
       setActiveGroupIndex(groupIndex);
     }
+    
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -137,7 +146,7 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex, isMobile = false }) 
                     : "hover:bg-gray-50"
                 }`}
               >
-                {/* Group Text - Click to activate only */}
+                {/* Group Text - Click to activate and navigate */}
                 <h3
                   onClick={() => handleGroupClick(groupIndex)}
                   className={`text-base font-bold flex-1 cursor-pointer ${
