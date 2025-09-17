@@ -8,7 +8,6 @@ import FaqSection from './pages/faq/FaqSection';
 import Testimonials from './pages/Testimonial/Testimonials';
 import Product from './pages/product/Product';
 import BestSellerBanner from './pages/bestseller/BestSellerBanner';
-import Gallery from './pages/gallery/Gallery';
 import Form from './pages/label/page/Form';
 
 
@@ -34,7 +33,7 @@ const Home = () => {
         <About />
         <BestSellerBanner />
         <WhyChooseUs />
-        <Gallery />
+        {/* <Gallery /> */}
         {/* <OrderProccess /> */}
         <Testimonials />
         <FaqSection />
