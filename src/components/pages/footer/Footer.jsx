@@ -113,7 +113,7 @@ const Footer = () => {
           <button
             aria-label="Scroll to top"
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 bg-green-600 hover:bg-green-700 text-white p-4 rounded-lg shadow-lg shadow-gray-400 text-xl transition-opacity duration-300"
+            className="fixed bottom-8 right-6 bg-green-600 hover:bg-green-700 text-white p-4 rounded-lg shadow-lg shadow-gray-400 text-xl transition-opacity duration-300"
           >
             <FaArrowUp />
           </button>
@@ -121,7 +121,7 @@ const Footer = () => {
       </footer>
 
       {/* ✅ Floating WhatsApp Icon */}
-      <a
+      {/* <a
         href="https://wa.me/919876543210" // Replace with your WhatsApp number
         target="_blank"
         rel="noopener noreferrer"
@@ -129,7 +129,7 @@ const Footer = () => {
         className="fixed bottom-8 left-8 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg shadow-gray-400 text-2xl z-50 transition-all duration-300"
       >
         <FaWhatsapp />
-      </a>
+      </a> */}
     </div>
   );
 };
