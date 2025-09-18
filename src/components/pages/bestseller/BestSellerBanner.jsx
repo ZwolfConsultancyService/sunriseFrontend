@@ -55,7 +55,7 @@ const BestSellerBanner = () => {
     <div className="w-full bg-gradient-to-br from-slate-50 to-gray-100 py-8 mt-12">
       <div className="w-[90%] max-w-6xl mx-auto rounded-lg px-6 py-10 text-center">
         <h2 className="text-3xl font-semibold text-gray-800 mb-8" data-aos="fade-up">
-         Our Best Trims
+         Our Hot Trims
         </h2>
 
         {/* Grid layout instead of slider */}

@@ -24,6 +24,7 @@ import Order from './components/pages/step/Order';
 import CategoryDetail from './components/pages/label/page/CategoryDetail';
 import LabelItemDetail from './components/pages/label/page/LabelItemDetail';
 import Gallerystep from './components/pages/gallery/Gallerystep';
+import TrimsInfrastructure from './components/pages/infraData/TrimsInfrastructure';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -58,6 +59,7 @@ function App() {
           <Route path="/return-policy" element={<ReturnPolicy />} />
           <Route path="/refund-policy" element={<RefundPolicy />} />
           <Route path="/order-process" element={<Order />} />
+          <Route path="/trims-infrastructure" element={<TrimsInfrastructure />} />
         </Routes>
       </Router>
     </>

@@ -12,7 +12,7 @@ const Navbar = () => {
   const [showTrimsMobile, setShowTrimsMobile] = useState(false);
   const location = useLocation();
 
-  const navLinks = ["Home", "Trims", "About", "Blog",];
+  const navLinks = ["Home", "Trims",  "Blog", "About","Trims-Infrastructure"];
 
   const getLinkPath = (link) =>
     `/${link === "Home" ? "" : link.toLowerCase().replace(/\s+/g, "-")}`;
