@@ -79,7 +79,7 @@ const [showForm, setShowForm] = useState(false);
                 Second, you need to choose hang tag string suppliers that can supply different materials to suit your needs.
               </p>
 
-              <div className="flex flex-col md:flex-row bg-gradient-to-r from-yellow-50 via-green-100 to-cyan-400 p-6 mb-6 rounded-lg shadow-md">
+              <div className="flex flex-col md:flex-row bg-gradient-to-r from-yellow-50 via-orange-100 to-cyan-400 p-6 mb-6 rounded-lg shadow-md">
                 <div className="md:w-1/2 flex justify-center items-center mb-4 md:mb-0">
                   <img
                     alt="Close-up of pink tag string seals"
@@ -202,7 +202,7 @@ const [showForm, setShowForm] = useState(false);
           Color
         </th>
         <td className="text-base text-[#333333] px-4 py-4">
-          Pink, black, white, red, grey, yellow, blue, green, etc; customized
+          Pink, black, white, red, grey, yellow, blue, orange, etc; customized
           color; Pantone color
         </td>
       </tr>

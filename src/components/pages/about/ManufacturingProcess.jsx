@@ -139,7 +139,7 @@ const ManufacturingProcess = () => {
                               <span className="text-gray-600 text-xs sm:text-sm">{step.step}</span>
                             </div>
                           </div>
-                          <FaCheckCircle className="w-5 h-5 text-green-500" />
+                          <FaCheckCircle className="w-5 h-5 text-orange-400" />
                         </div>
                       </div>
                     </div>

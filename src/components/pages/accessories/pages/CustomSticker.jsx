@@ -371,7 +371,7 @@ const [showForm, setShowForm] = useState(false);
     </tbody>
   </table>
 
-              <div className="flex flex-col md:flex-row bg-gradient-to-r from-yellow-50 via-green-100 to-cyan-400 p-6 mb-6 rounded-lg shadow-md mt-8">
+              <div className="flex flex-col md:flex-row bg-gradient-to-r from-yellow-50 via-orange-100 to-cyan-400 p-6 mb-6 rounded-lg shadow-md mt-8">
                 <div className="md:w-1/2 flex justify-center items-center mb-4 md:mb-0">
                   <img
                     alt="Close-up of pink tag string seals"

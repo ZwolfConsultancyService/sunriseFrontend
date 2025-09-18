@@ -79,7 +79,7 @@ const BestSellerBanner = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-gray-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <button className="bg-white/90 backdrop-blur-sm text-gray-800 px-6 py-3 rounded-full text-sm font-semibold shadow-lg hover:bg-green-500 hover:text-white transition-all duration-300 transform hover:scale-105">
+                  <button className="bg-white/90 backdrop-blur-sm text-gray-800 px-6 py-3 rounded-full text-sm font-semibold shadow-lg hover:bg-orange-400 hover:text-white transition-all duration-300 transform hover:scale-105">
                     Explore Collection
                   </button>
                 </div>

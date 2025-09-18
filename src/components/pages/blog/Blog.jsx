@@ -151,7 +151,7 @@ const Blog = () => {
               onClick={() => handlePageChange(pageNum)}
               className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                 pageNum === pagination.currentPage
-                  ? 'bg-green-600 text-white border border-green-600'
+                  ? 'bg-orange-500 text-white border border-orange-500'
                   : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
               }`}
             >
@@ -197,7 +197,7 @@ const Blog = () => {
         <Navbar />
         <main className="flex-grow flex items-center justify-center mt-16">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto mb-4"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500 mx-auto mb-4"></div>
             <p className="text-gray-600">Loading blogs...</p>
           </div>
         </main>
@@ -214,7 +214,7 @@ const Blog = () => {
           <div className="text-center">
             <p className="text-red-600 mb-4">Error: {error}</p>
             <button 
-              className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition"
+              className="bg-orange-500 text-white px-6 py-2 rounded hover:bg-orange-700 transition"
               onClick={() => fetchBlogs(pagination.currentPage)}
             >
               Try Again
@@ -234,7 +234,7 @@ const Blog = () => {
           <div className="text-center">
             <p className="text-gray-600 mb-4">No blogs found</p>
             <button 
-              className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition"
+              className="bg-orange-500 text-white px-6 py-2 rounded hover:bg-orange-700 transition"
               onClick={() => fetchBlogs(1)}
             >
               Refresh
@@ -296,7 +296,7 @@ const Blog = () => {
 
                 <div className={`flex items-center space-x-6 ${index % 2 === 1 ? 'justify-end md:justify-start' : ''}`}>
                   <button
-                    className="flex items-center gap-2 bg-green-600 text-white px-6 py-2 rounded shadow hover:shadow-lg transition"
+                    className="flex items-center gap-2 bg-orange-500 text-white px-6 py-2 rounded shadow hover:shadow-lg transition"
                     onClick={() => handleReadMore(product._id)}
                   >
                     Read more
@@ -360,7 +360,7 @@ const Blog = () => {
 
                 <div className={`flex items-center space-x-6 justify-start md:justify-${index % 2 === 1 ? 'start' : 'end'}`}>
                   <button
-                    className="flex items-center gap-2 bg-green-600 text-white px-6 py-2 rounded shadow hover:shadow-lg transition"
+                    className="flex items-center gap-2 bg-orange-500 text-white px-6 py-2 rounded shadow hover:shadow-lg transition"
                     onClick={() => handleReadMore(product._id)}
                   >
                     Read more

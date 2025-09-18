@@ -153,14 +153,14 @@ const HeroLabel = ({
           <>
             <button
               onClick={() => handleArrowClick('prev')}
-              className="hidden sm:block absolute top-1/2 left-4 -translate-y-1/2 text-white text-2xl md:text-3xl z-30 hover:text-green-400 transition duration-300 bg-black/20 hover:bg-black/40 rounded-full p-2"
+              className="hidden sm:block absolute top-1/2 left-4 -translate-y-1/2 text-white text-2xl md:text-3xl z-30 hover:text-orange-400 transition duration-300 bg-black/20 hover:bg-black/40 rounded-full p-2"
               aria-label="Previous Slide"
             >
               <FaChevronLeft />
             </button>
             <button
               onClick={() => handleArrowClick('next')}
-              className="hidden sm:block absolute top-1/2 right-4 -translate-y-1/2 text-white text-2xl md:text-3xl z-30 hover:text-green-400 transition duration-300 bg-black/20 hover:bg-black/40 rounded-full p-2"
+              className="hidden sm:block absolute top-1/2 right-4 -translate-y-1/2 text-white text-2xl md:text-3xl z-30 hover:text-orange-400 transition duration-300 bg-black/20 hover:bg-black/40 rounded-full p-2"
               aria-label="Next Slide"
             >
               <FaChevronRight />

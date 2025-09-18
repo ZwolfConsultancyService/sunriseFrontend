@@ -43,7 +43,7 @@ const NonWavanBags = () => {
           {/* Main Column */}
           <main className="flex-1">
             <p className="mb-6 text-lg font-medium text-gray-700">
-              Our custom non-woven bags are the perfect solution for eco-conscious brands. Made with durable and reusable fabric, they support your green initiatives while serving as a walking billboard for your company.
+              Our custom non-woven bags are the perfect solution for eco-conscious brands. Made with durable and reusable fabric, they support your orange initiatives while serving as a walking billboard for your company.
             </p>
 
             <img

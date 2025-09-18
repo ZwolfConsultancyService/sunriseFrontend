@@ -185,7 +185,7 @@ const galleryImages = [
                 {/* WhatsApp Button */}
                 <button 
                   onClick={handleWhatsAppClick}
-                  className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg"
+                  className="flex items-center justify-center bg-orange-400 hover:bg-orange-500 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg"
                 >
                   <FaWhatsapp className="w-5 h-5 mr-2" />
                   WhatsApp Enquiry

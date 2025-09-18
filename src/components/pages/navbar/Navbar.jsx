@@ -36,9 +36,9 @@ const Navbar = () => {
         {/* Logo */}
         <Link to={"/"}>
           <div className="flex items-center space-x-2 font-extrabold text-2xl">
-            <span className="text-green-500 text-3xl">⌞</span>
+            <span className="text-orange-400 text-3xl">⌞</span>
             <span>sun</span>
-            <span className="text-green-500">r</span>
+            <span className="text-orange-400">r</span>
             <span>ise</span>
           </div>
         </Link>
@@ -53,7 +53,7 @@ const Navbar = () => {
                   <div
                     className={`pb-1 cursor-pointer flex items-center hover:text-gray-700 ${
                       isActive(link)
-                        ? "text-green-600 border-b-2 border-green-600"
+                        ? "text-orange-500 border-b-2 border-orange-500"
                         : "text-gray-900"
                     }`}
                   >
@@ -87,7 +87,7 @@ const Navbar = () => {
                           >
                             <Link
                               to={getSubLinkPath(group.group)}
-                              className="text-xs font-bold text-orange-500 hover:text-green-600 uppercase tracking-wide mb-3 block leading-tight"
+                              className="text-xs font-bold text-orange-500 hover:text-orange-500 uppercase tracking-wide mb-3 block leading-tight"
                             >
                               {group.group}
                             </Link>
@@ -98,7 +98,7 @@ const Navbar = () => {
                                     to={`/label/${group.slug}/${category.category
                                       .toLowerCase()
                                       .replace(/\s+/g, "-")}`}
-                                    className="text-xs text-gray-800 hover:text-green-600 transition-colors block py-0.5 leading-relaxed"
+                                    className="text-xs text-gray-800 hover:text-orange-500 transition-colors block py-0.5 leading-relaxed"
                                   >
                                     {category.category}
                                   </Link>
@@ -116,7 +116,7 @@ const Navbar = () => {
                   to={getLinkPath(link)}
                   className={`pb-1 hover:text-gray-700 ${
                     isActive(link)
-                      ? "text-green-600 border-b-2 border-green-600"
+                      ? "text-orange-500 border-b-2 border-orange-500"
                       : "text-gray-900"
                   }`}
                   onClick={() => setIsOpen(false)}
@@ -165,7 +165,7 @@ const Navbar = () => {
                         >
                           <Link
                             to={getSubLinkPath(group.group)}
-                            className="block text-sm font-semibold text-gray-800 hover:text-green-600 mb-2"
+                            className="block text-sm font-semibold text-gray-800 hover:text-orange-500 mb-2"
                             onClick={() => setIsOpen(false)}
                           >
                             {group.group}
@@ -185,7 +185,7 @@ const Navbar = () => {
                                   alt={category.category}
                                   className="w-6 h-6 object-cover rounded"
                                 />
-                                <span className="text-xs text-gray-600 hover:text-green-600">
+                                <span className="text-xs text-gray-600 hover:text-orange-500">
                                   {category.category}
                                 </span>
                               </Link>
@@ -201,7 +201,7 @@ const Navbar = () => {
                   to={getLinkPath(link)}
                   className={`pb-1 hover:text-gray-700 ${
                     isActive(link)
-                      ? "text-green-600 border-b-2 border-green-600"
+                      ? "text-orange-500 border-b-2 border-orange-500"
                       : "text-gray-900"
                   }`}
                   onClick={() => setIsOpen(false)}

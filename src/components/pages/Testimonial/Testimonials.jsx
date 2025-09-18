@@ -64,7 +64,7 @@ const PrevArrow = ({ className, style, onClick }) => (
     aria-label="Previous testimonial"
   >
     <svg
-      className="w-6 h-6 text-green-500"
+      className="w-6 h-6 text-orange-400"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
@@ -84,7 +84,7 @@ const NextArrow = ({ className, style, onClick }) => (
     aria-label="Next testimonial"
   >
     <svg
-      className="w-6 h-6 text-green-500"
+      className="w-6 h-6 text-orange-400"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
@@ -142,7 +142,7 @@ const Testimonials = () => {
             <div key={index} className="px-4">
               <div className="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-lg transition duration-300 h-[300px] lg:h-[270px] flex flex-col justify-between">
                 <div>
-                  <FaQuoteLeft className="text-green-500 text-xl mb-4" />
+                  <FaQuoteLeft className="text-orange-400 text-xl mb-4" />
                   <p className="text-gray-700 text-base leading-relaxed mb-6">“{t.feedback}”</p>
                 </div>
                 <div className="flex items-center mt-auto">

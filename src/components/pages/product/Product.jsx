@@ -60,7 +60,7 @@ const Product = () => {
 
                 {/* Hover Cart Icon */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="bg-green-500 p-2 sm:p-3 rounded-full shadow-lg">
+                  <div className="bg-orange-400 p-2 sm:p-3 rounded-full shadow-lg">
                     <FiShoppingCart className="text-white text-sm sm:text-lg" />
                   </div>
                 </div>

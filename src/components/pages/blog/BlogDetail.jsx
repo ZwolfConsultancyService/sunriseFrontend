@@ -100,7 +100,7 @@ const BlogDetail = () => {
         <Navbar />
         <main className="flex-grow flex items-center justify-center mt-16">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto mb-4"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500 mx-auto mb-4"></div>
             <p className="text-gray-600">Loading blog...</p>
           </div>
         </main>
@@ -118,7 +118,7 @@ const BlogDetail = () => {
             <p className="text-red-600 mb-4">Error: {error}</p>
             <div className="space-x-4">
               <button 
-                className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition"
+                className="bg-orange-500 text-white px-6 py-2 rounded hover:bg-orange-700 transition"
                 onClick={() => window.location.reload()}
               >
                 Try Again
@@ -145,7 +145,7 @@ const BlogDetail = () => {
           <div className="text-center">
             <p className="text-gray-600 mb-4">Blog not found</p>
             <button 
-              className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition"
+              className="bg-orange-500 text-white px-6 py-2 rounded hover:bg-orange-700 transition"
               onClick={() => navigate('/blog')}
             >
               Back to Blogs
@@ -248,7 +248,7 @@ const BlogDetail = () => {
         <div className="flex flex-col sm:flex-row justify-between items-center pt-6 sm:pt-8 border-t gap-4" data-aos="fade-up">
           <button
             onClick={() => navigate('/blog')}
-            className="flex items-center gap-2 text-green-600 hover:text-green-700 transition text-sm sm:text-base"
+            className="flex items-center gap-2 text-orange-500 hover:text-orange-700 transition text-sm sm:text-base"
           >
             ← Back to Blogs
           </button>
@@ -265,7 +265,7 @@ const BlogDetail = () => {
             {nextBlog && (
               <button
                 onClick={() => navigate(`/blog/${nextBlog._id}`)}
-                className="bg-green-600 text-white px-3 sm:px-4 py-2 rounded hover:bg-green-700 transition text-xs sm:text-sm"
+                className="bg-orange-500 text-white px-3 sm:px-4 py-2 rounded hover:bg-orange-700 transition text-xs sm:text-sm"
               >
                 Next →
               </button>

@@ -54,7 +54,7 @@ const OrderProcess = () => {
         {/* Heading - Top on Mobile, Right on Desktop */}
         <div className="w-full lg:w-2/5 flex flex-col justify-center items-center text-center lg:items-start lg:text-left">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 leading-tight mt-0">
-            Easy Order <br /> <span className="text-green-500">Process</span>
+            Easy Order <br /> <span className="text-orange-400">Process</span>
           </h2>
           <p className="mt-4 text-gray-600 text-sm md:text-base max-w-md">
             Follow these steps to ensure a smooth order experience from start to finish.

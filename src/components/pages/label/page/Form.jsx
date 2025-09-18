@@ -74,7 +74,7 @@ const Form = ({ onClose }) => {
       
       {/* Success Message */}
       {showSuccess && (
-        <div className="fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-bounce">
+        <div className="fixed top-4 right-4 bg-orange-400 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-bounce">
           ✅ Form submitted successfully!
         </div>
       )}
