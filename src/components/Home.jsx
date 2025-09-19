@@ -9,6 +9,7 @@ import Testimonials from './pages/Testimonial/Testimonials';
 import Product from './pages/product/Product';
 import BestSellerBanner from './pages/bestseller/BestSellerBanner';
 import Form from './pages/label/page/Form';
+import InfraBanner from './pages/infraData/InfraBanner';
 
 
 
@@ -35,6 +36,7 @@ const Home = () => {
         <WhyChooseUs />
         {/* <Gallery /> */}
         {/* <OrderProccess /> */}
+        <InfraBanner />
         <Testimonials />
         <FaqSection />
         

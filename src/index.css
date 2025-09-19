@@ -12,3 +12,8 @@
 .no-scrollbar {
   overflow: -moz-scrollbars-none;
 }
+
+
+html{
+  overflow-x: hidden;
+}

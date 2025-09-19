@@ -59,7 +59,7 @@ function App() {
           <Route path="/return-policy" element={<ReturnPolicy />} />
           <Route path="/refund-policy" element={<RefundPolicy />} />
           <Route path="/order-process" element={<Order />} />
-          <Route path="/trims-infrastructure" element={<TrimsInfrastructure />} />
+          <Route path="/infrastructure" element={<TrimsInfrastructure />} />
         </Routes>
       </Router>
     </>
