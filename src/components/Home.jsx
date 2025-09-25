@@ -17,7 +17,6 @@ const Home = () => {
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
-    // Show form after 10 seconds with animation
     const timer = setTimeout(() => {
       setShowForm(true);
     }, 10000);
@@ -26,7 +25,7 @@ const Home = () => {
   }, [" "]);
 
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <Navbar />
       <div className='mt-16'>
         <Homepage />
@@ -39,8 +38,7 @@ const Home = () => {
         <InfraBanner />
         <Testimonials />
         <FaqSection />
-        
-        {/* Form Popup Component with Center Animation */}
+        ]
         {showForm && (
           <div 
             className={`fixed inset-0 z-50 flex items-center justify-center pointer-events-none transition-all duration-500 ${
