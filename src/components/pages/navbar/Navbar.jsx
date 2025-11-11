@@ -8,6 +8,14 @@ import { FaPhoneAlt, FaEnvelope, FaClock, FaDownload } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import labelHierarchy from "../label/data/labelHierarchy";
 import CompanyPdf from "../../../assets/sunriseCompany.pdf";
+import {
+  FaArrowUp,
+  FaYoutube,
+  FaFacebookF,
+  FaInstagram,
+  FaTwitter,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -55,62 +63,82 @@ const Navbar = () => {
   return (
     <>
 
-      <div
-        className={`w-full bg-gray-100 border-b border-gray-200 fixed top-0 left-0 z-50 transition-transform duration-300 ${
-          showHeader ? "translate-y-0" : "-translate-y-full" 
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 flex justify-between items-center text-gray-700 py-1">
-          
-          <div className="flex space-x-1 sm:space-x-4 flex-wrap items-center">
-            
-           <div className="hidden sm:flex items-center space-x-1 text-xs sm:text-sm">
-  <FaEnvelope className="text-orange-500 text-xs" />
-  <a
-    href="mailto:info@sunrise.com"
-    className="hover:text-orange-600 transition"
-  >
-    info@sunrise.com
-  </a>
-</div>
-
-<div className="flex items-center space-x-1 text-xs sm:text-sm">
-  <FaPhoneAlt className="text-orange-500 text-xs" />
-  <a
-    href="tel:+919876543210"
-    className="hover:text-orange-600 transition"
-  >
-    <span className="hidden xs:inline">+91 9876543210</span>
-    <span className="xs:hidden">Call Us</span>
-  </a>
-</div>
-
-            
-          
-            <div className="hidden md:flex items-center space-x-1 text-xs sm:text-sm">
-              <FaClock className="text-orange-500 text-xs" />
-              <span>Mon - Sat (9:00 - 18:00)</span>
-            </div>
-          </div>
-
-
-          <button
-          >
-      <a
-      href={CompanyPdf}
-      download="Sunrise-Company-Brochure.pdf" 
-      className="flex items-center bg-orange-500 hover:bg-orange-600 text-white px-2 sm:px-3 py-1 rounded text-xs transition"
-    >
-      <FaDownload className="mr-1 text-xs sm:text-sm" />
-      <span className="hidden sm:inline">Download Brochure</span>
-      <span className="sm:hidden">Download</span>
-    </a>
-          </button>
-        </div>
+     <div
+  className={`w-full bg-gray-100 border-b border-gray-200 fixed top-0 p-2 left-0 z-50 transition-transform duration-300 ${
+    showHeader ? "translate-y-0" : "-translate-y-full"
+  }`}
+>
+  <div className="max-w-7xl mx-auto px-2 sm:px-4 flex justify-between items-center text-gray-700 py-1">
+    {/* Left Info Section */}
+    <div className="flex space-x-2 sm:space-x-4 flex-wrap items-center">
+      {/* Email */}
+      <div className="hidden sm:flex items-center space-x-1 text-xs sm:text-sm">
+        <FaEnvelope className="text-orange-500 text-xs" />
+        <a
+          href="mailto:info@sunrise.com"
+          className="hover:text-orange-600 transition"
+        >
+          info@sunrise.com
+        </a>
       </div>
 
+      {/* Phone */}
+      <div className="flex items-center space-x-1 text-xs sm:text-sm">
+        <FaPhoneAlt className="text-orange-500 text-xs" />
+        <a
+          href="tel:+919876543210"
+          className="hover:text-orange-600 transition"
+        >
+          <span className="hidden xs:inline">+91 9876543210</span>
+          <span className="xs:hidden">Call Us</span>
+        </a>
+      </div>
+
+      {/* Timing */}
+      <div className="hidden md:flex items-center space-x-1 text-xs sm:text-sm">
+        <FaClock className="text-orange-500 text-xs" />
+        <span>Mon - Sat (9:00 - 18:00)</span>
+      </div>
+    </div>
+
+    {/* Right Section: Social Icons + Brochure */}
+    <div className="flex items-center space-x-4 sm:space-x-6">
+      {/* Social Icons */}
+      <div className="flex space-x-3 sm:space-x-5 text-gray-800 text-base sm:text-lg">
+        <a href="#" aria-label="YouTube" className="hover:text-orange-500">
+          <FaYoutube />
+        </a>
+        <a href="#" aria-label="Facebook" className="hover:text-orange-500">
+          <FaFacebookF />
+        </a>
+        <a href="#" aria-label="Instagram" className="hover:text-orange-500">
+          <FaInstagram />
+        </a>
+        <a href="#" aria-label="Twitter" className="hover:text-orange-500">
+          <FaTwitter />
+        </a>
+        <a href="#" aria-label="LinkedIn" className="hover:text-orange-500">
+          <FaLinkedinIn />
+        </a>
+      </div>
+
+      {/* Download Button */}
+      <a
+        href={CompanyPdf}
+        download="Sunrise-Company-Brochure.pdf"
+        className="flex items-center bg-orange-500 hover:bg-orange-600 text-white px-2 sm:px-3 py-1 rounded text-xs sm:text-sm transition"
+      >
+        <FaDownload className="mr-1 text-xs sm:text-sm" />
+        <span className="hidden sm:inline">Download Brochure</span>
+        <span className="sm:hidden">Download</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+
       <nav className={`w-full bg-white shadow px-4 sm:px-6 py-3 fixed left-0 z-40 transition-all duration-300 ${
-        showHeader ? 'top-[30px]' : 'top-0'
+        showHeader ? 'top-[48px]' : 'top-0'
       }`}>
         <div className="max-w-7xl mx-auto flex items-center justify-between relative">
         

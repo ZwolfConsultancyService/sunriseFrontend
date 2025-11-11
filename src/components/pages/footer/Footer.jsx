@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from "react";
 import {
-  FaArrowRight,
   FaArrowUp,
   FaYoutube,
   FaFacebookF,
   FaInstagram,
   FaTwitter,
   FaLinkedinIn,
-  FaWhatsapp, // ✅ New Import
 } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import sunrise from "../../../assets/sunrise.jpg"
-
+import labelhierarchy  from "../label/data/labelHierarchy";
 const Footer = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const navigate = useNavigate();
@@ -20,7 +17,6 @@ const Footer = () => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 1000);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -32,13 +28,13 @@ const Footer = () => {
   const footerLinks = [
     { name: "Gallery", path: "/gallery" },
     { name: "Blog", path: "/blog" },
-    { name: "Order Proccess", path: "/order-process" },
+    { name: "Order Process", path: "/order-process" },
     { name: "Return Policy", path: "/return-policy" },
   ];
 
   const legalLinks = [
     { name: "Privacy Policy", path: "/privacy-policy" },
-    { name: "Terms & Conditions", path: "/terms-&-Conditions" },
+    { name: "Terms & Conditions", path: "/terms-&-conditions" },
     { name: "Refund Policy", path: "/refund-policy" },
   ];
 
@@ -49,6 +45,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:items-start gap-20">
           {/* Left links */}
           <div className="flex flex-wrap gap-16 md:gap-x-48 sm:gap-24">
+            {/* Footer Links */}
             <div className="flex flex-col space-y-6 text-gray-800 text-base sm:text-lg font-semibold">
               {footerLinks.map((item) => (
                 <Link key={item.name} to={item.path} className="hover:underline">
@@ -56,6 +53,8 @@ const Footer = () => {
                 </Link>
               ))}
             </div>
+
+            {/* Legal Links */}
             <div className="flex flex-col space-y-6 text-gray-800 text-base sm:text-lg font-semibold">
               {legalLinks.map((item) => (
                 <Link key={item.name} to={item.path} className="hover:underline">
@@ -63,25 +62,42 @@ const Footer = () => {
                 </Link>
               ))}
             </div>
+
+            {/* ✅ Label Groups */}
+         {/* ✅ Label Groups (split into two columns) */}
+<div className="flex flex-col text-gray-800 text-base sm:text-lg font-semibold">
+  <h3 className="text-gray-800 text-lg font-semibold mb-4">Label Groups</h3>
+
+  <div className="grid grid-cols-2 gap-x-12 gap-y-2">
+    {labelhierarchy.map((group) => (
+      <Link
+        key={group.group}
+        to={`/label/${group.slug}`}
+        className="hover:text-orange-500 transition-colors text-sm"
+      >
+        {group.group}
+      </Link>
+    ))}
+  </div>
+</div>
+
           </div>
         </div>
 
         {/* Bottom row */}
         <div className="max-w-7xl mx-auto mt-24 flex flex-col md:flex-row md:justify-between md:items-center text-gray-700 text-sm sm:text-base font-medium">
           <div className="flex flex-wrap items-center gap-3 mb-8 md:mb-0">
-              <Link to={"/"}>
-        <div className="flex items-center space-x-2 font-extrabold text-2xl">
-          <span className="text-orange-400 text-3xl">⌞</span>
-          <span>sun</span>
-          <span className="text-orange-400">r</span>
-          <span>ise</span>
-        </div>
-        </Link> 
-
-           
+            <Link to={"/"}>
+              <div className="flex items-center space-x-2 font-extrabold text-2xl">
+                <span className="text-orange-400 text-3xl">⌞</span>
+                <span>sun</span>
+                <span className="text-orange-400">r</span>
+                <span>ise</span>
+              </div>
+            </Link>
 
             <span className="text-gray-700">
-              © {new Date().getFullYear()} sunrise. All rights reserved.
+              © {new Date().getFullYear()} Sunrise. All rights reserved.
             </span>
             <Link to="/privacy-policy" className="ml-2 hover:underline text-gray-700">
               Privacy Policy
@@ -119,17 +135,6 @@ const Footer = () => {
           </button>
         )}
       </footer>
-
-      {/* ✅ Floating WhatsApp Icon */}
-      {/* <a
-        href="https://wa.me/919876543210" // Replace with your WhatsApp number
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Chat on WhatsApp"
-        className="fixed bottom-8 left-8 bg-orange-400 hover:bg-orange-500 text-white p-4 rounded-full shadow-lg shadow-gray-400 text-2xl z-50 transition-all duration-300"
-      >
-        <FaWhatsapp />
-      </a> */}
     </div>
   );
 };
