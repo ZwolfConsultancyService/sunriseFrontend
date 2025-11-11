@@ -66,7 +66,7 @@ const Footer = () => {
             {/* ✅ Label Groups */}
          {/* ✅ Label Groups (split into two columns) */}
 <div className="flex flex-col text-gray-800 text-base sm:text-lg font-semibold">
-  <h3 className="text-gray-800 text-lg font-semibold mb-4">Label Groups</h3>
+  <h3 className="text-gray-800 text-lg font-semibold mb-4">Label </h3>
 
   <div className="grid grid-cols-2 gap-x-12 gap-y-2">
     {labelhierarchy.map((group) => (
