@@ -38,7 +38,7 @@ const Home = () => {
         <InfraBanner />
         <Testimonials />
         <FaqSection />
-        ]
+        
         {showForm && (
           <div 
             className={`fixed inset-0 z-50 flex items-center justify-center pointer-events-none transition-all duration-500 ${

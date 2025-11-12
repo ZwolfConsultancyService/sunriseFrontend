@@ -12,7 +12,7 @@ const AboutNav = () => {
     <div>
       <Navbar />
 
-      <div className="mt-16">
+      <div className="mt-24">
         <About />
       </div>
 
