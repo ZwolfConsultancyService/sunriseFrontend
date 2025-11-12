@@ -20,7 +20,7 @@ export default function TrimsInfrastructure() {
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 mt-16">
       {/* Heading */}
       <div className="text-center mb-12" data-aos="fade-down">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-orange-400 underline ">Infrastructure</h2>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-yellow-400 underline ">Infrastructure</h2>
         <p className="mt-3 text-gray-600 max-w-2xl mx-auto">
           Our trims infrastructure is built with world-class facilities,
           advanced machinery and skilled manpower ensuring premium quality.

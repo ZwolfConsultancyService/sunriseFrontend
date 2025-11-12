@@ -60,14 +60,14 @@ const Product = () => {
 
                 {/* Hover Cart Icon */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="bg-orange-400 p-2 sm:p-3 rounded-full shadow-lg">
+                  <div className="bg-yellow-400 p-2 sm:p-3 rounded-full shadow-lg">
                     <FiShoppingCart className="text-white text-sm sm:text-lg" />
                   </div>
                 </div>
 
                 {/* Badge for Categories Count */}
                 {item.categories && item.categories.length > 0 && (
-                  <span className="absolute top-2 right-2 bg-orange-500 text-white text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded">
+                  <span className="absolute top-2 right-2 bg-yellow-500 text-white text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded">
                     {item.categories.length} Types
                   </span>
                 )}

@@ -73,7 +73,7 @@ const Footer = () => {
       <Link
         key={group.group}
         to={`/label/${group.slug}`}
-        className="hover:text-orange-500 transition-colors text-sm"
+        className="hover:text-yellow-500 transition-colors text-sm"
       >
         {group.group}
       </Link>
@@ -89,9 +89,9 @@ const Footer = () => {
           <div className="flex flex-wrap items-center gap-3 mb-8 md:mb-0">
             <Link to={"/"}>
               <div className="flex items-center space-x-2 font-extrabold text-2xl">
-                <span className="text-orange-400 text-3xl">⌞</span>
+                
                 <span>sun</span>
-                <span className="text-orange-400">r</span>
+                <span className="text-yellow-400">r</span>
                 <span>ise</span>
               </div>
             </Link>
@@ -129,7 +129,7 @@ const Footer = () => {
           <button
             aria-label="Scroll to top"
             onClick={scrollToTop}
-            className="fixed bottom-8 right-6 bg-orange-500 hover:bg-orange-700 text-white p-4 rounded-lg shadow-lg shadow-gray-400 text-xl transition-opacity duration-300"
+            className="fixed bottom-8 right-6 bg-yellow-500 hover:bg-yellow-700 text-white p-4 rounded-lg shadow-lg shadow-gray-400 text-xl transition-opacity duration-300"
           >
             <FaArrowUp />
           </button>

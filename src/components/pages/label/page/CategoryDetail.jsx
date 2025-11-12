@@ -116,7 +116,7 @@ const galleryImages = [
               ← Back to {groupData.group}
             </Link>
 
-            <h2 className="text-2xl font-bold mb-6 text-orange-600">{categoryData.title}</h2>
+            <h2 className="text-2xl font-bold mb-6 text-yellow-600">{categoryData.title}</h2>
             
            {/* Professional Image Gallery Section */}
 <div className="mb-8 flex flex-col md:flex-row gap-4">
@@ -127,8 +127,8 @@ const galleryImages = [
         key={index} 
         className={`relative cursor-pointer rounded-lg overflow-hidden transition-all duration-300 border border-red-500${
           selectedImage === index 
-            ? 'ring-2 ring-orange-500 ring-offset-2' 
-            : 'hover:opacity-80 border border-gray-300 hover:ring-2 hover:ring-orange-500 hover:ring-offset-2'
+            ? 'ring-2 ring-yellow-500 ring-offset-2' 
+            : 'hover:opacity-80 border border-gray-300 hover:ring-2 hover:ring-yellow-500 hover:ring-offset-2'
         }`}
         onClick={() => setSelectedImage(index)}
       >
@@ -185,7 +185,7 @@ const galleryImages = [
                 {/* WhatsApp Button */}
                 <button 
                   onClick={handleWhatsAppClick}
-                  className="flex items-center justify-center bg-orange-400 hover:bg-orange-500 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg"
+                  className="flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg"
                 >
                   <FaWhatsapp className="w-5 h-5 mr-2" />
                   WhatsApp Enquiry
@@ -254,7 +254,7 @@ const galleryImages = [
                               : "High-quality " + item.toLowerCase() + " for your branding needs. Click to learn more about specifications and customization options."
                             }
                           </p>
-                          <div className="mt-3 text-orange-500 text-sm font-medium">
+                          <div className="mt-3 text-yellow-500 text-sm font-medium">
                             Learn More →
                           </div>
                         </div>

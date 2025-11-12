@@ -61,7 +61,7 @@ const LabelDetail = () => {
 
 {/* Category Cards for this Group */}
 <div className="mb-12">
-  <h2 className="text-xl font-bold mb-4 text-orange-600">Explore Categories in {label.group}</h2>
+  <h2 className="text-xl font-bold mb-4 text-yellow-600">Explore Categories in {label.group}</h2>
 
   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
     {label.categories?.map((cat, idx) => (
@@ -92,13 +92,13 @@ const LabelDetail = () => {
 
   
   {cat.items.length > 3 && (
-    <li className="text-orange-500 font-medium">
+    <li className="text-yellow-500 font-medium">
       + {cat.items.length - 3} more
     </li>
   )}
 </ul> */}
 
-          <div className="mt-auto text-orange-500 text-sm font-medium">
+          <div className="mt-auto text-yellow-500 text-sm font-medium">
             Learn More →
           </div>
         </div>

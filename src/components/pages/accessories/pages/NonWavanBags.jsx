@@ -43,7 +43,7 @@ const NonWavanBags = () => {
           {/* Main Column */}
           <main className="flex-1">
             <p className="mb-6 text-lg font-medium text-gray-700">
-              Our custom non-woven bags are the perfect solution for eco-conscious brands. Made with durable and reusable fabric, they support your orange initiatives while serving as a walking billboard for your company.
+              Our custom non-woven bags are the perfect solution for eco-conscious brands. Made with durable and reusable fabric, they support your yellow initiatives while serving as a walking billboard for your company.
             </p>
 
             <img
@@ -281,7 +281,7 @@ const NonWavanBags = () => {
                          'Wholesale transparent plastic bags with personalized logos',
                          'Supply custom rigid boxes for brands'
                        ].map((post, index) => (
-                         <li key={index} className="hover:text-orange-600 cursor-pointer">{post}</li>
+                         <li key={index} className="hover:text-yellow-600 cursor-pointer">{post}</li>
                        ))}
                      </ul>
                    </div>
@@ -292,7 +292,7 @@ const NonWavanBags = () => {
                        'bags', 'buttons', 'company news', 'fasteners',
                        'garment accessories', 'garment trims',"hang tag string", "hang tags", "hangers", "ideas and inspirations", "labels and tags", "leather", "metal accessories", "packaging solutions", "paper bags", "patches", "plastic bags", "project samples", "ribbon & tape & bands", "stickers", "textiles and fabrics", "tissue paper", "woven labels", "zipper pulls",
                      ].map((tag, index) => (
-                       <a key={index} className="block text-orange-400 hover:underline" href="#">
+                       <a key={index} className="block text-yellow-400 hover:underline" href="#">
                          {tag}
                        </a>
                      ))}

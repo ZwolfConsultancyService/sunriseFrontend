@@ -108,7 +108,7 @@ const labelExtendedDetails = {
   "3d-printing-label": {
     title: "3D Printing Label",
     image: "https://i.pinimg.com/736x/d5/ee/4e/d5ee4eb916f131671a036621cdbd554a.jpg",
-    image2:"https://5.imimg.com/data5/SELLER/Default/2023/11/360625819/TM/FK/GB/67728102/orange-polyester-3d-hd-label-500x500.jpeg",
+    image2:"https://5.imimg.com/data5/SELLER/Default/2023/11/360625819/TM/FK/GB/67728102/yellow-polyester-3d-hd-label-500x500.jpeg",
     description: "These labels use layered ink techniques to produce raised graphics or logos, providing a tactile 3D effect. The result is a bold, interactive design that adds value and visibility.",
     applications: "Sportswear, high-street fashion, outerwear, lifestyle apparel.",
     bestFor: "Attention-grabbing branding in activewear or designer casualwear."

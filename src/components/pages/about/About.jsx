@@ -67,7 +67,7 @@ const About = () => {
             From woven and satin labels to barcode stickers, rubber labels, metal tags, AM & RF security labels, and more — we offer it all at affordable rates tailored to your needs.
           </p>
           <p
-            className="text-orange-400 font-semibold cursor-pointer hover:underline"
+            className="text-yellow-400 font-semibold cursor-pointer hover:underline"
             onClick={openContactForm}
           >
             Contact us today to get attractive, high-quality labels for your business!
@@ -77,7 +77,7 @@ const About = () => {
         {!isAboutRoute && (
           <button
             onClick={handleReadMoreClick}
-            className="text-orange-400 font-semibold hover:underline focus:outline-none block lg:hidden"
+            className="text-yellow-400 font-semibold hover:underline focus:outline-none block lg:hidden"
           >
             Read More
           </button>
@@ -89,7 +89,7 @@ const About = () => {
       <a
         href={CompanyProfilePDF}
         download="Company-Profile.pdf"
-        className="bg-white hover:bg-gray-200 text-orange-400 border border-gray-500 text-lg font-semibold py-3 px-6 rounded-lg transition-all duration-300"
+        className="bg-white hover:bg-gray-200 text-yellow-400 border border-gray-500 text-lg font-semibold py-3 px-6 rounded-lg transition-all duration-300"
       >
         📄 Download Company Profile
       </a>

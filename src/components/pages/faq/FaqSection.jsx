@@ -81,7 +81,7 @@ const FaqSection = () => {
               >
                 {faq.question}
                 {activeIndex === index ? (
-                  <FaChevronUp className="text-orange-500" />
+                  <FaChevronUp className="text-yellow-500" />
                 ) : (
                   <FaChevronDown className="text-gray-400" />
                 )}

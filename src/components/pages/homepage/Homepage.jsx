@@ -43,7 +43,7 @@ const Homepage = () => {
             <div className="mt-6 sm:mt-8">
               <button
                 onClick={() => navigate("/label")}
-                className="bg-orange-400 text-gray-900 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base font-bold rounded-full shadow-md hover:shadow-xl transition duration-300 hover:bg-orange-300 focus:outline-none focus:ring-2"
+                className="bg-yellow-400 text-gray-900 px-6 sm:px-8 py-2 sm:py-3 text-sm sm:text-base font-bold rounded-full shadow-md hover:shadow-xl transition duration-300 hover:bg-yellow-300 focus:outline-none focus:ring-2"
               >
                 Explore Our Trim Collection
               </button>

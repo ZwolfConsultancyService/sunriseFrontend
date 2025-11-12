@@ -79,7 +79,7 @@ const [showForm, setShowForm] = useState(false);
                 Second, you need to choose hang tag string suppliers that can supply different materials to suit your needs.
               </p>
 
-              <div className="flex flex-col md:flex-row bg-gradient-to-r from-yellow-50 via-orange-100 to-cyan-400 p-6 mb-6 rounded-lg shadow-md">
+              <div className="flex flex-col md:flex-row bg-gradient-to-r from-yellow-50 via-yellow-100 to-cyan-400 p-6 mb-6 rounded-lg shadow-md">
                 <div className="md:w-1/2 flex justify-center items-center mb-4 md:mb-0">
                   <img
                     alt="Close-up of pink tag string seals"
@@ -202,7 +202,7 @@ const [showForm, setShowForm] = useState(false);
           Color
         </th>
         <td className="text-base text-[#333333] px-4 py-4">
-          Pink, black, white, red, grey, yellow, blue, orange, etc; customized
+          Pink, black, white, red, grey, yellow, blue, yellow, etc; customized
           color; Pantone color
         </td>
       </tr>
@@ -381,7 +381,7 @@ const [showForm, setShowForm] = useState(false);
                   'Wholesale transparent plastic bags with personalized logos',
                   'Supply custom rigid boxes for brands'
                 ].map((post, index) => (
-                  <li key={index} className="hover:text-orange-600 cursor-pointer">{post}</li>
+                  <li key={index} className="hover:text-yellow-600 cursor-pointer">{post}</li>
                 ))}
               </ul>
             </div>
@@ -392,7 +392,7 @@ const [showForm, setShowForm] = useState(false);
                 'bags', 'buttons', 'company news', 'fasteners',
                 'garment accessories', 'garment trims',"hang tag string", "hang tags", "hangers", "ideas and inspirations", "labels and tags", "leather", "metal accessories", "packaging solutions", "paper bags", "patches", "plastic bags", "project samples", "ribbon & tape & bands", "stickers", "textiles and fabrics", "tissue paper", "woven labels", "zipper pulls",
               ].map((tag, index) => (
-                <a key={index} className="block text-orange-400 hover:underline" href="#">
+                <a key={index} className="block text-yellow-400 hover:underline" href="#">
                   {tag}
                 </a>
               ))}

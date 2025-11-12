@@ -37,14 +37,14 @@ const LabelGroupPage = ({ activeGroupIndex }) => {
               className="flex flex-col items-center w-full max-w-sm group"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
-              <div className="w-full aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border-2 border-transparent group-hover:border-orange-200">
+              <div className="w-full aspect-[4/3] overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-all duration-300 border-2 border-transparent group-hover:border-yellow-200">
                 <img
                   alt={category.category}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   src={category.image}
                 />
               </div>
-              <h3 className="mt-4 font-semibold text-lg text-gray-900 text-center group-hover:text-orange-600 transition-colors duration-200">
+              <h3 className="mt-4 font-semibold text-lg text-gray-900 text-center group-hover:text-yellow-600 transition-colors duration-200">
                 {category.category}
               </h3>
               {category.items && category.items.length > 0 && (
@@ -62,7 +62,7 @@ const LabelGroupPage = ({ activeGroupIndex }) => {
                       </span>
                     ))}
                     {category.items.length > 2 && (
-                      <span className="text-xs px-2 py-1 bg-orange-100 text-orange-600 rounded-full">
+                      <span className="text-xs px-2 py-1 bg-yellow-100 text-yellow-600 rounded-full">
                         +{category.items.length - 2} more
                       </span>
                     )}

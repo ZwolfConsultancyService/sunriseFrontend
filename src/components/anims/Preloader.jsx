@@ -21,13 +21,13 @@ const Preloader = () => {
       }}
     >
       {/* ✨ Blurred Light Effects */}
-      <div className="absolute w-[300px] h-[300px] bg-orange-300 opacity-30 rounded-full blur-3xl left-[10%] top-[20%] animate-pulse"></div>
+      <div className="absolute w-[300px] h-[300px] bg-yellow-300 opacity-30 rounded-full blur-3xl left-[10%] top-[20%] animate-pulse"></div>
       <div className="absolute w-[250px] h-[250px] bg-pink-300 opacity-30 rounded-full blur-2xl right-[10%] bottom-[15%] animate-ping"></div>
 
       {/* Spinner & Text */}
       <div className="relative w-30 h-30 flex items-center justify-center animate-fadeIn">
         {/* Spinner */}
-        <div className="absolute top-0 left-0 w-30 h-30 rounded-full border-4 border-orange-400 border-t-transparent animate-spin"></div>
+        <div className="absolute top-0 left-0 w-30 h-30 rounded-full border-4 border-yellow-400 border-t-transparent animate-spin"></div>
 
         {/* Loading Text */}
         <div
@@ -59,9 +59,9 @@ const Preloader = () => {
               gap: "0.1rem",
             }}
           >
-            <span className="text-orange-400 text-xl">⌞</span>
+            <span className="text-yellow-400 text-xl">⌞</span>
             <span>sun</span>
-            <span className="text-orange-400">r</span>
+            <span className="text-yellow-400">r</span>
             <span>ise</span>
           </span>
         </div>

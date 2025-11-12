@@ -74,10 +74,10 @@ const Navbar = () => {
     <div className="flex space-x-2 sm:space-x-4 flex-wrap items-center">
       {/* Email */}
       <div className="hidden sm:flex items-center space-x-1 text-xs sm:text-sm">
-        <FaEnvelope className="text-orange-500 text-xs" />
+        <FaEnvelope className="text-yellow-500 text-xs" />
         <a
           href="mailto:info@sunrise.com"
-          className="hover:text-orange-600 transition"
+          className="hover:text-yellow-600 transition"
         >
           info@sunrise.com
         </a>
@@ -85,10 +85,10 @@ const Navbar = () => {
 
       {/* Phone */}
       <div className="flex items-center space-x-1 text-xs sm:text-sm">
-        <FaPhoneAlt className="text-orange-500 text-xs" />
+        <FaPhoneAlt className="text-yellow-500 text-xs" />
         <a
           href="tel:+919876543210"
-          className="hover:text-orange-600 transition"
+          className="hover:text-yellow-600 transition"
         >
           <span className="hidden xs:inline">+91 9876543210</span>
           <span className="xs:hidden">Call Us</span>
@@ -97,7 +97,7 @@ const Navbar = () => {
 
       {/* Timing */}
       <div className="hidden md:flex items-center space-x-1 text-xs sm:text-sm">
-        <FaClock className="text-orange-500 text-xs" />
+        <FaClock className="text-yellow-500 text-xs" />
         <span>Mon - Sat (9:00 - 18:00)</span>
       </div>
     </div>
@@ -106,19 +106,19 @@ const Navbar = () => {
     <div className="flex items-center space-x-4 sm:space-x-6">
       {/* Social Icons */}
       <div className="flex space-x-3 sm:space-x-5 text-gray-800 text-base sm:text-lg">
-        <a href="#" aria-label="YouTube" className="hover:text-orange-500">
+        <a href="#" aria-label="YouTube" className="hover:text-yellow-500">
           <FaYoutube />
         </a>
-        <a href="#" aria-label="Facebook" className="hover:text-orange-500">
+        <a href="#" aria-label="Facebook" className="hover:text-yellow-500">
           <FaFacebookF />
         </a>
-        <a href="#" aria-label="Instagram" className="hover:text-orange-500">
+        <a href="#" aria-label="Instagram" className="hover:text-yellow-500">
           <FaInstagram />
         </a>
-        <a href="#" aria-label="Twitter" className="hover:text-orange-500">
+        <a href="#" aria-label="Twitter" className="hover:text-yellow-500">
           <FaTwitter />
         </a>
-        <a href="#" aria-label="LinkedIn" className="hover:text-orange-500">
+        <a href="#" aria-label="LinkedIn" className="hover:text-yellow-500">
           <FaLinkedinIn />
         </a>
       </div>
@@ -127,7 +127,7 @@ const Navbar = () => {
       <a
         href={CompanyPdf}
         download="Sunrise-Company-Brochure.pdf"
-        className="flex items-center bg-orange-500 hover:bg-orange-600 text-white px-2 sm:px-3 py-1 rounded text-xs sm:text-sm transition"
+        className="flex items-center bg-yellow-500 hover:bg-yellow-600 text-white px-2 sm:px-3 py-1 rounded text-xs sm:text-sm transition"
       >
         <FaDownload className="mr-1 text-xs sm:text-sm" />
         <span className="hidden sm:inline">Download Brochure</span>
@@ -156,9 +156,8 @@ const Navbar = () => {
 
     {/* ✅ Brand Text */}
     <div className="flex items-center space-x-1 sm:space-x-2">
-      <span className="text-orange-400 text-2xl sm:text-3xl">⌞</span>
       <span>sun</span>
-      <span className="text-orange-400">r</span>
+      <span className="text-yellow-400">r</span>
       <span>ise</span>
     </div>
   </div>
@@ -175,7 +174,7 @@ const Navbar = () => {
                     <div
                       className={`pb-1 cursor-pointer flex items-center hover:text-gray-700 transition-colors ${
                         isActive(link)
-                          ? "text-orange-500 border-b-2 border-orange-500"
+                          ? "text-yellow-500 border-b-2 border-yellow-500"
                           : "text-gray-900"
                       }`}
                     >
@@ -208,7 +207,7 @@ const Navbar = () => {
                             >
                               <Link
                                 to={getSubLinkPath(group.group)}
-                                className="text-xs font-bold text-orange-500 hover:text-orange-500 uppercase tracking-wide mb-3 block leading-tight"
+                                className="text-xs font-bold text-yellow-500 hover:text-yellow-500 uppercase tracking-wide mb-3 block leading-tight"
                               >
                                 {group.group}
                               </Link>
@@ -219,7 +218,7 @@ const Navbar = () => {
                                       to={`/label/${group.slug}/${category.category
                                         .toLowerCase()
                                         .replace(/\s+/g, "-")}`}
-                                      className="text-xs text-gray-800 hover:text-orange-500 transition-colors block py-0.5 leading-relaxed"
+                                      className="text-xs text-gray-800 hover:text-yellow-500 transition-colors block py-0.5 leading-relaxed"
                                     >
                                       {category.category}
                                     </Link>
@@ -237,7 +236,7 @@ const Navbar = () => {
                     to={getLinkPath(link)}
                     className={`cursor-pointer pb-1 hover:text-gray-700 transition-colors ${
                       isActive(link)
-                        ? "text-orange-500 border-b-2 border-orange-500"
+                        ? "text-yellow-500 border-b-2 border-yellow-500"
                         : "text-gray-900"
                     }`}
                     onClick={() => setIsOpen(false)}
@@ -286,7 +285,7 @@ const Navbar = () => {
                           >
                             <Link
                               to={getSubLinkPath(group.group)}
-                              className="cursor-pointer block text-sm font-semibold text-gray-800 hover:text-orange-500 mb-2 py-1"
+                              className="cursor-pointer block text-sm font-semibold text-gray-800 hover:text-yellow-500 mb-2 py-1"
                               onClick={() => setIsOpen(false)}
                             >
                               {group.group}
@@ -306,7 +305,7 @@ const Navbar = () => {
                                     alt={category.category}
                                     className="w-5 h-5 sm:w-6 sm:h-6 object-cover rounded"
                                   />
-                                  <span className="text-xs sm:text-sm text-gray-600 hover:text-orange-500">
+                                  <span className="text-xs sm:text-sm text-gray-600 hover:text-yellow-500">
                                     {category.category}
                                   </span>
                                 </Link>
@@ -322,7 +321,7 @@ const Navbar = () => {
                     to={getLinkPath(link)}
                     className={`cursor-pointer py-1 hover:text-gray-700 transition-colors ${
                       isActive(link)
-                        ? "text-orange-500 font-medium"
+                        ? "text-yellow-500 font-medium"
                         : "text-gray-900"
                     }`}
                     onClick={() => setIsOpen(false)}

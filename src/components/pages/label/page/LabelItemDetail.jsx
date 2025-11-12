@@ -132,7 +132,7 @@ const LabelItemDetail = () => {
               ← Back to {categoryData.title}
             </Link>
 
-            <h1 className="text-3xl font-bold mb-6 text-orange-600">{itemData.title}</h1>
+            <h1 className="text-3xl font-bold mb-6 text-yellow-600">{itemData.title}</h1>
             
             {/* Image Gallery */}
             <div className="mb-8 flex flex-col md:flex-row gap-4">
@@ -143,8 +143,8 @@ const LabelItemDetail = () => {
                     key={index} 
                     className={`relative cursor-pointer rounded-lg overflow-hidden transition-all duration-300 ${
                       selectedImage === index 
-                        ? 'ring-2 ring-orange-500 ring-offset-2' 
-                        : 'border border-gray-300 hover:opacity-80 hover:ring-2 hover:ring-orange-500 hover:ring-offset-2'
+                        ? 'ring-2 ring-yellow-500 ring-offset-2' 
+                        : 'border border-gray-300 hover:opacity-80 hover:ring-2 hover:ring-yellow-500 hover:ring-offset-2'
                     }`}
                     onClick={() => setSelectedImage(index)}
                   >
@@ -233,7 +233,7 @@ const LabelItemDetail = () => {
                 {/* WhatsApp Button */}
                 <button 
                   onClick={handleWhatsAppClick}
-                  className="flex items-center justify-center bg-orange-400 hover:bg-orange-500 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg"
+                  className="flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-300 shadow-md hover:shadow-lg"
                 >
                   <FaWhatsapp className="w-5 h-5 mr-2" />
                   WhatsApp Enquiry

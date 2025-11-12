@@ -71,7 +71,7 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex, isMobile = false }) 
         <div className="relative">
           <button
             onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-            className="w-full flex items-center justify-between p-4 border border-gray-300 rounded-lg bg-white hover:border-orange-300 transition-colors"
+            className="w-full flex items-center justify-between p-4 border border-gray-300 rounded-lg bg-white hover:border-yellow-300 transition-colors"
           >
             <span className="text-gray-700 font-medium">
               {labelHierarchy[activeGroupIndex]?.group || "All Categories"}
@@ -96,7 +96,7 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex, isMobile = false }) 
                     }}
                     className={`w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors ${
                       activeGroupIndex === groupIndex
-                        ? "bg-orange-50 text-orange-600 border-r-2 border-orange-500"
+                        ? "bg-yellow-50 text-yellow-600 border-r-2 border-yellow-500"
                         : "text-gray-700"
                     }`}
                   >
@@ -134,7 +134,7 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex, isMobile = false }) 
               key={groupIndex}
               className={`border rounded-lg transition-all duration-200 ${
                 activeGroupIndex === groupIndex
-                  ? "border-orange-500 shadow-md"
+                  ? "border-yellow-500 shadow-md"
                   : "border-gray-200"
               }`}
             >
@@ -142,7 +142,7 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex, isMobile = false }) 
               <div
                 className={`w-full flex items-center justify-between p-3 cursor-pointer transition-colors ${
                   activeGroupIndex === groupIndex
-                    ? "hover:bg-orange-100"
+                    ? "hover:bg-yellow-100"
                     : "hover:bg-gray-50"
                 }`}
               >
@@ -151,8 +151,8 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex, isMobile = false }) 
                   onClick={() => handleGroupClick(groupIndex)}
                   className={`text-base font-bold flex-1 cursor-pointer ${
                     activeGroupIndex === groupIndex
-                      ? "text-orange-400"
-                      : "text-orange-500"
+                      ? "text-yellow-400"
+                      : "text-yellow-500"
                   }`}
                 >
                   {group.group}
@@ -161,12 +161,12 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex, isMobile = false }) 
                 {/* Arrow - Click to expand/collapse */}
                 <span
                   onClick={(e) => toggleGroup(groupIndex, e)}
-                  className="p-1 cursor-pointer hover:bg-orange-50 rounded"
+                  className="p-1 cursor-pointer hover:bg-yellow-50 rounded"
                 >
                   {openGroups[groupIndex] ? (
-                    <FiChevronDown className="text-orange-500 w-4 h-4 flex-shrink-0" />
+                    <FiChevronDown className="text-yellow-500 w-4 h-4 flex-shrink-0" />
                   ) : (
-                    <FiChevronRight className="text-orange-500 w-4 h-4 flex-shrink-0" />
+                    <FiChevronRight className="text-yellow-500 w-4 h-4 flex-shrink-0" />
                   )}
                 </span>
               </div>
@@ -186,7 +186,7 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex, isMobile = false }) 
                           to={`/label/${group.slug}/${category.category
                             .toLowerCase()
                             .replace(/\s+/g, "-")}`}
-                          className="text-sm font-medium text-gray-700 hover:text-orange-500 flex-1 mr-2"
+                          className="text-sm font-medium text-gray-700 hover:text-yellow-500 flex-1 mr-2"
                           onClick={handleCategoryClick}
                         >
                           {category.category}
@@ -229,7 +229,7 @@ const Asidepage = ({ activeGroupIndex, setActiveGroupIndex, isMobile = false }) 
                                       .replace(/\s+/g, "-")}/${item
                                       .toLowerCase()
                                       .replace(/\s+/g, "-")}`}
-                                    className="hover:text-orange-500 hover:underline"
+                                    className="hover:text-yellow-500 hover:underline"
                                     onClick={handleItemClick}
                                   >
                                     {item}

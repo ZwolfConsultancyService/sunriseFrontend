@@ -31,7 +31,7 @@ const QuoteForm = () => {
 
       {/* Email CTA */}
       <main className="max-w-5xl mx-auto px-6 py-10">
-        <h2 className="text-orange-500 font-bold text-2xl mb-4">Email us:</h2>
+        <h2 className="text-yellow-500 font-bold text-2xl mb-4">Email us:</h2>
         <a
           href="mailto:Info@Sunrise.com"
           className="inline-block bg-red-500 text-white font-semibold text-sm rounded-full px-6 py-2 mb-4 hover:bg-red-600 transition-colors"
@@ -45,7 +45,7 @@ const QuoteForm = () => {
 
       {/* Form Section */}
       <main className="max-w-5xl mx-auto  py-8">
-        <h2 className="text-orange-500 font-semibold text-2xl mb-6">
+        <h2 className="text-yellow-500 font-semibold text-2xl mb-6">
           Request Your Quote
         </h2>
 
@@ -188,7 +188,7 @@ const QuoteForm = () => {
           <div className="mb-6">
             <button
               type="submit"
-              className="bg-orange-500 text-white font-bold px-6 py-2 rounded hover:bg-orange-700 transition"
+              className="bg-yellow-500 text-white font-bold px-6 py-2 rounded hover:bg-yellow-700 transition"
             >
               Submit
             </button>
