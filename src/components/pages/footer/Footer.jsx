@@ -127,7 +127,7 @@ const Footer = () => {
           <div className="flex flex-wrap items-center gap-3 mb-8 md:mb-0">
             <Link to={"/"}>
               <div className="flex items-center space-x-2 font-extrabold text-2xl">
-  <p>Sunrise</p>
+  <p>Sunrise Label</p>
               </div>
             </Link>
 

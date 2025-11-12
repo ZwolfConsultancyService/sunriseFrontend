@@ -156,7 +156,7 @@ const Navbar = () => {
 
     {/* ✅ Brand Text */}
     <div className="flex items-center space-x-1 sm:space-x-2">
-      <h1 className="text-gray-800 font-serif">Sunirse</h1>
+      <h1 className="text-gray-800 font-serif">Sunirse Label</h1>
     </div>
   </div>
 </Link>
