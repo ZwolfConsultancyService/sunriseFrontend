@@ -16,6 +16,7 @@ import {
   FaTwitter,
   FaLinkedinIn,
 } from "react-icons/fa";
+import Logo from "../../../assets/logo.jpg"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -143,13 +144,26 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between relative">
         
           <Link to={"/"}>
-            <div className="flex items-center space-x-1 sm:space-x-2 font-extrabold text-xl sm:text-2xl">
-              <span className="text-orange-400 text-2xl sm:text-3xl">⌞</span>
-              <span>sun</span>
-              <span className="text-orange-400">r</span>
-              <span>ise</span>
-            </div>
-          </Link>
+  <div className="flex items-center space-x-2 sm:space-x-3 font-extrabold text-xl sm:text-2xl">
+   
+    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white shadow-md border border-gray-200 overflow-hidden flex items-center justify-center">
+      <img
+        src={Logo}
+        alt="Sunrise Logo"
+        className="w-9 h-9 sm:w-11 sm:h-11 object-cover"
+      />
+    </div>
+
+    {/* ✅ Brand Text */}
+    <div className="flex items-center space-x-1 sm:space-x-2">
+      <span className="text-orange-400 text-2xl sm:text-3xl">⌞</span>
+      <span>sun</span>
+      <span className="text-orange-400">r</span>
+      <span>ise</span>
+    </div>
+  </div>
+</Link>
+
 
           {/* Desktop Nav */}
           <ul className="hidden lg:flex space-x-6 xl:space-x-8 text-sm xl:text-base font-medium">
