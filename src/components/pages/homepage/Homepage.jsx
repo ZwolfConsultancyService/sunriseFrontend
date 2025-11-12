@@ -7,7 +7,7 @@ const Homepage = () => {
 
   return (
     <div className="relative">
-      <div className="relative w-full h-[500px] sm:h-[550px] md:h-[620px] lg:h-[700px] overflow-hidden mt-16">
+      <div className="relative w-11/12 h-[500px] sm:h-[550px] md:h-[620px] lg:h-[700px] overflow-hidden mt-36 jutify-center mx-auto rounded-lg shadow-lg">
         {/* Background Image */}
         <img
           src={HomeImg1}
